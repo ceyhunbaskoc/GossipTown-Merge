@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02c324f8b87d4d1b853ee79d3921098e, type: 3}
+  m_Name: GlobalStoryDatabase
+  m_EditorClassIdentifier: 
+  Chapters:
+  - ChapterId: ch_01
+    ChapterTitle: "B\xF6l\xFCm 1: \u0130lk Ad\u0131mlar"
+    Lines:
+    - Speaker: {fileID: 11400000, guid: 70b13114d47f84547b2416ecaad9ee8a, type: 2}
+      IsPlayerSide: 1
+      Text: "Neredeyim ben? Buras\u0131 \xE7ok karanl\u0131k..."
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 42335e7bed087bf42965fa5c1270592a, type: 2}
+      IsPlayerSide: 0
+      Text: "Korkma, g\xFCvendesin. Ben sana rehberlik edece\u011Fim."
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 70b13114d47f84547b2416ecaad9ee8a, type: 2}
+      IsPlayerSide: 1
+      Text: Peki ne yapmam gerekiyor?
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: 42335e7bed087bf42965fa5c1270592a, type: 2}
+      IsPlayerSide: 0
+      Text: "Korkma, g\xFCvendesin. Ben sana rehberlik edece\u011Fim."
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 70b13114d47f84547b2416ecaad9ee8a, type: 2}
+      IsPlayerSide: 1
+      Text: Peki ne yapmam gerekiyor?
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 42335e7bed087bf42965fa5c1270592a, type: 2}
+      IsPlayerSide: 0
+      Text: "Korkma, g\xFCvendesin. Ben sana rehberlik edece\u011Fim."
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 70b13114d47f84547b2416ecaad9ee8a, type: 2}
+      IsPlayerSide: 1
+      Text: Peki ne yapmam gerekiyor?
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: 42335e7bed087bf42965fa5c1270592a, type: 2}
+      IsPlayerSide: 0
+      Text: "Korkma, g\xFCvendesin. Ben sana rehberlik edece\u011Fim."
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 70b13114d47f84547b2416ecaad9ee8a, type: 2}
+      IsPlayerSide: 1
+      Text: Peki ne yapmam gerekiyor?
+      IsPausePoint: 1
+  - ChapterId: ch_02
+    ChapterTitle: "B\xF6l\xFCm 2: Kurulum"
+    Lines:
+    - Speaker: {fileID: 11400000, guid: 42335e7bed087bf42965fa5c1270592a, type: 2}
+      IsPlayerSide: 0
+      Text: "\u0130lk binan\u0131 ba\u015Far\u0131yla in\u015Fa ettin."
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 70b13114d47f84547b2416ecaad9ee8a, type: 2}
+      IsPlayerSide: 1
+      Text: "Evet, kaynaklar\u0131 y\xF6netmek zor olmad\u0131."
+      IsPausePoint: 1

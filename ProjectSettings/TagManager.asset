@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 3
+  tags: []
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - BoardItems
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: UIBackground
+    uniqueID: 2284987519
+    locked: 0
+  - name: Cells
+    uniqueID: 3788308143
+    locked: 0
+  - name: BackdropView
+    uniqueID: 437436559
+    locked: 0
+  - name: SelectionFrame
+    uniqueID: 1851459863
+    locked: 0
+  - name: Items
+    uniqueID: 852992445
+    locked: 0
+  - name: Overlays
+    uniqueID: 192564577
+    locked: 0
+  - name: Particles
+    uniqueID: 1209309595
+    locked: 0
+  - name: Building
+    uniqueID: 3676321517
+    locked: 0
+  - name: UI
+    uniqueID: 3355551717
+    locked: 0
+  - name: UI_ShopPanel
+    uniqueID: 3824023965
+    locked: 0
+  - name: UI_Currency
+    uniqueID: 1468374307
+    locked: 0
+  - name: UI_TopPriority
+    uniqueID: 1266873387
+    locked: 0
+  - name: DraggedItem
+    uniqueID: 2095893401
+    locked: 0
+  m_RenderingLayers:
+  - Default

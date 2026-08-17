@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1926abd0a3034a4d9734cc290f020da7, type: 3}
+  m_Name: WeeklyQuestConfig
+  m_EditorClassIdentifier: 
+  WeekId: week_1
+  DailyGroups:
+  - DayIndex: 1
+    Quests:
+    - {fileID: 11400000, guid: 09083f7a46771a74c956469712590b29, type: 2}
+    - {fileID: 11400000, guid: f7df8a804c52c254e978e151cda198c5, type: 2}
+    DayCompletionRewards:
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 2
+      Amount: 1
+  - DayIndex: 2
+    Quests:
+    - {fileID: 11400000, guid: 09083f7a46771a74c956469712590b29, type: 2}
+    DayCompletionRewards:
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 0
+      Amount: 20

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86e25a1715a2451b94221a53b8a8c640, type: 3}
+  m_Name: GlobalRewardIconDatabase
+  m_EditorClassIdentifier: 
+  _categoryIcons:
+  - Category: 2
+    CategoryIcon: {fileID: 21300000, guid: d17037033fc964387a0f9dd676f62132, type: 3}
+  - Category: 3
+    CategoryIcon: {fileID: 21300000, guid: 26781ca162ca242e6b15c335a7422dc3, type: 3}
+  - Category: 4
+    CategoryIcon: {fileID: 21300000, guid: 879b65f7be8a74453a53e4d7f6a87e64, type: 3}
+  _fallbackIcon: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  <MedalIcon>k__BackingField: {fileID: 21300000, guid: e0d205e33f577419cb357631ec486da0, type: 3}

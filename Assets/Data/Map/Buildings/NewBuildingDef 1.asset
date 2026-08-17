@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b43b932f1faa42c0816684a56d3f7bcb, type: 3}
+  m_Name: NewBuildingDef 1
+  m_EditorClassIdentifier: 
+  <BuildingId>k__BackingField: test
+  <BuildingName>k__BackingField: Test
+  <Levels>k__BackingField:
+  - LevelSprite: {fileID: 7366617892383084551, guid: 12fd41b85bf40da41ac3ada6d1a5f0b4, type: 3}
+    UpgradeCost: 20
+    LevelRewards:
+    - Category: 0
+      RewardItem: {fileID: 11400000, guid: 2536adb532772d44a927910b8cf1aa62, type: 2}
+      Level: 4
+      Amount: 1
+  - LevelSprite: {fileID: 3830282136720419767, guid: 12fd41b85bf40da41ac3ada6d1a5f0b4, type: 3}
+    UpgradeCost: 20
+    LevelRewards:
+    - Category: 2
+      RewardItem: {fileID: 0}
+      Level: 0
+      Amount: 20

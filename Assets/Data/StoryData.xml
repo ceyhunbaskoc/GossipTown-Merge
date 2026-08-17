@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StoryDatabase>
+    <Chapter id="ch_01" title="Bölüm 1: İlk Adımlar">
+        <Line speaker="Ceyhun" isPlayerSide="true" isPausePoint="false">Neredeyim ben? Burası çok karanlık...</Line>
+        <Line speaker="Berry" isPlayerSide="false" isPausePoint="false">Korkma, güvendesin. Ben sana rehberlik edeceğim.</Line>
+        <Line speaker="Ceyhun" isPlayerSide="true" isPausePoint="true">Peki ne yapmam gerekiyor?</Line>
+        <Line speaker="Berry" isPlayerSide="false" isPausePoint="false">Korkma, güvendesin. Ben sana rehberlik edeceğim.</Line>
+        <Line speaker="Ceyhun" isPlayerSide="true" isPausePoint="false">Peki ne yapmam gerekiyor?</Line>
+        <Line speaker="Berry" isPlayerSide="false" isPausePoint="false">Korkma, güvendesin. Ben sana rehberlik edeceğim.</Line>
+        <Line speaker="Ceyhun" isPlayerSide="true" isPausePoint="true">Peki ne yapmam gerekiyor?</Line>
+        <Line speaker="Berry" isPlayerSide="false" isPausePoint="false">Korkma, güvendesin. Ben sana rehberlik edeceğim.</Line>
+        <Line speaker="Ceyhun" isPlayerSide="true" isPausePoint="true">Peki ne yapmam gerekiyor?</Line>
+    </Chapter>
+
+    <Chapter id="ch_02" title="Bölüm 2: Kurulum">
+        <Line speaker="Berry" isPlayerSide="false" isPausePoint="false">İlk binanı başarıyla inşa ettin.</Line>
+        <Line speaker="Ceyhun" isPlayerSide="true" isPausePoint="true">Evet, kaynakları yönetmek zor olmadı.</Line>
+    </Chapter>
+</StoryDatabase>

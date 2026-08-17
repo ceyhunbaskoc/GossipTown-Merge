@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7075a009d3784df2ad3006d706ebe04c, type: 3}
+  m_Name: test_spawner_item
+  m_EditorClassIdentifier: 
+  <Id>k__BackingField: coffee_spawner
+  <ItemName>k__BackingField: Coffee Spawner
+  <Spawners>k__BackingField:
+  - <Level>k__BackingField: 1
+    <ItemIcon>k__BackingField: {fileID: 887198741737445754, guid: fae96da3bf4fab94686efe00c287d66c, type: 3}
+    <SpawnItemSO>k__BackingField: {fileID: 11400000, guid: 5a034ebef0e978846bc89a8172ceedb3, type: 2}
+    <DropRates>k__BackingField:
+    - Level: 1
+      Weight: 10
+    - Level: 2
+      Weight: 1
+    <MaxCapacity>k__BackingField: 50
+    <CooldownSeconds>k__BackingField: 60
+  - <Level>k__BackingField: 2
+    <ItemIcon>k__BackingField: {fileID: -3848116696304839789, guid: fae96da3bf4fab94686efe00c287d66c, type: 3}
+    <SpawnItemSO>k__BackingField: {fileID: 11400000, guid: 5a034ebef0e978846bc89a8172ceedb3, type: 2}
+    <DropRates>k__BackingField:
+    - Level: 1
+      Weight: 10
+    - Level: 2
+      Weight: 1
+    <MaxCapacity>k__BackingField: 50
+    <CooldownSeconds>k__BackingField: 60
+  - <Level>k__BackingField: 3
+    <ItemIcon>k__BackingField: {fileID: 43884223449068057, guid: fae96da3bf4fab94686efe00c287d66c, type: 3}
+    <SpawnItemSO>k__BackingField: {fileID: 11400000, guid: 5a034ebef0e978846bc89a8172ceedb3, type: 2}
+    <DropRates>k__BackingField:
+    - Level: 1
+      Weight: 10
+    - Level: 2
+      Weight: 1
+    <MaxCapacity>k__BackingField: 50
+    <CooldownSeconds>k__BackingField: 60
+  - <Level>k__BackingField: 4
+    <ItemIcon>k__BackingField: {fileID: 6837097449660722236, guid: fae96da3bf4fab94686efe00c287d66c, type: 3}
+    <SpawnItemSO>k__BackingField: {fileID: 11400000, guid: 5a034ebef0e978846bc89a8172ceedb3, type: 2}
+    <DropRates>k__BackingField:
+    - Level: 1
+      Weight: 10
+    - Level: 2
+      Weight: 1
+    <MaxCapacity>k__BackingField: 50
+    <CooldownSeconds>k__BackingField: 60
+  - <Level>k__BackingField: 5
+    <ItemIcon>k__BackingField: {fileID: -7708148202205387522, guid: fae96da3bf4fab94686efe00c287d66c, type: 3}
+    <SpawnItemSO>k__BackingField: {fileID: 11400000, guid: 5a034ebef0e978846bc89a8172ceedb3, type: 2}
+    <DropRates>k__BackingField:
+    - Level: 1
+      Weight: 10
+    - Level: 2
+      Weight: 1
+    <MaxCapacity>k__BackingField: 50
+    <CooldownSeconds>k__BackingField: 60
+  - <Level>k__BackingField: 6
+    <ItemIcon>k__BackingField: {fileID: -8942005793598689798, guid: fae96da3bf4fab94686efe00c287d66c, type: 3}
+    <SpawnItemSO>k__BackingField: {fileID: 11400000, guid: 5a034ebef0e978846bc89a8172ceedb3, type: 2}
+    <DropRates>k__BackingField:
+    - Level: 1
+      Weight: 10
+    - Level: 2
+      Weight: 1
+    <MaxCapacity>k__BackingField: 50
+    <CooldownSeconds>k__BackingField: 60
+  - <Level>k__BackingField: 7
+    <ItemIcon>k__BackingField: {fileID: -7709817040886047871, guid: fae96da3bf4fab94686efe00c287d66c, type: 3}
+    <SpawnItemSO>k__BackingField: {fileID: 11400000, guid: 5a034ebef0e978846bc89a8172ceedb3, type: 2}
+    <DropRates>k__BackingField:
+    - Level: 1
+      Weight: 10
+    - Level: 2
+      Weight: 1
+    <MaxCapacity>k__BackingField: 50
+    <CooldownSeconds>k__BackingField: 60
+  - <Level>k__BackingField: 8
+    <ItemIcon>k__BackingField: {fileID: 4447628750688672725, guid: fae96da3bf4fab94686efe00c287d66c, type: 3}
+    <SpawnItemSO>k__BackingField: {fileID: 11400000, guid: 5a034ebef0e978846bc89a8172ceedb3, type: 2}
+    <DropRates>k__BackingField:
+    - Level: 1
+      Weight: 10
+    - Level: 2
+      Weight: 1
+    <MaxCapacity>k__BackingField: 50
+    <CooldownSeconds>k__BackingField: 60

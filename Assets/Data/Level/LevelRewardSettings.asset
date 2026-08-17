@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62609d39d0394ce096e93b4ae27d9f52, type: 3}
+  m_Name: LevelRewardSettings
+  m_EditorClassIdentifier: 
+  <LevelRewards>k__BackingField:
+  - Level: 2
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 0
+      Amount: 50
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 0
+      Amount: 10
+  - Level: 3
+    RewardConfig:
+    - Category: 0
+      ItemDefinition: {fileID: 11400000, guid: 2536adb532772d44a927910b8cf1aa62, type: 2}
+      Level: 4
+      Amount: 1
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 0
+      Amount: 25
