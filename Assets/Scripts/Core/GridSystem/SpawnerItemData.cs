@@ -1,10 +1,11 @@
 ﻿using System;
 using Core.SaveSystem;
 using Core.Services;
+using UnityEngine;
 
 namespace Core.GridSystem
 {
-    public class SpawnerItemData : ItemData, ITimeTrackable
+    public class SpawnerItemData : ItemData, ITimeTrackable, ICustomSaveableItem
     {
         public int CurrentCapacity { get; set; }
         public int MaxCapacity { get; private set; }
@@ -31,6 +32,36 @@ namespace Core.GridSystem
             CurrentCapacity = maxCapacity;
         }
         
+        public string GetCustomStateJson()
+        {
+            SpawnerSaveState state = new SpawnerSaveState
+            {
+                CurrentCapacity = this.CurrentCapacity,
+                CooldownEndTimeTicks = this.CooldownEndTimeTicks
+            };
+            return JsonUtility.ToJson(state);
+        }
+
+        public void LoadCustomStateFromJson(string json)
+        {
+            SpawnerSaveState state = JsonUtility.FromJson<SpawnerSaveState>(json);
+            if (state == null) return;
+
+            CurrentCapacity = state.CurrentCapacity;
+            
+            if (state.CooldownEndTimeTicks > 0)
+            {
+                if (DateTime.UtcNow.Ticks >= state.CooldownEndTimeTicks)
+                {
+                    WakeUp();
+                }
+                else
+                {
+                    EnterCooldown(state.CooldownEndTimeTicks);
+                }
+            }
+        }
+        
         public void InitializeSpawnerCapacity(int maxCapacity)
         {
             MaxCapacity = maxCapacity;
@@ -52,14 +83,6 @@ namespace Core.GridSystem
         public void OnTimeCompleted()
         {
             WakeUp();
-        }
-        
-        public override ItemSaveData GetSaveData()
-        {
-            ItemSaveData data = base.GetSaveData();
-            data.CurrentCapacity = this.CurrentCapacity;
-            data.CooldownEndTimeTicks = this.CooldownEndTimeTicks;
-            return data;
         }
     }
 }

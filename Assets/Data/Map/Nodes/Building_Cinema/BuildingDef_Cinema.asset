@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b43b932f1faa42c0816684a56d3f7bcb, type: 3}
+  m_Name: BuildingDef_Cinema
+  m_EditorClassIdentifier: 
+  <BuildingId>k__BackingField: building_cinema
+  <BuildingName>k__BackingField: Cinema
+  <Levels>k__BackingField:
+  - LevelSprite: {fileID: 1426362317923036474, guid: 9609c643258687c4593839a05785b17d, type: 3}
+    UpgradeCost: 1340
+    LevelRewards:
+    - Category: 5
+      RewardItem: {fileID: 0}
+      Level: 1
+      Amount: 610
+  - LevelSprite: {fileID: -8058470826498077393, guid: 9609c643258687c4593839a05785b17d, type: 3}
+    UpgradeCost: 2950
+    LevelRewards:
+    - Category: 5
+      RewardItem: {fileID: 0}
+      Level: 1
+      Amount: 1225
+    - Category: 4
+      RewardItem: {fileID: 0}
+      Level: 1
+      Amount: 80
+  - LevelSprite: {fileID: -5351470138790261487, guid: 9609c643258687c4593839a05785b17d, type: 3}
+    UpgradeCost: 6500
+    LevelRewards:
+    - Category: 5
+      RewardItem: {fileID: 0}
+      Level: 1
+      Amount: 2450
+  - LevelSprite: {fileID: -5689850169659313497, guid: 9609c643258687c4593839a05785b17d, type: 3}
+    UpgradeCost: 14290
+    LevelRewards:
+    - Category: 5
+      RewardItem: {fileID: 0}
+      Level: 1
+      Amount: 4900
+    - Category: 4
+      RewardItem: {fileID: 0}
+      Level: 1
+      Amount: 80
+  - LevelSprite: {fileID: -3872771782672712066, guid: 9609c643258687c4593839a05785b17d, type: 3}
+    UpgradeCost: 31440
+    LevelRewards:
+    - Category: 5
+      RewardItem: {fileID: 0}
+      Level: 1
+      Amount: 9795
+  - LevelSprite: {fileID: -8349152502459024185, guid: 9609c643258687c4593839a05785b17d, type: 3}
+    UpgradeCost: 69170
+    LevelRewards:
+    - Category: 5
+      RewardItem: {fileID: 0}
+      Level: 1
+      Amount: 19590
+    - Category: 3
+      RewardItem: {fileID: 0}
+      Level: 1
+      Amount: 40

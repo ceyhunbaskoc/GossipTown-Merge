@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Core.Economy;
 using Core.Reward;
 using Core.Services;
@@ -13,86 +14,111 @@ namespace Core.Roadmap
         private readonly RoadmapProgressionService _roadmapService;
         private readonly RewardDispatcherService _rewardService;
         private readonly RewardSelectionService _rewardSelectionService;
-        
-        //TODO: Later on, something like a shared `dispatchCurrencyReward` function should be called. That function should also navigate to the location in the top bar using an animation.
         private readonly IEconomyModifier _economyModifier;
+        private readonly RoadmapDatabaseSO _roadmapDatabase;
 
-        public RoadmapRewardIntegrator(RoadmapProgressionService roadmapService, RewardDispatcherService rewardService, IEconomyModifier economyModifier, RewardSelectionService rewardSelectionService)
+        private readonly Dictionary<string, Queue<(int Level, BuildingLevelData Data)>> _pendingRewardsQueue = new Dictionary<string, Queue<(int Level, BuildingLevelData Data)>>();
+        public RoadmapRewardIntegrator(
+            RoadmapProgressionService roadmapService, 
+            RewardDispatcherService rewardService, 
+            IEconomyModifier economyModifier, 
+            RewardSelectionService rewardSelectionService,
+            RoadmapDatabaseSO roadmapDatabase)
         {
             _roadmapService = roadmapService;
             _rewardService = rewardService;
             _economyModifier = economyModifier;
             _rewardSelectionService = rewardSelectionService;
+            _roadmapDatabase = roadmapDatabase;
         
-            _roadmapService.OnNodeUpgraded += HandleRewardsOnUpgrade;
+            _roadmapService.OnNodeUpgraded += HandleDomainUpgrade;
+
+            RecoverLostRewards();
         }
 
-        private void HandleRewardsOnUpgrade(MapNodeDefinitionSO nodeDef, BuildingLevelData levelData)
+        private void RecoverLostRewards()
         {
-            if (levelData.LevelRewards != null && levelData.LevelRewards.Count > 0)
+            if (_roadmapDatabase == null || _roadmapDatabase.AllNodes == null) return;
+
+            foreach (var nodeDef in _roadmapDatabase.AllNodes)
             {
-                foreach(var reward in levelData.LevelRewards)
+                int currentLevel = _roadmapService.GetNodeCurrentLevel(nodeDef.NodeId);
+                int lastClaimedLevel = _roadmapService.GetLastClaimedRewardLevel(nodeDef.NodeId);
+
+                if (currentLevel > lastClaimedLevel)
                 {
-                    DispatchReward(reward);
+                    for (int level = lastClaimedLevel + 1; level <= currentLevel; level++)
+                    {
+                        var levelData = nodeDef.Building.GetLevelData(level);
+                        if (levelData != null)
+                        {
+                            ExecuteRewardDispatch(levelData);
+                            _roadmapService.MarkRewardAsClaimed(nodeDef.NodeId, level);
+                        }
+                    }
                 }
             }
         }
+
+        private void HandleDomainUpgrade(MapNodeDefinitionSO nodeDef, BuildingLevelData levelData)
+        {
+            if (!_pendingRewardsQueue.ContainsKey(nodeDef.NodeId))
+            {
+                _pendingRewardsQueue[nodeDef.NodeId] = new Queue<(int, BuildingLevelData)>();
+            }
+
+            int snapshotLevel = _roadmapService.GetNodeCurrentLevel(nodeDef.NodeId);
+            _pendingRewardsQueue[nodeDef.NodeId].Enqueue((snapshotLevel, levelData));
+        }
+
+        public void OnVisualUpgradeCompleted(string nodeId)
+        {
+            if (_pendingRewardsQueue.TryGetValue(nodeId, out var queue) && queue.Count > 0)
+            {
+                var payload = queue.Dequeue();
+                int eventLevel = payload.Level;
+                BuildingLevelData levelData = payload.Data;
+                
+                ExecuteRewardDispatch(levelData);
+                
+                _roadmapService.MarkRewardAsClaimed(nodeId, eventLevel);
+            }
+        }
         
+        private void ExecuteRewardDispatch(BuildingLevelData levelData)
+        {
+            if (levelData.LevelRewards == null || levelData.LevelRewards.Count == 0) return;
+
+            foreach(var reward in levelData.LevelRewards)
+            {
+                DispatchReward(reward);
+            }
+        }
+
         private void DispatchReward(BuildingRewardDefinition rewardDef)
         {
             switch (rewardDef.Category)
             {
                 case RewardCategory.ItemSpawner:
-                    RewardPayload itemRewardPayload = new RewardPayload(
-                        itemId: rewardDef.RewardItem.Id,
-                        level: rewardDef.Level,
-                        amount: rewardDef.Amount);
-                    _rewardService.DispatchReward(itemRewardPayload);
-                    /*RewardPayload? spawnerReward = _rewardSelectionService.TryGetSpawnerUpgradeReward();
-                    if (spawnerReward.HasValue)
-                    {
-                        _rewardService.DispatchReward(spawnerReward.Value);
-                    }
-                    else
-                    {
-                        Debug.LogError("Item spawner reward can't dispatch");
-                        RewardPayload chestReward = _rewardSelectionService.GetChestReward();
-                        _rewardService.DispatchReward(chestReward);
-                    }*/
-                    break;
                 case RewardCategory.Chest:
-                    RewardPayload rewardPayload = new RewardPayload(
+                    RewardPayload payload = new RewardPayload(
                         itemId: rewardDef.RewardItem.Id,
                         level: rewardDef.Level,
                         amount: rewardDef.Amount);
-                    _rewardService.DispatchReward(rewardPayload);
+                    _rewardService.DispatchReward(payload);
                     break;
                     
                 default:
-                    _dispatchCurrencyReward(rewardDef);
-                    break;
-            }
-        }
-
-        private void _dispatchCurrencyReward(BuildingRewardDefinition rewardDef)
-        {
-            switch (rewardDef.Category)
-            {
-                case RewardCategory.Energy:
-                    _economyModifier.AddEnergy(rewardDef.Amount);
-                    break;
-                case RewardCategory.Gem:
-                    _economyModifier.AddGem(rewardDef.Amount);
-                    break;
-                case RewardCategory.Gold:
-                    _economyModifier.AddGold(rewardDef.Amount);
+                    QuestRewardConfig currencyReward = new QuestRewardConfig
+                        { Amount = rewardDef.Amount, Category = rewardDef.Category, ItemDefinition = null, Level = 0 };
+                    _rewardService.DispatchCurrencyReward(currencyReward);
                     break;
             }
         }
 
         public void Dispose()
         {
-            _roadmapService.OnNodeUpgraded -= HandleRewardsOnUpgrade;
+            _roadmapService.OnNodeUpgraded -= HandleDomainUpgrade;
         }
     }
 }

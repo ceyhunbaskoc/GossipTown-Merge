@@ -7,5 +7,6 @@ namespace Data.Roadmap
     public class RoadmapDatabaseSO : ScriptableObject
     {
         [field: SerializeField] public List<MapNodeDefinitionSO> AllNodes { get; private set; }
+        [field: SerializeField] public Sprite UnBuildSprite { get; private set; }
     }
 }

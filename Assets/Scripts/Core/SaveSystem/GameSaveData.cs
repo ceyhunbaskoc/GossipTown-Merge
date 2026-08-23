@@ -11,6 +11,12 @@ namespace Core.SaveSystem
         public string Id;
         public int Level;
         
+        public string CustomDataJson;
+    }
+    
+    [Serializable]
+    public class SpawnerSaveState
+    {
         public int CurrentCapacity;
         public long CooldownEndTimeTicks;
     }
@@ -68,6 +74,13 @@ namespace Core.SaveSystem
     }
     
     [Serializable]
+    public class ChestSaveState
+    {
+        public int CurrentState;
+        public long UnlockTargetTimeTicks;
+    }
+    
+    [Serializable]
     public class RoadmapSaveData
     {
         public List<NodeSaveData> UnlockedNodes = new List<NodeSaveData>();
@@ -78,6 +91,8 @@ namespace Core.SaveSystem
     {
         public string NodeId;
         public int CurrentLevel;
+        
+        public int LastClaimedRewardLevel;
     }
     
     [Serializable]

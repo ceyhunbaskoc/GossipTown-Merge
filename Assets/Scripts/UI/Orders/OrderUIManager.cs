@@ -21,16 +21,20 @@ namespace UI.Orders
         private ObjectPoolManager _poolManager;
         private ItemDatabaseSO _itemDatabase;
         private CurrencyFlightService _currencyFlightService;
-        private OrderRandomCharacterSelector _characterSelector;
+        
+        private IOrderCharacterSelector _characterSelector;
         private ItemDetailEventChannelSO _itemDetailEventChannel;
 
         private Dictionary<OrderModel, OrderCardPresenter> _activePresenters = new Dictionary<OrderModel, OrderCardPresenter>();
+        
+        private Dictionary<OrderModel, Sprite> _activeOrderSprites = new Dictionary<OrderModel, Sprite>();
+
         public void Initialize(OrderDataModel orderDataModel, 
             IOrderFulfillmentService fulfillmentService, 
             ObjectPoolManager poolManager, 
             ItemDatabaseSO itemDatabase,
             CurrencyFlightService currencyFlightService,
-            OrderRandomCharacterSelector characterSelector,
+            IOrderCharacterSelector characterSelector,
             ItemDetailEventChannelSO itemDetailEventChannel)
         {
             _orderDataModel = orderDataModel;
@@ -66,7 +70,10 @@ namespace UI.Orders
 
                 requiredItemsData.Add(new OrderItemUIData(identifier, itemSprite, requiredCount));
             }
-            Sprite characterSprite = _characterSelector.GetRandomCharacterSprite();
+            
+            Sprite characterSprite = _characterSelector.GetUniqueCharacterSprite();
+            _activeOrderSprites.Add(newOrder, characterSprite);
+            
             viewInstance.SetupCard(characterSprite, newOrder.RewardAmount, requiredItemsData);
 
             OrderCardPresenter presenter = new OrderCardPresenter(newOrder, viewInstance, _orderDataModel, _fulfillmentService, _itemDetailEventChannel);
@@ -82,10 +89,17 @@ namespace UI.Orders
                     completedOrder.RewardAmount, 
                     clickedView.OrderCardView.RewardText.transform.position); 
             }
+            
             if (_activePresenters.TryGetValue(completedOrder, out OrderCardPresenter presenter))
             {
                 presenter.Dispose(); 
                 _activePresenters.Remove(completedOrder);
+            }
+            
+            if (_activeOrderSprites.TryGetValue(completedOrder, out Sprite usedSprite))
+            {
+                _characterSelector.ReleaseCharacterSprite(usedSprite);
+                _activeOrderSprites.Remove(completedOrder);
             }
         }
 
@@ -101,6 +115,12 @@ namespace UI.Orders
             {
                 p.Dispose();
             }
+            
+            foreach (var sprite in _activeOrderSprites.Values)
+            {
+                _characterSelector.ReleaseCharacterSprite(sprite);
+            }
+            _activeOrderSprites.Clear();
         }
     }
 }

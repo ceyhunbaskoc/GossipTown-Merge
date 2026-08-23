@@ -10,8 +10,10 @@ namespace Order
 
     public class DynamicWaveRewardCalculator : IWaveRewardCalculator
     {
-        private const int BASE_EXP_PER_ORDER = 10;
-        private const float DIFFICULTY_MULTIPLIER = 1.5f;
+        private const int BASE_EXP_PER_BASE_ITEM = 5; 
+        
+        private const float MERGE_INCENTIVE_BONUS = 1.1f; 
+        
         private const float WAVE_COMPLETION_BONUS = 1.2f;
 
         public int CalculateWaveExperience(IReadOnlyList<OrderModel> completedOrders)
@@ -27,6 +29,7 @@ namespace Order
             {
                 totalWaveExperience += CalculateSingleOrderExperience(order);
             }
+            
             float finalExperience = totalWaveExperience * WAVE_COMPLETION_BONUS;
 
             return Mathf.RoundToInt(finalExperience);
@@ -41,8 +44,13 @@ namespace Order
                 int itemLevel = kvp.Key.Level;
                 int requiredCount = kvp.Value;
                 
-                float rawItemExp = Mathf.Pow(DIFFICULTY_MULTIPLIER, itemLevel) * BASE_EXP_PER_ORDER;
-                orderExperience += Mathf.RoundToInt(rawItemExp) * requiredCount;
+                int trueEffort = 1 << (Mathf.Max(1, itemLevel) - 1);
+                
+                float rewardedEffort = Mathf.Pow(trueEffort, MERGE_INCENTIVE_BONUS);
+                
+                float itemExp = rewardedEffort * BASE_EXP_PER_BASE_ITEM;
+                
+                orderExperience += Mathf.RoundToInt(itemExp) * requiredCount;
             }
 
             return orderExperience;

@@ -14,6 +14,7 @@ namespace Core.Services
         public event Action<MapNodeDefinitionSO> OnNodeUnlocked; 
         
         public event Action OnDataLoaded; 
+        public event Action OnRewardSave; 
 
         private readonly Dictionary<string, MapNodeDefinitionSO> _allNodesMap;
         private readonly Dictionary<string, NodeSaveData> _nodeSaveMap;
@@ -60,6 +61,23 @@ namespace Core.Services
             }
     
             OnDataLoaded?.Invoke();
+        }
+        
+        public void MarkRewardAsClaimed(string nodeId, int level)
+        {
+            if (_nodeSaveMap.TryGetValue(nodeId, out var nodeSave))
+            {
+                if (level > nodeSave.LastClaimedRewardLevel)
+                {
+                    nodeSave.LastClaimedRewardLevel = level;
+                    OnRewardSave?.Invoke();
+                }
+            }
+        }
+
+        public int GetLastClaimedRewardLevel(string nodeId)
+        {
+            return _nodeSaveMap.TryGetValue(nodeId, out var data) ? data.LastClaimedRewardLevel : 0;
         }
 
         public int GetNodeCurrentLevel(string nodeId)
@@ -135,7 +153,7 @@ namespace Core.Services
         {
             if (!CanUpgradeNode(nodeId))
             {
-                Debug.LogWarning($"[RoadmapProgression] İllegal Upgrade Trying: {nodeId}");
+                Debug.LogWarning($"[RoadmapProgression] Illegal Upgrade Trying: {nodeId}");
                 return;
             }
 
@@ -160,14 +178,13 @@ namespace Core.Services
                 _currentSaveData.UnlockedNodes.Add(nodeSave);
                 isFirstUnlock = true;
             }
-
             nodeSave.CurrentLevel++;
+            OnNodeUpgraded?.Invoke(nodeDef, nextLevelData);
+            
             if (isFirstUnlock)
             {
                 OnNodeUnlocked?.Invoke(nodeDef);
             }
-    
-            OnNodeUpgraded?.Invoke(nodeDef, nextLevelData);
         }
     }
 }

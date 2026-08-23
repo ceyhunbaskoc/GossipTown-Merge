@@ -17,36 +17,49 @@ namespace UI.Components
         [SerializeField] private float _targetWidth = 150f;
 
         private LayoutElement _layoutElement;
+        private LayoutElement LayoutElement => _layoutElement != null ? _layoutElement : (_layoutElement = GetComponent<LayoutElement>());
+
         private CanvasGroup _canvasGroup;
+        private CanvasGroup CanvasGroup => _canvasGroup != null ? _canvasGroup : (_canvasGroup = GetComponent<CanvasGroup>());
+
         private Coroutine _activeCoroutine;
 
         private void Awake()
         {
-            _layoutElement = GetComponent<LayoutElement>();
-            _canvasGroup = GetComponent<CanvasGroup>();
+            _layoutElement = LayoutElement;
+            _canvasGroup = CanvasGroup;
             
-            _layoutElement.flexibleWidth = 0; 
+            LayoutElement.flexibleWidth = 0; 
         }
 
         public void Show()
         {
             gameObject.SetActive(true);
             if (_activeCoroutine != null) StopCoroutine(_activeCoroutine);
-            if (!gameObject.activeInHierarchy) return;
-            _activeCoroutine = StartCoroutine(AnimateLayout(0f, _targetWidth, 0f, 1f, null));
+            
+            if (!gameObject.activeInHierarchy)
+            {
+                LayoutElement.preferredWidth = _targetWidth;
+                CanvasGroup.alpha = 1f;
+                return;
+            }
+
+            _activeCoroutine = StartCoroutine(AnimateLayout(LayoutElement.preferredWidth, _targetWidth, CanvasGroup.alpha, 1f, null));
         }
 
         public void Hide(Action onComplete = null)
         {
             if (_activeCoroutine != null) StopCoroutine(_activeCoroutine);
-            
+    
             if (!gameObject.activeInHierarchy)
             {
+                LayoutElement.preferredWidth = 0f;
+                CanvasGroup.alpha = 0f;
                 onComplete?.Invoke();
                 return;
             }
 
-            _activeCoroutine = StartCoroutine(AnimateLayout(_layoutElement.preferredWidth, 0f, _canvasGroup.alpha, 0f, () => 
+            _activeCoroutine = StartCoroutine(AnimateLayout(LayoutElement.preferredWidth, 0f, CanvasGroup.alpha, 0f, () => 
             {
                 gameObject.SetActive(false);
                 onComplete?.Invoke();
@@ -63,15 +76,14 @@ namespace UI.Components
                 float t = Mathf.Clamp01(elapsed / _animationDuration);
                 float curvedT = _easeCurve.Evaluate(t);
 
-                _layoutElement.preferredWidth = Mathf.LerpUnclamped(startWidth, endWidth, curvedT);
-                
-                _canvasGroup.alpha = Mathf.LerpUnclamped(startAlpha, endAlpha, curvedT);
+                LayoutElement.preferredWidth = Mathf.LerpUnclamped(startWidth, endWidth, curvedT);
+                CanvasGroup.alpha = Mathf.LerpUnclamped(startAlpha, endAlpha, curvedT);
 
                 yield return null;
             }
 
-            _layoutElement.preferredWidth = endWidth;
-            _canvasGroup.alpha = endAlpha;
+            LayoutElement.preferredWidth = endWidth;
+            CanvasGroup.alpha = endAlpha;
             _activeCoroutine = null;
 
             onComplete?.Invoke();

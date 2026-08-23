@@ -6,11 +6,9 @@ namespace Core.Views
     public class ItemVisualizer : MonoBehaviour
     {
         [Header("UI References")]
-        [Tooltip("Alt objedeki gerçek görsel")]
         [SerializeField] private SpriteRenderer _visualRenderer; 
-        
-        [Tooltip("Ana objedeki görünmez (null) Raycast Proxy")]
         [SerializeField] private SpriteRenderer _raycastProxyRenderer; 
+        [SerializeField] private GameObject _notificationBadge; 
         
         [SerializeField] private int _dragSortingOrder = 100;
         [Header("Effects")]
@@ -56,7 +54,19 @@ namespace Core.Views
 
         private void OnDestroy() => transform.DOKill();
 
-        public void SetVisual(Sprite icon) { if (_visualRenderer != null) _visualRenderer.sprite = icon; }
+        public void SetVisual(Sprite icon)
+        {
+            if (_visualRenderer != null) _visualRenderer.sprite = icon;
+        }
+        
+        public void SetBadgeActive(bool isActive)
+        {
+            if (_notificationBadge != null)
+            {
+                _notificationBadge.SetActive(isActive);
+            }
+        }
+        
         public void SetColor(Color color) { if (_visualRenderer != null) _visualRenderer.color = color; }
 
         public void PlayPickUpAnimation()

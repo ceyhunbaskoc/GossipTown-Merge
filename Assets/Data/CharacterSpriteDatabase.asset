@@ -13,4 +13,17 @@ MonoBehaviour:
   m_Name: CharacterSpriteDatabase
   m_EditorClassIdentifier: 
   <CharacterSprites>k__BackingField:
-  - {fileID: -4219088023257176045, guid: 35dade6142ebaab4b82dfb453d73e441, type: 3}
+  - {fileID: -7441139868736287282, guid: f5ee8ebaba4eefe4988e59ff41f546eb, type: 3}
+  - {fileID: -2466268626296644205, guid: 618943aeb1412bb4fabb9b2f4f8ceb7f, type: 3}
+  - {fileID: -6599764356889070899, guid: fb46d065793990f4cb3b1a3320b680a3, type: 3}
+  - {fileID: -1151377370720505935, guid: 566c434395a77e64898f32639f3f03ac, type: 3}
+  - {fileID: -5019718528572193193, guid: 7c8469e3c9389cd4cbcca4d37696e4ea, type: 3}
+  - {fileID: 5477913946314167194, guid: 321edd5ebf8084d479fe3da44cbf9df5, type: 3}
+  - {fileID: -1250542065175253887, guid: a23b13a2c8ae12d40999e26066904e90, type: 3}
+  - {fileID: 4120955195336003847, guid: fb4e11dad80418549a535d388d968b55, type: 3}
+  - {fileID: 2606193311958461929, guid: 585076690965a8749bd059057c7cd2ec, type: 3}
+  - {fileID: 4124896640385407065, guid: 399ca1aeb05c2cf45a1cc6baa04d57c0, type: 3}
+  - {fileID: 3935919010145192865, guid: 30725b4ddc0ed214cb625d632d46cf3e, type: 3}
+  - {fileID: 2135477860636792133, guid: 1caf32a19c9fb8a4f9eeb07cdcebfb04, type: 3}
+  - {fileID: -2054795350586306836, guid: 8b61846717ea4b249afa8c56dd20e043, type: 3}
+  - {fileID: -2618618111374563509, guid: 044353ded963d0f41b16530ec63e232f, type: 3}

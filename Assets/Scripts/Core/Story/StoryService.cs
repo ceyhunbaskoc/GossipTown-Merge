@@ -19,7 +19,7 @@ namespace Core.Story
         public void LoadSaveData(StorySaveData savedData)
         {
             _saveData = savedData ?? new StorySaveData();
-            if (_database == null || _database.Chapters == null)
+            if (_database == null || _database.Chapters == null || _database.Chapters.Count == 0)
             {
                 Debug.LogError("[StoryService] GlobalStoryDatabaseSO is missing or empty!");
                 return;
@@ -27,23 +27,21 @@ namespace Core.Story
 
             if (_saveData.CurrentChapterIndex >= _database.Chapters.Count)
             {
-                _saveData.CurrentChapterIndex = _database.Chapters.Count - 1;
                 _saveData.IsStoryCompleted = true;
             }
             else
             {
                 int currentChapterLineCount = _database.Chapters[_saveData.CurrentChapterIndex].Lines.Count;
-                if (_saveData.CurrentLineIndex > currentChapterLineCount)
+                if (_saveData.CurrentLineIndex >= currentChapterLineCount)
                 {
                     _saveData.CurrentLineIndex = currentChapterLineCount;
                 }
             }
         }
 
-        public StorySaveData GetSaveData()
-        {
-            return _saveData;
-        }
+        public StorySaveData GetSaveData() => _saveData;
+        
+        public bool IsStoryCompleted() => _saveData.IsStoryCompleted;
 
         public bool TryGetNextLine(out DialogueLine nextLine, out string currentChapterTitle)
         {
@@ -58,6 +56,7 @@ namespace Core.Story
 
             StoryChapter currentChapter = _database.Chapters[_saveData.CurrentChapterIndex];
             currentChapterTitle = currentChapter.ChapterTitle;
+            
             if (_saveData.CurrentLineIndex >= currentChapter.Lines.Count)
             {
                 _saveData.CurrentChapterIndex++;

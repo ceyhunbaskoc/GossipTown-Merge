@@ -13,23 +13,1667 @@ MonoBehaviour:
   m_Name: LevelRewardSettings
   m_EditorClassIdentifier: 
   <LevelRewards>k__BackingField:
+  - Level: 1
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 30
   - Level: 2
     RewardConfig:
     - Category: 2
       ItemDefinition: {fileID: 0}
-      Level: 0
-      Amount: 50
-    - Category: 3
-      ItemDefinition: {fileID: 0}
-      Level: 0
-      Amount: 10
+      Level: 1
+      Amount: 40
   - Level: 3
     RewardConfig:
-    - Category: 0
-      ItemDefinition: {fileID: 11400000, guid: 2536adb532772d44a927910b8cf1aa62, type: 2}
-      Level: 4
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 50
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
       Amount: 1
+  - Level: 4
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 60
     - Category: 3
       ItemDefinition: {fileID: 0}
-      Level: 0
+      Level: 1
+      Amount: 5
+  - Level: 5
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 70
+  - Level: 6
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 80
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 7
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 90
+  - Level: 8
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 100
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 5
+  - Level: 9
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 110
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 10
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 120
+  - Level: 11
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 130
+  - Level: 12
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 140
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 6
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 13
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 150
+  - Level: 14
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 160
+  - Level: 15
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 170
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 16
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 180
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 6
+  - Level: 17
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 190
+  - Level: 18
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 200
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 19
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 210
+  - Level: 20
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 220
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 7
+  - Level: 21
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 230
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 22
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 240
+  - Level: 23
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 250
+  - Level: 24
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 260
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 7
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 25
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 270
+  - Level: 26
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 280
+  - Level: 27
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 290
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 28
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 300
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 7
+  - Level: 29
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 310
+  - Level: 30
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 320
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 31
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 330
+  - Level: 32
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 340
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 8
+  - Level: 33
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 350
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 34
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 360
+  - Level: 35
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 370
+  - Level: 36
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 380
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 8
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 37
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 390
+  - Level: 38
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 400
+  - Level: 39
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 410
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 40
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 420
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 9
+  - Level: 41
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 430
+  - Level: 42
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 440
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 43
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 450
+  - Level: 44
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 460
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 9
+  - Level: 45
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 470
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 46
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 480
+  - Level: 47
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 490
+  - Level: 48
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 500
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 9
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 49
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 510
+  - Level: 50
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 520
+  - Level: 51
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 530
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 52
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 540
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 10
+  - Level: 53
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 550
+  - Level: 54
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 560
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 55
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 570
+  - Level: 56
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 580
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 10
+  - Level: 57
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 590
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 58
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 600
+  - Level: 59
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 610
+  - Level: 60
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 620
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 11
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 61
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 630
+  - Level: 62
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 640
+  - Level: 63
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 650
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 64
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 660
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 11
+  - Level: 65
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 670
+  - Level: 66
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 680
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 67
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 690
+  - Level: 68
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 700
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 11
+  - Level: 69
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 710
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 70
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 720
+  - Level: 71
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 730
+  - Level: 72
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 740
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 12
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 73
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 750
+  - Level: 74
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 760
+  - Level: 75
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 770
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 76
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 780
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 12
+  - Level: 77
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 790
+  - Level: 78
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 800
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 79
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 810
+  - Level: 80
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 820
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 13
+  - Level: 81
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 830
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 82
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 840
+  - Level: 83
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 850
+  - Level: 84
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 860
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 13
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 85
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 870
+  - Level: 86
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 880
+  - Level: 87
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 890
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 88
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 900
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 13
+  - Level: 89
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 910
+  - Level: 90
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 920
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 91
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 930
+  - Level: 92
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 940
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 14
+  - Level: 93
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 950
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 94
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 960
+  - Level: 95
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 970
+  - Level: 96
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 980
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 14
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 97
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 990
+  - Level: 98
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1000
+  - Level: 99
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1010
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 100
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1020
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 15
+  - Level: 101
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1030
+  - Level: 102
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1040
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 103
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1050
+  - Level: 104
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1060
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 15
+  - Level: 105
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1070
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 106
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1080
+  - Level: 107
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1090
+  - Level: 108
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1100
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 15
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 109
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1110
+  - Level: 110
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1120
+  - Level: 111
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1130
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 112
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1140
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 16
+  - Level: 113
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1150
+  - Level: 114
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1160
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 115
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1170
+  - Level: 116
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1180
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 16
+  - Level: 117
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1190
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 118
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1200
+  - Level: 119
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1210
+  - Level: 120
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1220
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 17
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 121
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1230
+  - Level: 122
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1240
+  - Level: 123
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1250
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 124
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1260
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 17
+  - Level: 125
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1270
+  - Level: 126
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1280
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 127
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1290
+  - Level: 128
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1300
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 17
+  - Level: 129
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1310
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 130
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1320
+  - Level: 131
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1330
+  - Level: 132
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1340
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 18
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 133
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1350
+  - Level: 134
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1360
+  - Level: 135
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1370
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 136
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1380
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 18
+  - Level: 137
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1390
+  - Level: 138
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1400
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 139
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1410
+  - Level: 140
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1420
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 19
+  - Level: 141
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1430
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 142
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1440
+  - Level: 143
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1450
+  - Level: 144
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1460
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 19
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 145
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1470
+  - Level: 146
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1480
+  - Level: 147
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1490
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 148
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1500
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 19
+  - Level: 149
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1510
+  - Level: 150
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1520
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 151
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1530
+  - Level: 152
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1540
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 20
+  - Level: 153
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1550
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 154
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1560
+  - Level: 155
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1570
+  - Level: 156
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1580
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 20
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 157
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1590
+  - Level: 158
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1600
+  - Level: 159
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1610
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 160
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1620
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 21
+  - Level: 161
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1630
+  - Level: 162
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1640
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 163
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1650
+  - Level: 164
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1660
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 21
+  - Level: 165
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1670
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 166
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1680
+  - Level: 167
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1690
+  - Level: 168
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1700
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 21
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 169
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1710
+  - Level: 170
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1720
+  - Level: 171
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1730
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 172
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1740
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 22
+  - Level: 173
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1750
+  - Level: 174
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1760
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 175
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1770
+  - Level: 176
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1780
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 22
+  - Level: 177
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1790
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 178
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1800
+  - Level: 179
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1810
+  - Level: 180
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1820
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 23
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 181
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1830
+  - Level: 182
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1840
+  - Level: 183
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1850
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 184
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1860
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 23
+  - Level: 185
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1870
+  - Level: 186
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1880
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 187
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1890
+  - Level: 188
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1900
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 23
+  - Level: 189
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1910
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 190
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1920
+  - Level: 191
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1930
+  - Level: 192
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1940
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 24
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 193
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1950
+  - Level: 194
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1960
+  - Level: 195
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1970
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 196
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1980
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 24
+  - Level: 197
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 1990
+  - Level: 198
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 2000
+    - Category: 1
+      ItemDefinition: {fileID: 11400000, guid: fcdf6d330ac1c354daf1c6147f132862, type: 2}
+      Level: 1
+      Amount: 1
+  - Level: 199
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 2010
+  - Level: 200
+    RewardConfig:
+    - Category: 2
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 2020
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
       Amount: 25

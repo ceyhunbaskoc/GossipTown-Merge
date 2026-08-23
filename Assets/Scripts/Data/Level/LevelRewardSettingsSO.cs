@@ -29,5 +29,11 @@ namespace Data.Level
             }
             return null;
         }
+#if UNITY_EDITOR
+        public void Editor_SetLevelRewards(LevelRewardSettings[] generatedRewards)
+        {
+            LevelRewards = generatedRewards;
+        }
+#endif
     }
 }

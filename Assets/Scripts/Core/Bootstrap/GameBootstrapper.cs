@@ -39,6 +39,7 @@ using Data.Roadmap;
 using Data.Story;
 using Data.UI;
 using Order;
+using UI;
 using UI.Backpack;
 using UI.Chest;
 using UI.Collectible;
@@ -56,6 +57,7 @@ using UI.Orders;
 using UI.Quests;
 using UI.Rewards;
 using UI.Settings;
+using UI.Spawner;
 using UI.Story;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -88,6 +90,7 @@ namespace Core.Bootstrap
         
         [Header("Event Channels")]
         [SerializeField] private ItemDetailEventChannelSO _itemDetailEventChannel;
+        [SerializeField] private ItemDetailEventChannelSO _spawnerDetailEventChannel;
         
         [Header("Starting Board Data")]
         [SerializeField] private StartingBoardSetupSO _currentStartingBoardData;
@@ -107,6 +110,7 @@ namespace Core.Bootstrap
         [SerializeField] private RewardPresentationManager _rewardPresentationManager;
         [SerializeField] private RewardQueueView _rewardQueueView;
         [SerializeField] private ChestRewardHandler _chestRewardHandler;
+        [SerializeField] private SpawnerRestingHandler _spawnerRestingHandler;
         [SerializeField] private ChestOpeningOrchestrator _chestOpeningOrchestrator;
         [SerializeField] private BackpackDropZone _backpackDropZone;
         [SerializeField] private BackpackPanelController _backpackPanelController;
@@ -129,6 +133,9 @@ namespace Core.Bootstrap
         [SerializeField] private ExchangeItemUIPresenter _exchangeItemUIPresenter;
         [SerializeField] private ShopAdUIPresenter _shopAdUIPresenter;
         [SerializeField] private ItemDetailPanelView _itemDetailPanelView;
+        [SerializeField] private SpawnerDetailPanelView _spawnerDetailPanelView;
+
+        [SerializeField] private GlobalInputBlockerView _globalInputBlockerView;
         
         [Header("Order System")]
         [SerializeField] private OrderFulfillmentOrchestrator _fulfillmentOrchestrator;
@@ -180,6 +187,7 @@ namespace Core.Bootstrap
         private ISettingsService _settingsService;
         private AdShopService _adShopService;
         private ItemDetailPanelPresenter _itemDetailPanelPresenter;
+        private SpawnerDetailPanelPresenter _spawnerDetailPanelPresenter;
 
         private Camera _mainCamera;
 
@@ -196,6 +204,7 @@ namespace Core.Bootstrap
 
             _timeManager = new TimeManager();
             IInputLockService inputLockService = new InputLockService();
+            _globalInputBlockerView.Initialize(inputLockService);
             IWarningMessageService warningMessageService = new WarningMessageService(_singleWarningTextView, _floatingTextConfig);
             
             GridItemDataFactory gridItemDataFactory = new GridItemDataFactory(_itemDatabase);
@@ -263,7 +272,7 @@ namespace Core.Bootstrap
             ILootGenerationService lootGenerationService = new LootGenerationService();
 
             ChestInteractionService chestInteractionService = new ChestInteractionService(lootGenerationService, _gridModel, _itemDatabase, gridItemDataFactory, _mainBoardController,
-                _chestOpeningOrchestrator, _economyModel, _timeManager, _mergeItemFactory);
+                _chestOpeningOrchestrator, _economyModel, _timeManager, _mergeItemFactory, _adService);
             
             ItemInteractionService interactionService = new ItemInteractionService(_gridModel, _itemDatabase, _economyModel, generatorService, chestInteractionService);
 
@@ -273,7 +282,8 @@ namespace Core.Bootstrap
             
             _itemInfoPanelController.Initialize(boardSelectionService, _gridModel);
 
-            _chestRewardHandler.Initialize(boardSelectionService, chestInteractionService, _timeManager, warningMessageService);
+            _chestRewardHandler.Initialize(boardSelectionService, chestInteractionService, warningMessageService);
+            _spawnerRestingHandler.Initialize(boardSelectionService);
 
             MergeVFXOrchestrator mergeVFXOrchestrator = new MergeVFXOrchestrator(_objectPoolManager);
             _mainBoardController.InitializeMainBoard(_gridModel, mergeService, interactionService, boardTransferService, boardSelectionService, warningMessageService, _collectibleCollectOrchestrator, _currencyFlightService ,_itemDatabase, mergeVFXOrchestrator, _gridWidth, _gridHeight, _cellSize);
@@ -283,7 +293,7 @@ namespace Core.Bootstrap
             _boardSelectionVisualizer.Initialize(boardSelectionService, _mainBoardController);
 
             BackpackUnlockerService backpackUnlockerService = new BackpackUnlockerService(_economyModel, _backpackGridModel);
-            _backpackPanelController.Initialize(_backpackGridModel, boardTransferService, _itemDatabase, backpackUnlockerService);
+            _backpackPanelController.Initialize(_backpackGridModel, boardTransferService, _itemDatabase, backpackUnlockerService, warningMessageService);
             
             LevelSaveData levelSaveData = savedData != null ? savedData.LevelData : null;
             _levelService = new LevelService(_levelProgressionSettings, levelSaveData);
@@ -311,7 +321,7 @@ namespace Core.Bootstrap
                 _economyModel,
                 _objectPoolManager
             );
-            OrderRandomCharacterSelector characterSelector = new OrderRandomCharacterSelector(_characterSpriteDatabase);
+            IOrderCharacterSelector characterSelector = new OrderRandomCharacterSelector(_characterSpriteDatabase);
             
             _orderUIManager.Initialize(_orderDataModel, fulfillmentService, _objectPoolManager, _itemDatabase, _currencyFlightService, characterSelector, _itemDetailEventChannel);
 
@@ -415,10 +425,13 @@ namespace Core.Bootstrap
                 _roadmapProgressionService.LoadSaveData(savedData.RoadmapData);
             }
 
-            _roadmapRewardIntegrator = new RoadmapRewardIntegrator(_roadmapProgressionService, rewardDispatcher, _economyModel, rewardSelectionService);
+            _roadmapRewardIntegrator = new RoadmapRewardIntegrator(_roadmapProgressionService, rewardDispatcher, _economyModel, rewardSelectionService, _roadmapDatabase);
 
             _buildingUpgradePresenter.Initialize(_roadmapProgressionService, _economyModel, inputLockService, _objectPoolManager, _globalRewardIconDatabase);
-            _roadmapUIController.Initialize(_roadmapProgressionService, _economyModel);
+            Sprite unBuildSprite = _roadmapDatabase.UnBuildSprite;
+            _roadmapUIController.Initialize(_roadmapProgressionService, _economyModel, inputLockService, _objectPoolManager, unBuildSprite);
+            
+            _roadmapUIController.OnNodeUpgradeVisualCompleted += _roadmapRewardIntegrator.OnVisualUpgradeCompleted;
             
             _roadmapUIController.OnNodeClickedRequested += (nodeId) => 
             {
@@ -437,7 +450,7 @@ namespace Core.Bootstrap
             
             _buildingLevelCheckPresenter.Initialize(_roadmapProgressionService, inputLockService);
             
-            _storyTriggerController = new StoryTriggerController(_roadmapProgressionService, _storyPanelPresenter);
+            _storyTriggerController = new StoryTriggerController(_roadmapUIController, _storyPanelPresenter, _storyService);
             
             _mapCameraController.Initialize(inputLockService);
             
@@ -486,8 +499,11 @@ namespace Core.Bootstrap
                 _currencyFlightService,
                 _objectPoolManager);
 
-            _itemDetailPanelPresenter = new ItemDetailPanelPresenter(_itemDetailEventChannel, _itemDetailPanelView, _itemDatabase, _objectPoolManager);
-            
+            _itemDetailPanelPresenter = new ItemDetailPanelPresenter(_itemDetailEventChannel, _spawnerDetailEventChannel, _itemDetailPanelView, _itemDatabase, _objectPoolManager, _itemDiscoveryModel);
+            _spawnerDetailPanelPresenter = new SpawnerDetailPanelPresenter(_spawnerDetailEventChannel, _spawnerDetailPanelView, _itemDatabase, _objectPoolManager, _itemDiscoveryModel);
+
+
+            _roadmapProgressionService.OnRewardSave += AutoSave;
             
             _milestoneServiceLogin.OnTierClaimed += (tier) => AutoSave();
             _milestoneServiceLogin.OnMedalCountChanged += (current, max) => AutoSave();
@@ -558,7 +574,10 @@ namespace Core.Bootstrap
             _storyTriggerController?.Dispose();
             _adService.Dispose();
             _itemDetailPanelPresenter.Dispose();
+            _spawnerDetailPanelPresenter.Dispose();
             _settingsService.OnSettingsChanged -= AutoSave;
+            _roadmapProgressionService.OnRewardSave -= AutoSave;
+            _roadmapUIController.OnNodeUpgradeVisualCompleted -= _roadmapRewardIntegrator.OnVisualUpgradeCompleted;
         }
     }
 }

@@ -451,6 +451,7 @@ GameObject:
   - component: {fileID: 1898236517401534769}
   - component: {fileID: 72699750704411577}
   - component: {fileID: 1921919785017495697}
+  - component: {fileID: 1758416075830438641}
   m_Layer: 5
   m_Name: ItemDetailSlotView
   m_TagString: Untagged
@@ -505,3 +506,15 @@ MonoBehaviour:
   _lockedOverlay: {fileID: 5663976582874358801}
   _defaultBgColor: {r: 0.872, g: 0.8035372, b: 0.7062479, a: 1}
   _currentLevelBgColor: {r: 1, g: 0.7458426, b: 0.32549024, a: 1}
+--- !u!114 &1758416075830438641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6480651247825035769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c12107e4f7614085b98e1d81c743fc58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

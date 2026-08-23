@@ -117,7 +117,8 @@ namespace UI.Map
 
                     bool isCurrency = reward.Category == Data.Quests.RewardCategory.Gold || 
                                       reward.Category == Data.Quests.RewardCategory.Gem || 
-                                      reward.Category == Data.Quests.RewardCategory.Energy;
+                                      reward.Category == Data.Quests.RewardCategory.Energy ||
+                                      reward.Category == Data.Quests.RewardCategory.Experience;
 
                     if (!isCurrency && reward.RewardItem == null)
                     {

@@ -20,8 +20,6 @@ namespace Data
         [field: SerializeField] public Sprite ItemIcon { get; private set; }
         
         [Header("Spawner Rules")]
-        [field: SerializeField] public BaseItemDefinitionSO SpawnItemSO { get; private set; } 
-        
         [field: SerializeField] public List<SpawnDropRate> DropRates { get; private set; }
         
         [field: SerializeField] public int MaxCapacity { get; private set; } = 15;
@@ -31,6 +29,8 @@ namespace Data
     [CreateAssetMenu(fileName = "NewSpawnerItem", menuName = "MergeGame/Spawner Item SO")]
     public class SpawnerDefinitionSO : BaseItemDefinitionSO, IInteractableDefinition 
     {
+        [field: Header("Global Spawner Rules")]
+        [field: SerializeField] public BaseItemDefinitionSO SpawnItemSO { get; private set; } 
         [field: SerializeField] public List<SpawnerData> Spawners { get; private set; }
         
         public override int MaxLevel => Spawners != null ? Spawners.Count : 0;
@@ -49,7 +49,7 @@ namespace Data
         public bool CanInteract(int currentLevel)
         {
             var data = GetSpawnerData(currentLevel);
-            return data != null && data.SpawnItemSO != null && data.DropRates.Count > 0;
+            return data != null && SpawnItemSO != null && data.DropRates.Count > 0;
         }
 
         public ItemIdentifier GetDropItem(int currentLevel)
@@ -74,10 +74,10 @@ namespace Data
                 currentWeight += drop.Weight;
                 if (randomValue <= currentWeight)
                 {
-                    return new ItemIdentifier(data.SpawnItemSO.Id, drop.Level);
+                    return new ItemIdentifier(SpawnItemSO.Id, drop.Level);
                 }
             }
-            return new ItemIdentifier(data.SpawnItemSO.Id, data.DropRates[0].Level);
+            return new ItemIdentifier(SpawnItemSO.Id, data.DropRates[0].Level);
         }
 
         public override IGridItem CreateRuntimeData(string id, int level)

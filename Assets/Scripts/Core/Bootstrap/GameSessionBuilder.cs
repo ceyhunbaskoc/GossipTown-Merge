@@ -48,24 +48,11 @@ namespace Core.Bootstrap
 
                 if (cellSave.HasItem && cellSave.ItemData != null)
                 {
-                    IGridItem loadedItem = _dataFactory.CreateItemData(cellSave.ItemData.Id, cellSave.ItemData.Level);
-                    if (loadedItem is SpawnerItemData spawnerItem)
+                    IGridItem loadedItem = _dataFactory.CreateItemDataFromSave(cellSave.ItemData);
+            
+                    if (loadedItem is ITimeTrackable timeTrackable && timeTrackable.TargetTimeTicks > DateTime.UtcNow.Ticks)
                     {
-                        spawnerItem.CurrentCapacity = cellSave.ItemData.CurrentCapacity;
-                
-                        if (cellSave.ItemData.CooldownEndTimeTicks > 0)
-                        {
-                            if (DateTime.UtcNow.Ticks >= cellSave.ItemData.CooldownEndTimeTicks)
-                            {
-                                spawnerItem.WakeUp();
-                            }
-                            else
-                            {
-                                spawnerItem.EnterCooldown(cellSave.ItemData.CooldownEndTimeTicks);
-                                
-                                _timeManager.RegisterTimer(spawnerItem);
-                            }
-                        }
+                        _timeManager.RegisterTimer(timeTrackable);
                     }
 
                     gridDataModel.TryPlaceObject(cellSave.Position, loadedItem);

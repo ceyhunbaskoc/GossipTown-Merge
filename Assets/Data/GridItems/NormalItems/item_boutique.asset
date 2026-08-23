@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53b244d6e8fb780428f2aaae4f7bd63c, type: 3}
+  m_Name: item_boutique
+  m_EditorClassIdentifier: 
+  <Id>k__BackingField: item_boutique
+  <ItemName>k__BackingField: Boutique
+  _description: 
+  <Items>k__BackingField:
+  - <Level>k__BackingField: 1
+    <ItemIcon>k__BackingField: {fileID: -4516339250246676677, guid: 4f3ebf3e64b222f4c8b4a5a84724f4b1, type: 3}
+  - <Level>k__BackingField: 2
+    <ItemIcon>k__BackingField: {fileID: 6237070540196265568, guid: 4f3ebf3e64b222f4c8b4a5a84724f4b1, type: 3}
+  - <Level>k__BackingField: 3
+    <ItemIcon>k__BackingField: {fileID: 3852799338055319414, guid: 4f3ebf3e64b222f4c8b4a5a84724f4b1, type: 3}
+  - <Level>k__BackingField: 4
+    <ItemIcon>k__BackingField: {fileID: -6769114225347239959, guid: 4f3ebf3e64b222f4c8b4a5a84724f4b1, type: 3}
+  - <Level>k__BackingField: 5
+    <ItemIcon>k__BackingField: {fileID: 6824955594689082465, guid: 4f3ebf3e64b222f4c8b4a5a84724f4b1, type: 3}
+  - <Level>k__BackingField: 6
+    <ItemIcon>k__BackingField: {fileID: 6426633240935878965, guid: 4f3ebf3e64b222f4c8b4a5a84724f4b1, type: 3}
+  - <Level>k__BackingField: 7
+    <ItemIcon>k__BackingField: {fileID: 7351945626058404489, guid: 4f3ebf3e64b222f4c8b4a5a84724f4b1, type: 3}
+  - <Level>k__BackingField: 8
+    <ItemIcon>k__BackingField: {fileID: -2869885460102290521, guid: 4f3ebf3e64b222f4c8b4a5a84724f4b1, type: 3}
+  <SourceSpawner>k__BackingField: {fileID: 11400000, guid: 34bc04e9b05197d42834ef3e847910e4, type: 2}

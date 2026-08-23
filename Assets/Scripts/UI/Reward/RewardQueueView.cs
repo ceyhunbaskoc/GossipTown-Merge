@@ -38,6 +38,16 @@ namespace UI.Rewards
 
             RefreshUI(default);
         }
+        
+        private void OnEnable()
+        {
+            if (_rewardModel != null)
+            {
+                _rewardModel.OnRewardAdded += RefreshUI;
+                _rewardModel.OnRewardClaimed += OnRewardClaimedLocally;
+                RefreshUI(default);
+            }
+        }
 
         private void OnClaimClicked()
         {
@@ -73,6 +83,15 @@ namespace UI.Rewards
             {
                 _claimButtonAnimatedLayoutElement.Hide();
                 _isButtonActive = false;
+            }
+        }
+        
+        private void OnDisable()
+        {
+            if (_rewardModel != null)
+            {
+                _rewardModel.OnRewardAdded -= RefreshUI;
+                _rewardModel.OnRewardClaimed -= OnRewardClaimedLocally;
             }
         }
 

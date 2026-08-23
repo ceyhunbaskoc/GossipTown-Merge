@@ -1,26 +1,57 @@
-﻿using Data;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Data;
 using UnityEngine;
 
 namespace Order
 {
-    public class OrderRandomCharacterSelector
+    public interface IOrderCharacterSelector
     {
-        private readonly CharacterSpriteDatabaseSO _characterSpriteDatabaseSO;
-        public OrderRandomCharacterSelector(CharacterSpriteDatabaseSO characterSpriteDatabaseSO)
+        Sprite GetUniqueCharacterSprite();
+        void ReleaseCharacterSprite(Sprite sprite);
+    }
+    public class OrderRandomCharacterSelector : IOrderCharacterSelector
+    {
+        private readonly CharacterSpriteDatabaseSO _characterSpriteDatabase;
+        private readonly HashSet<Sprite> _inUseSprites = new HashSet<Sprite>();
+
+        public OrderRandomCharacterSelector(CharacterSpriteDatabaseSO characterSpriteDatabase)
         {
-            _characterSpriteDatabaseSO = characterSpriteDatabaseSO;
+            _characterSpriteDatabase = characterSpriteDatabase;
         }
         
-        public Sprite GetRandomCharacterSprite()
+        public Sprite GetUniqueCharacterSprite()
         {
-            var characterSprites = _characterSpriteDatabaseSO.CharacterSprites;
-            if (characterSprites == null || characterSprites.Count == 0)
+            List<Sprite> allSprites = _characterSpriteDatabase.CharacterSprites;
+            
+            if (allSprites == null || allSprites.Count == 0)
             {
-                throw new System.Exception("Character sprites database is empty or null.");
+                throw new System.Exception("[OrderCharacterSelector] Character sprites database is empty or null.");
             }
 
-            int randomIndex = UnityEngine.Random.Range(0, characterSprites.Count);
-            return characterSprites[randomIndex];
+            List<Sprite> availableSprites = allSprites.Where(sprite => !_inUseSprites.Contains(sprite)).ToList();
+
+            if (availableSprites.Count == 0)
+            {
+                Debug.LogWarning("[OrderCharacterSelector] Not enough unique sprites! Reusing active sprites. Consider adding more characters to the database.");
+                _inUseSprites.Clear();
+                availableSprites = allSprites.ToList();
+            }
+
+            int randomIndex = UnityEngine.Random.Range(0, availableSprites.Count);
+            Sprite selectedSprite = availableSprites[randomIndex];
+            
+            _inUseSprites.Add(selectedSprite);
+            
+            return selectedSprite;
+        }
+
+        public void ReleaseCharacterSprite(Sprite sprite)
+        {
+            if (sprite != null)
+            {
+                _inUseSprites.Remove(sprite);
+            }
         }
     }
 }

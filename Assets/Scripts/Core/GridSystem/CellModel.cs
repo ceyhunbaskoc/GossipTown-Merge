@@ -41,6 +41,11 @@ namespace Core.GridSystem
             if (this.IsOccupied && this.Item is ItemData itemData)
             {
                 data.ItemData = itemData.GetSaveData();
+
+                if (this.Item is ICustomSaveableItem customSaveableItem)
+                {
+                    data.ItemData.CustomDataJson = customSaveableItem.GetCustomStateJson();
+                }
             }
 
             return data;

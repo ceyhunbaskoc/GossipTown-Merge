@@ -19,7 +19,10 @@ namespace Core.PoolSystem
         LevelRewardRowView,
         MergeParticle,
         ShopPurchaseItem,
-        ItemDetailSlotView
+        ItemDetailSlotView,
+        SpawnerDetailSlotView,
+        DustParticle,
+        ConfettiParticle
     }
     [Serializable]
     public class PoolMapping

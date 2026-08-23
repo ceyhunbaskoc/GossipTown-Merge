@@ -7,7 +7,6 @@ using Core.GridSystem;
 
 namespace Core.Views
 {
-    // SOLID (SRP): Yalnızca çerçevenin animasyonuyla ilgilenir. Item'lar bu sınıfı bilmez.
     public class BoardSelectionVisualizer : MonoBehaviour
     {
         [Header("References")]
@@ -78,6 +77,8 @@ namespace Core.Views
             {
                 if (_lastSelectedPosition.HasValue && _lastSelectedPosition.Value == currentGridPos)
                 {
+                    _selectionFrame.transform.position = targetWorldPos;
+            
                     float halfDuration = _animationDuration * 0.5f;
                     _transitionSequence.Append(_selectionFrame.transform.DOScale(Vector3.one * _samePositionPulseScale, halfDuration).SetEase(Ease.OutQuad));
                     _transitionSequence.Append(_selectionFrame.transform.DOScale(Vector3.one, halfDuration).SetEase(Ease.OutBounce));
@@ -96,6 +97,7 @@ namespace Core.Views
                 _selectionFrame.transform.localScale = Vector3.zero;
                 _transitionSequence.Append(_selectionFrame.transform.DOScale(Vector3.one, _animationDuration).SetEase(Ease.OutBack));
             }
+    
             _lastSelectedPosition = currentGridPos;
         }
 

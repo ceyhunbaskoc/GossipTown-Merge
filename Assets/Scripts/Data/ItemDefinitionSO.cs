@@ -15,6 +15,8 @@ namespace Data
     public class ItemDefinitionSO : BaseItemDefinitionSO
     {
         [field: SerializeField] public List<NormalItemData> Items { get; private set; }
+        
+        [field: SerializeField] public SpawnerDefinitionSO SourceSpawner { get; private set; }
 
         public override int MaxLevel => Items != null ? Items.Count : 0;
         public override Sprite GetIcon(int level)

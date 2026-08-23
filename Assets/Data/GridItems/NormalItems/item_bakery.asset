@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53b244d6e8fb780428f2aaae4f7bd63c, type: 3}
+  m_Name: item_bakery
+  m_EditorClassIdentifier: 
+  <Id>k__BackingField: item_bakery
+  <ItemName>k__BackingField: Bakery
+  _description: 
+  <Items>k__BackingField:
+  - <Level>k__BackingField: 1
+    <ItemIcon>k__BackingField: {fileID: -5359031613335939112, guid: d9b7d54a4c4cea242b72bcb7b1b334a1, type: 3}
+  - <Level>k__BackingField: 2
+    <ItemIcon>k__BackingField: {fileID: 5519014445665988251, guid: d9b7d54a4c4cea242b72bcb7b1b334a1, type: 3}
+  - <Level>k__BackingField: 3
+    <ItemIcon>k__BackingField: {fileID: -8476485231599005922, guid: d9b7d54a4c4cea242b72bcb7b1b334a1, type: 3}
+  - <Level>k__BackingField: 4
+    <ItemIcon>k__BackingField: {fileID: -3326342669601673362, guid: d9b7d54a4c4cea242b72bcb7b1b334a1, type: 3}
+  - <Level>k__BackingField: 5
+    <ItemIcon>k__BackingField: {fileID: -3750295804794504343, guid: d9b7d54a4c4cea242b72bcb7b1b334a1, type: 3}
+  - <Level>k__BackingField: 6
+    <ItemIcon>k__BackingField: {fileID: -5159179241039441610, guid: d9b7d54a4c4cea242b72bcb7b1b334a1, type: 3}
+  - <Level>k__BackingField: 7
+    <ItemIcon>k__BackingField: {fileID: 656452981867899026, guid: d9b7d54a4c4cea242b72bcb7b1b334a1, type: 3}
+  - <Level>k__BackingField: 8
+    <ItemIcon>k__BackingField: {fileID: -3884625590199108082, guid: d9b7d54a4c4cea242b72bcb7b1b334a1, type: 3}
+  <SourceSpawner>k__BackingField: {fileID: 11400000, guid: 18a016ca5c04b6a48a87873bb2ed44e2, type: 2}

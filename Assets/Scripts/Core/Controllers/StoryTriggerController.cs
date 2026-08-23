@@ -3,32 +3,47 @@ using Core.Services;
 using UI.Story;
 using Data.Roadmap;
 using Core.SaveSystem;
+using Core.Story;
+using UI.Map;
 
 namespace Core.Controllers
 {
     public class StoryTriggerController : IDisposable
     {
-        private readonly RoadmapProgressionService _roadmapService;
+        private readonly RoadmapUIController _roadmapUIController;
         private readonly StoryPanelPresenter _storyPresenter;
+        
+        private readonly StoryService _storyService; 
 
-        public StoryTriggerController(RoadmapProgressionService roadmapService, StoryPanelPresenter storyPresenter)
+        public StoryTriggerController(
+            RoadmapUIController roadmapUIController, 
+            StoryPanelPresenter storyPresenter,
+            StoryService storyService)
         {
-            _roadmapService = roadmapService;
+            _roadmapUIController = roadmapUIController;
             _storyPresenter = storyPresenter;
+            _storyService = storyService;
 
-            _roadmapService.OnNodeUpgraded += HandleNodeUpgraded;
+            _roadmapUIController.OnNodeUpgradeVisualCompleted += HandleNodeUpgraded;
         }
 
-        private void HandleNodeUpgraded(MapNodeDefinitionSO nodeDef, BuildingLevelData nextLevelData)
+        private void HandleNodeUpgraded(string id)
         {
-            _storyPresenter.OpenPanel();
+            if (!_storyService.IsStoryCompleted())
+            {
+                _storyPresenter.OpenPanel();
+            }
+            else
+            {
+                UnityEngine.Debug.Log("[StoryTriggerController] Hikaye tamamlandı, panel açılmıyor.");
+            }
         }
 
         public void Dispose()
         {
-            if (_roadmapService != null)
+            if (_roadmapUIController != null)
             {
-                _roadmapService.OnNodeUpgraded -= HandleNodeUpgraded;
+                _roadmapUIController.OnNodeUpgradeVisualCompleted -= HandleNodeUpgraded;
             }
         }
     }

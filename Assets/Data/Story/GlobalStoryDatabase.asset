@@ -14,52 +14,753 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Chapters:
   - ChapterId: ch_01
-    ChapterTitle: "B\xF6l\xFCm 1: \u0130lk Ad\u0131mlar"
+    ChapterTitle: 'Chapter 1: The Awakening'
     Lines:
-    - Speaker: {fileID: 11400000, guid: 70b13114d47f84547b2416ecaad9ee8a, type: 2}
-      IsPlayerSide: 1
-      Text: "Neredeyim ben? Buras\u0131 \xE7ok karanl\u0131k..."
-      IsPausePoint: 0
-    - Speaker: {fileID: 11400000, guid: 42335e7bed087bf42965fa5c1270592a, type: 2}
+    - Speaker: {fileID: 11400000, guid: 4c2cda600e17d3040844d1001b76e26e, type: 2}
       IsPlayerSide: 0
-      Text: "Korkma, g\xFCvendesin. Ben sana rehberlik edece\u011Fim."
+      Text: Look at this place... It used to be the heart of the city. Now, it's
+        just memories and dust.
       IsPausePoint: 0
-    - Speaker: {fileID: 11400000, guid: 70b13114d47f84547b2416ecaad9ee8a, type: 2}
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
       IsPlayerSide: 1
-      Text: Peki ne yapmam gerekiyor?
+      Text: It looks worse than I imagined, Grandpa. Can we really save it?
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 4c2cda600e17d3040844d1001b76e26e, type: 2}
+      IsPlayerSide: 0
+      Text: With your engineering mind and a bit of hard work? Absolutely. We just
+        need to fix it up, piece by piece.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
+      IsPlayerSide: 0
+      Text: Oh, please. Spare me the sentimental nonsense.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: Who are you?
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
+      IsPlayerSide: 0
+      Text: The future owner of this dirt patch. I'm Isabella. I build shopping malls,
+        not fairy tales. Sell it to me now while it still has a penny of value.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: Not for sale. Watch me bring this street back to life.
       IsPausePoint: 1
-    - Speaker: {fileID: 11400000, guid: 42335e7bed087bf42965fa5c1270592a, type: 2}
+    - Speaker: {fileID: 11400000, guid: 3c6097a127f17d3458d258f406b59bdd, type: 2}
       IsPlayerSide: 0
-      Text: "Korkma, g\xFCvendesin. Ben sana rehberlik edece\u011Fim."
+      Text: Hey! If you're serious about fixing this place, my coffee machine is
+        barely breathing.
       IsPausePoint: 0
-    - Speaker: {fileID: 11400000, guid: 70b13114d47f84547b2416ecaad9ee8a, type: 2}
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
       IsPlayerSide: 1
-      Text: Peki ne yapmam gerekiyor?
-      IsPausePoint: 0
-    - Speaker: {fileID: 11400000, guid: 42335e7bed087bf42965fa5c1270592a, type: 2}
-      IsPlayerSide: 0
-      Text: "Korkma, g\xFCvendesin. Ben sana rehberlik edece\u011Fim."
-      IsPausePoint: 0
-    - Speaker: {fileID: 11400000, guid: 70b13114d47f84547b2416ecaad9ee8a, type: 2}
-      IsPlayerSide: 1
-      Text: Peki ne yapmam gerekiyor?
+      Text: I'm on it. Let's merge some tools and get it running!
       IsPausePoint: 1
-    - Speaker: {fileID: 11400000, guid: 42335e7bed087bf42965fa5c1270592a, type: 2}
+    - Speaker: {fileID: 11400000, guid: 0d57fad9c41be454097b69c8b078d26f, type: 2}
       IsPlayerSide: 0
-      Text: "Korkma, g\xFCvendesin. Ben sana rehberlik edece\u011Fim."
+      Text: Hold on! You can't just start construction without proper municipal permits!
       IsPausePoint: 0
-    - Speaker: {fileID: 11400000, guid: 70b13114d47f84547b2416ecaad9ee8a, type: 2}
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
       IsPlayerSide: 1
-      Text: Peki ne yapmam gerekiyor?
+      Text: I checked the city zoning laws, Mayor. Everything is strictly legal.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 0d57fad9c41be454097b69c8b078d26f, type: 2}
+      IsPlayerSide: 0
+      Text: We'll see about that. I have my eyes on you.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
+      IsPlayerSide: 0
+      Text: Don't worry, Thomas. They'll run out of money by tomorrow.
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: a81aeb2f90c933f419f5beb2984e207f, type: 2}
+      IsPlayerSide: 0
+      Text: Delivery! Wow, the street is already looking a bit cleaner. Need me to
+        run some orders?
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: Exactly, Max. The more orders we complete, the more capital we generate.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: a81aeb2f90c933f419f5beb2984e207f, type: 2}
+      IsPlayerSide: 0
+      Text: Consider it done! I'm the fastest courier in town.
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: 3c6097a127f17d3458d258f406b59bdd, type: 2}
+      IsPlayerSide: 0
+      Text: People are actually sitting at my tables again. I can't believe this.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: This is just the beginning. Let's upgrade the exterior next.
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: 4c2cda600e17d3040844d1001b76e26e, type: 2}
+      IsPlayerSide: 0
+      Text: You did it. The first major milestone. The district is finally breathing
+        again.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
+      IsPlayerSide: 0
+      Text: Beginner's luck. One decent building doesn't make a profitable district.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: Then you better sit back and watch, Isabella.
       IsPausePoint: 1
   - ChapterId: ch_02
-    ChapterTitle: "B\xF6l\xFCm 2: Kurulum"
+    ChapterTitle: 'Chapter 2: Cultural Resistance'
     Lines:
-    - Speaker: {fileID: 11400000, guid: 42335e7bed087bf42965fa5c1270592a, type: 2}
+    - Speaker: {fileID: 11400000, guid: 021ea8cb1d1bb964cb0ef1f3352e2b09, type: 2}
       IsPlayerSide: 0
-      Text: "\u0130lk binan\u0131 ba\u015Far\u0131yla in\u015Fa ettin."
+      Text: Excuse me? If you're the one fixing things up, my bakery roof is leaking
+        right onto the dough.
       IsPausePoint: 0
-    - Speaker: {fileID: 11400000, guid: 70b13114d47f84547b2416ecaad9ee8a, type: 2}
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
       IsPlayerSide: 1
-      Text: "Evet, kaynaklar\u0131 y\xF6netmek zor olmad\u0131."
+      Text: A bakery? Fresh bread is exactly what this street needs to attract more
+        foot traffic.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 021ea8cb1d1bb964cb0ef1f3352e2b09, type: 2}
+      IsPlayerSide: 0
+      Text: I have the recipes, you bring the tools. Let's do this!
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: 0d57fad9c41be454097b69c8b078d26f, type: 2}
+      IsPlayerSide: 0
+      Text: I'm receiving noise complaints regarding your construction activities.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: During legal working hours? That's impossible, Mayor.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 0d57fad9c41be454097b69c8b078d26f, type: 2}
+      IsPlayerSide: 0
+      Text: Just... keep it down. The city council is watching.
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
+      IsPlayerSide: 0
+      Text: I heard you're helping the bakery. I could just open a mega-supermarket
+        across the street and crush her prices.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: People prefer quality and community over cheap, mass-produced junk.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
+      IsPlayerSide: 0
+      Text: We'll see what their wallets prefer.
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: 021ea8cb1d1bb964cb0ef1f3352e2b09, type: 2}
+      IsPlayerSide: 0
+      Text: The new ovens are incredible! We just sold out of our morning batch.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: a81aeb2f90c933f419f5beb2984e207f, type: 2}
+      IsPlayerSide: 0
+      Text: And I've been delivering pastries to the uptown offices. Everyone is
+        talking about this place!
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: Great job, team. Let's keep the momentum going.
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: 4c2cda600e17d3040844d1001b76e26e, type: 2}
+      IsPlayerSide: 0
+      Text: The valuation of the neighborhood just spiked. I haven't seen numbers
+        like this since the 90s.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: The higher the value, the harder it is for Isabella to buy us out.
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
+      IsPlayerSide: 0
+      Text: I must admit, you are slightly more annoying than I anticipated.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 0d57fad9c41be454097b69c8b078d26f, type: 2}
+      IsPlayerSide: 0
+      Text: Isabella, my investors are getting anxious. You said this would be a
+        quick acquisition!
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: Looks like your little alliance is cracking. Better get used to losing.
+      IsPausePoint: 1
+  - ChapterId: ch_03
+    ChapterTitle: 'Chapter 3: Blossoming Economy'
+    Lines:
+    - Speaker: {fileID: 11400000, guid: e5b15f1aa1ee81c48934725c96562ec3, type: 2}
+      IsPlayerSide: 0
+      Text: Hi there... I was wondering if you could help me too. My flower shop's
+        greenhouse is completely shattered.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: A greenhouse requires precise climate control systems. I can engineer
+        that for you.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: e5b15f1aa1ee81c48934725c96562ec3, type: 2}
+      IsPlayerSide: 0
+      Text: Oh, thank you! The street needs some color and life.
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
+      IsPlayerSide: 0
+      Text: Flowers? Really? You are trying to fight a multi-million dollar corporate
+        takeover with daisies?
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: It's about the ecosystem, Isabella. Aesthetics drive customer retention.
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: a81aeb2f90c933f419f5beb2984e207f, type: 2}
+      IsPlayerSide: 0
+      Text: I can barely keep up with the deliveries! Coffee, pastries, and now floral
+        arrangements!
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 3c6097a127f17d3458d258f406b59bdd, type: 2}
+      IsPlayerSide: 0
+      Text: We need to upgrade the delivery logistics. The grid is getting busy.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: I'll handle the resource management. You guys focus on production.
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: 0d57fad9c41be454097b69c8b078d26f, type: 2}
+      IsPlayerSide: 0
+      Text: I am sending a health and safety inspector. Your 'botanical experiment'
+        might be a bio-hazard.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: Send whoever you want. Our systems are flawless.
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: e5b15f1aa1ee81c48934725c96562ec3, type: 2}
+      IsPlayerSide: 0
+      Text: The inspector was actually impressed! He even bought a bouquet for his
+        wife!
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 4c2cda600e17d3040844d1001b76e26e, type: 2}
+      IsPlayerSide: 0
+      Text: Haha! That's how you win them over. By being undeniably good.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: We are becoming a self-sustaining economy. This is perfect.
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
+      IsPlayerSide: 0
+      Text: Fine. You've won the lower district. But the real real-estate war is
+        just starting.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: We are not backing down. We are expanding.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
+      IsPlayerSide: 0
+      Text: Bring it on. Let's see how you handle the heavy industry.
+      IsPausePoint: 1
+  - ChapterId: ch_04
+    ChapterTitle: 'Chapter 4: The Knowledge Hub'
+    Lines:
+    - Speaker: {fileID: 11400000, guid: 72fc4401eb87d01478e0dcee3b99fc9b, type: 2}
+      IsPlayerSide: 0
+      Text: Welcome. I am Arthur. Sadly, my bookstore is becoming a relic. People
+        just don't value physical archives anymore.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: They don't value dust, Arthur. But they do value experience and community.
+        We need to modernize your catalog.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 72fc4401eb87d01478e0dcee3b99fc9b, type: 2}
+      IsPlayerSide: 0
+      Text: A digital inventory system paired with classic reading spaces? I like
+        how your mind works.
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
+      IsPlayerSide: 0
+      Text: A bookstore? How archaic. I was planning to bulldoze this block for a
+        multi-level parking garage.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: Knowledge is a high-yield asset, Isabella. A parking garage is just lazy
+        real estate.
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: 0d57fad9c41be454097b69c8b078d26f, type: 2}
+      IsPlayerSide: 0
+      Text: I must warn you, old paper is a severe fire hazard. I might have to revoke
+        your operational license.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: We are installing state-of-the-art thermal suppression systems as we
+        speak, Mayor. Try another excuse.
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: a81aeb2f90c933f419f5beb2984e207f, type: 2}
+      IsPlayerSide: 0
+      Text: Heavy delivery coming through! Books are way heavier than pastries, you
+        know.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: We are optimizing the supply chain, Max. Hang in there, the logistics
+        will get smoother.
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: 72fc4401eb87d01478e0dcee3b99fc9b, type: 2}
+      IsPlayerSide: 0
+      Text: The integration is flawless! We have students, researchers, and families
+        all sharing this space.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: Cultural valuation is up. We are anchoring the community here.
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
+      IsPlayerSide: 0
+      Text: Fine, you saved a library. But sentimentality doesn't generate corporate
+        revenue.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 4c2cda600e17d3040844d1001b76e26e, type: 2}
+      IsPlayerSide: 0
+      Text: It generates loyalty, Isabella. Something your shareholders know nothing
+        about.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: Let's keep expanding. We are building an unbreakable network.
+      IsPausePoint: 1
+  - ChapterId: ch_05
+    ChapterTitle: 'Chapter 5: Culinary Expansion'
+    Lines:
+    - Speaker: {fileID: 11400000, guid: 3ae9e6c8038e4b24d98c8353be283c0c, type: 2}
+      IsPlayerSide: 0
+      Text: Mamma mia! My thermal ovens are losing heat efficiency. I cannot bake
+        a proper pizza like this!
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: Heat dissipation is a classic engineering problem, Mario. Let's rebuild
+        your kitchen with high-grade materials.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 3ae9e6c8038e4b24d98c8353be283c0c, type: 2}
+      IsPlayerSide: 0
+      Text: If you can fix my kitchen, I will feed this entire street!
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
+      IsPlayerSide: 0
+      Text: A local pizza joint? I can open ten fast-food franchises here by tomorrow
+        and crush his margins.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: Quality always scales better than cheap quantity. Your frozen dough can't
+        compete with authentic craftsmanship.
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: 0d57fad9c41be454097b69c8b078d26f, type: 2}
+      IsPlayerSide: 0
+      Text: The Board of Health requires strict ventilation standards for commercial
+        kitchens.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: Our new HVAC systems exceed city regulations by forty percent, Mayor.
+        Check the data yourself.
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: a81aeb2f90c933f419f5beb2984e207f, type: 2}
+      IsPlayerSide: 0
+      Text: Hot pizza delivery protocol active! The new insulated thermal bags you
+        designed are amazing!
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: Delivery radius expanded. We are capturing the uptown market now.
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: 3ae9e6c8038e4b24d98c8353be283c0c, type: 2}
+      IsPlayerSide: 0
+      Text: Bellissimo! The lines are out the door! Production efficiency is at maximum
+        capacity!
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: Revenue streams are stabilizing. This block is practically self-funding
+        now.
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
+      IsPlayerSide: 0
+      Text: This is a minor statistical anomaly. People will eventually go back to
+        cheap convenience.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 4c2cda600e17d3040844d1001b76e26e, type: 2}
+      IsPlayerSide: 0
+      Text: You clearly don't understand the power of a good slice of pizza, Isabella.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: The economic baseline of the street just shifted. We are winning.
+      IsPausePoint: 1
+  - ChapterId: ch_06
+    ChapterTitle: 'Chapter 6: Bespoke Manufacturing'
+    Lines:
+    - Speaker: {fileID: 11400000, guid: 4a071e55567759a46a98acfe0dadf45e, type: 2}
+      IsPlayerSide: 0
+      Text: Hey! I have all these designs for mechanical toys, but my old carving
+        tools lack precision.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: We need to transition you from manual labor to automated precision. I'll
+        set up some desktop fabrication units.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 4a071e55567759a46a98acfe0dadf45e, type: 2}
+      IsPlayerSide: 0
+      Text: You mean like 3D printers and CNC machines? You're a genius!
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
+      IsPlayerSide: 0
+      Text: Manufacturing toys locally? Have you lost your mind? Mass production
+        in overseas factories is the only profitable way.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: We aren't doing mass production. We are doing bespoke, premium local
+        manufacturing. It's a completely different market tier.
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: 0d57fad9c41be454097b69c8b078d26f, type: 2}
+      IsPlayerSide: 0
+      Text: Industrial machinery in a commercial zone? I will have to issue a zoning
+        violation!
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: These are low-decibel, eco-friendly micro-fabricators, Mayor. Totally
+        compliant with commercial zoning.
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: a81aeb2f90c933f419f5beb2984e207f, type: 2}
+      IsPlayerSide: 0
+      Text: These toys are incredible! I'm delivering them to collectors who are
+        paying premium prices!
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: High-margin products. Exactly as calculated. Good job, Max.
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: 4a071e55567759a46a98acfe0dadf45e, type: 2}
+      IsPlayerSide: 0
+      Text: Production output is up 300 percent, and the quality is flawless! The
+        kids love them.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: We've officially proven that local innovation can beat corporate outsourcing.
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
+      IsPlayerSide: 0
+      Text: This... this doesn't make financial sense. My algorithms predicted you
+        would go bankrupt by now.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 4c2cda600e17d3040844d1001b76e26e, type: 2}
+      IsPlayerSide: 0
+      Text: Algorithms can't predict passion, Isabella. You're losing the neighborhood.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: We are just getting warmed up. The real upgrades are next.
+      IsPausePoint: 1
+  - ChapterId: ch_07
+    ChapterTitle: 'Chapter 7: Haute Couture'
+    Lines:
+    - Speaker: {fileID: 11400000, guid: e972bc04a23d2cb42bc07a3ecee7841c, type: 2}
+      IsPlayerSide: 0
+      Text: Darling, this street is getting crowded, but my boutique's supply chain
+        is a disaster. I cannot weave fast enough.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: Manual weaving is a bottleneck, Chole. We need to integrate automated
+        loom systems and smart inventory tracking.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: e972bc04a23d2cb42bc07a3ecee7841c, type: 2}
+      IsPlayerSide: 0
+      Text: Automated elegance? If you can maintain the fabric quality, I am completely
+        on board.
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
+      IsPlayerSide: 0
+      Text: A high-end boutique in this neighborhood? I was going to replace this
+        block with a fast-fashion outlet.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: Fast fashion is environmentally toxic and economically fragile. We are
+        building a sustainable premium brand.
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: 0d57fad9c41be454097b69c8b078d26f, type: 2}
+      IsPlayerSide: 0
+      Text: Textile manufacturing requires severe waste-water permits. I'm afraid
+        I have to halt your operations.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: Our new micro-factories operate on a closed-loop water recycling system,
+        Mayor. Zero emissions. Nice try.
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: a81aeb2f90c933f419f5beb2984e207f, type: 2}
+      IsPlayerSide: 0
+      Text: These packages are so fancy! I feel like a VIP courier delivering these
+        tailored suits across the city.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: Brand presentation is key, Max. The delivery experience is part of the
+        product valuation.
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: e972bc04a23d2cb42bc07a3ecee7841c, type: 2}
+      IsPlayerSide: 0
+      Text: Absolutely stunning! The upper-class clients are flocking here. We are
+        setting the city's trends!
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: Our demographic reach has expanded to the elites. The district's net
+        worth is skyrocketing.
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
+      IsPlayerSide: 0
+      Text: My fast-fashion stock is plummeting. People are actually waiting in line
+        for your boutique.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 4c2cda600e17d3040844d1001b76e26e, type: 2}
+      IsPlayerSide: 0
+      Text: Quality craftsmanship outlasts cheap trends, Isabella. Always has, always
+        will.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: We control the cultural capital now. The real power plays are next.
+      IsPausePoint: 1
+  - ChapterId: ch_08
+    ChapterTitle: 'Chapter 8: The Silver Screen'
+    Lines:
+    - Speaker: {fileID: 11400000, guid: ef51d743b9fa9714881ce33bae70a8ce, type: 2}
+      IsPlayerSide: 0
+      Text: The art of cinema is dying here. My projectors are ancient, and the acoustics
+        are terrible.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: We don't just need new projectors, Victor. We need an acoustic engineering
+        overhaul. Total immersion.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: ef51d743b9fa9714881ce33bae70a8ce, type: 2}
+      IsPlayerSide: 0
+      Text: If you can engineer a flawless soundscape, I will bring the greatest
+        independent films to this screen!
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
+      IsPlayerSide: 0
+      Text: An indie cinema? I already signed a contract for a corporate multiplex
+        with thirty soulless screens.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: Your multiplex offers noise. We are offering a curated cultural experience.
+        We will siphon your audience.
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: 0d57fad9c41be454097b69c8b078d26f, type: 2}
+      IsPlayerSide: 0
+      Text: Acoustic upgrades? That sounds like a noise pollution violation waiting
+        to happen. I'm sending inspectors.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: The theater is fitted with military-grade soundproofing foam. It's quieter
+        outside than a library, Mayor.
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: a81aeb2f90c933f419f5beb2984e207f, type: 2}
+      IsPlayerSide: 0
+      Text: Delivering film reels and VIP premier tickets! The whole city wants a
+        seat in Victor's theater.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: We've established a cultural monopoly. The entertainment sector is officially
+        secured.
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: ef51d743b9fa9714881ce33bae70a8ce, type: 2}
+      IsPlayerSide: 0
+      Text: Magnificent! The premiere was entirely sold out. The sound system you
+        engineered is breathtaking.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: We are drawing tourists to the district now. The economic loop is reinforcing
+        itself.
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
+      IsPlayerSide: 0
+      Text: This is impossible. My multiplex is empty. People are choosing your single
+        screen over my empire.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 4c2cda600e17d3040844d1001b76e26e, type: 2}
+      IsPlayerSide: 0
+      Text: Because this street has a soul, Isabella. And you can't buy that.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: We are unstoppable now. Time to secure our digital infrastructure.
+      IsPausePoint: 1
+  - ChapterId: ch_09
+    ChapterTitle: 'Chapter 9: The Digital Frontier'
+    Lines:
+    - Speaker: {fileID: 11400000, guid: f0df9c76a75af9b4ca4ab723203cc247, type: 2}
+      IsPlayerSide: 0
+      Text: Hey! All these businesses are great, but the local grid can't handle
+        the data traffic. We need a mesh network.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: A localized, decentralized server hub. I can design the hardware architecture
+        if you write the protocols.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: f0df9c76a75af9b4ca4ab723203cc247, type: 2}
+      IsPlayerSide: 0
+      Text: Deal! We are going to turn this street into the smartest block in the
+        city.
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
+      IsPlayerSide: 0
+      Text: A localized network? No. I control the city's telecom infrastructure.
+        You will route your data through my servers.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: Not a chance. We are building an independent grid. Your data monopoly
+        ends at our district borders.
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: 0d57fad9c41be454097b69c8b078d26f, type: 2}
+      IsPlayerSide: 0
+      Text: Unauthorized data hubs? This is a cyber-security threat! I am ordering
+        a complete shutdown of your network!
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: Our encryption protocols exceed federal standards. Unless you want a
+        lawsuit for suppressing free enterprise, back off.
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: a81aeb2f90c933f419f5beb2984e207f, type: 2}
+      IsPlayerSide: 0
+      Text: Zoe updated my delivery app! The smart-routing algorithm just increased
+        my delivery speed by forty percent!
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: System-wide efficiency. Every business on the street is now mathematically
+        optimized.
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: f0df9c76a75af9b4ca4ab723203cc247, type: 2}
+      IsPlayerSide: 0
+      Text: The servers are online and stable! The entire district is connected,
+        lightning fast and completely secure.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: We have achieved technological independence. The street is officially
+        future-proof.
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
+      IsPlayerSide: 0
+      Text: You've locked me out of the local grid. My surveillance and data mining
+        operations here are blind.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 4c2cda600e17d3040844d1001b76e26e, type: 2}
+      IsPlayerSide: 0
+      Text: You can't exploit what you can't see, Isabella. Checkmate.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: The foundation is flawless. Now, it's time for the final acquisition.
+      IsPausePoint: 1
+  - ChapterId: ch_10
+    ChapterTitle: 'Chapter 10: The Crown Jewel'
+    Lines:
+    - Speaker: {fileID: 11400000, guid: daaf67181a4cc9249a7e946315bacbfd, type: 2}
+      IsPlayerSide: 0
+      Text: I have watched your progress with great interest. But my jewelry requires
+        microscopic precision and a vault with unbreachable security.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: We will integrate laser-guided engraving modules and a decentralized
+        biometric security grid, Edward. Total perfection.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: daaf67181a4cc9249a7e946315bacbfd, type: 2}
+      IsPlayerSide: 0
+      Text: If you can deliver that level of engineering, my capital will anchor
+        this entire district.
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
+      IsPlayerSide: 0
+      Text: Edward, be reasonable. I am offering you a blank check. Move your business
+        to my new corporate plaza.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: daaf67181a4cc9249a7e946315bacbfd, type: 2}
+      IsPlayerSide: 0
+      Text: Your plaza lacks soul, Isabella. This street has an ecosystem of brilliance.
+        My answer is no.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: The district's integrity is not for sale. We generate our own wealth
+        now.
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: 0d57fad9c41be454097b69c8b078d26f, type: 2}
+      IsPlayerSide: 0
+      Text: A high-security vault in a commercial zone? I am initiating an emergency
+        tax audit on all your businesses!
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: Our financial algorithms are transparent and flawless, Mayor. Audit us
+        all you want, you will only find perfection.
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: a81aeb2f90c933f419f5beb2984e207f, type: 2}
+      IsPlayerSide: 0
+      Text: Secured armored delivery protocols are active! I've never carried this
+        much value in my life!
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: You are the arteries of this economy, Max. The physical assets are finally
+        secured.
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
+      IsPlayerSide: 0
+      Text: My board of directors just called. The collective valuation of this street...
+        it has surpassed my company's local assets.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: Hostile takeover denied, Isabella. The algorithms predicted you would
+        win, but they couldn't calculate community.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
+      IsPlayerSide: 0
+      Text: ...You win. I am withdrawing my acquisition bids. This district is yours.
+      IsPausePoint: 1
+    - Speaker: {fileID: 11400000, guid: 0d57fad9c41be454097b69c8b078d26f, type: 2}
+      IsPlayerSide: 0
+      Text: Well, as the Mayor, I always knew this street had potential! I am officially
+        declaring it a Protected Innovation Hub!
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: Don't push your luck, Thomas. We built this, not you.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 4c2cda600e17d3040844d1001b76e26e, type: 2}
+      IsPlayerSide: 0
+      Text: Look at this place... Alive, thriving, and unbreakable. You didn't just
+        fix buildings, you engineered a legacy.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: We did it, Grandpa. The street is finally ours.
       IsPausePoint: 1

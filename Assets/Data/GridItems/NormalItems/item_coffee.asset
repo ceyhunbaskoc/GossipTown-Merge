@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53b244d6e8fb780428f2aaae4f7bd63c, type: 3}
+  m_Name: item_coffee
+  m_EditorClassIdentifier: 
+  <Id>k__BackingField: item_coffee
+  <ItemName>k__BackingField: Coffee
+  _description: 
+  <Items>k__BackingField:
+  - <Level>k__BackingField: 1
+    <ItemIcon>k__BackingField: {fileID: 4687309882487268517, guid: 7539dc4522e8acf4aaf0b4aa48a91105, type: 3}
+  - <Level>k__BackingField: 2
+    <ItemIcon>k__BackingField: {fileID: 6655872186638320746, guid: 7539dc4522e8acf4aaf0b4aa48a91105, type: 3}
+  - <Level>k__BackingField: 3
+    <ItemIcon>k__BackingField: {fileID: -5084214435005115830, guid: 7539dc4522e8acf4aaf0b4aa48a91105, type: 3}
+  - <Level>k__BackingField: 4
+    <ItemIcon>k__BackingField: {fileID: 1838890498225210024, guid: 7539dc4522e8acf4aaf0b4aa48a91105, type: 3}
+  - <Level>k__BackingField: 5
+    <ItemIcon>k__BackingField: {fileID: -5028597511880491726, guid: 7539dc4522e8acf4aaf0b4aa48a91105, type: 3}
+  - <Level>k__BackingField: 6
+    <ItemIcon>k__BackingField: {fileID: 4225551213800497501, guid: 7539dc4522e8acf4aaf0b4aa48a91105, type: 3}
+  - <Level>k__BackingField: 7
+    <ItemIcon>k__BackingField: {fileID: -2225805740163495298, guid: 7539dc4522e8acf4aaf0b4aa48a91105, type: 3}
+  - <Level>k__BackingField: 8
+    <ItemIcon>k__BackingField: {fileID: 1133605800875791059, guid: 7539dc4522e8acf4aaf0b4aa48a91105, type: 3}
+  <SourceSpawner>k__BackingField: {fileID: 11400000, guid: b33669e209aa48948ae21508cf4d57d8, type: 2}

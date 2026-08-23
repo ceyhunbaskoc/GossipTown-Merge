@@ -32,17 +32,15 @@ namespace UI.Chest
 
         private BoardSelectionService _selectionService;
         private ChestInteractionService _chestInteractionService;
-        private ITimeManager _timeManager;
         
         private ChestItemData _activeChestData;
         private ChestData _activeChestStaticData;
         private IWarningMessageService _warningService;
 
-        public void Initialize(BoardSelectionService selectionService, ChestInteractionService chestInteractionService, ITimeManager timeManager, IWarningMessageService warningService)
+        public void Initialize(BoardSelectionService selectionService, ChestInteractionService chestInteractionService, IWarningMessageService warningService)
         {
             _selectionService = selectionService;
             _chestInteractionService = chestInteractionService;
-            _timeManager = timeManager;
             _warningService = warningService;
 
             _selectionService.OnItemSelected += OnItemSelected;
@@ -60,9 +58,13 @@ namespace UI.Chest
         {
             if (item is ChestItemData chestItem && itemDef is ChestDefinitionSO chestDef)
             {
+                UnsubscribeFromActiveChest();
+
                 _activeChestData = chestItem;
                 _activeChestStaticData = chestDef.GetChestData(chestItem.Level); 
                 
+                _activeChestData.OnStateChanged += HandleChestStateChanged;
+
                 _chestActionZone.SetActive(true);
                 RefreshUIState();
             }
@@ -72,9 +74,15 @@ namespace UI.Chest
             }
         }
 
+        private void HandleChestStateChanged(ChestState newState)
+        {
+            RefreshUIState();
+        }
+
         private void RefreshUIState()
         {
             if (_activeChestData == null) return;
+            
             _forceOpenGemValueText.text = _activeChestStaticData.InstantUnlockGemCost.ToString();
 
             _lockedStateContainer.SetActive(false);
@@ -98,7 +106,6 @@ namespace UI.Chest
         private void OnStartUnlockClicked()
         {
             _chestInteractionService.StartUnlocking(_activeChestData);
-            RefreshUIState();
         }
 
         private void OnForceOpenGemClicked()
@@ -109,14 +116,11 @@ namespace UI.Chest
             {
                 _warningService.ShowWarning("Not Enough Gems!", Input.mousePosition);
             }
-            RefreshUIState();
         }
 
         private void OnSpeedUpAdClicked()
         {
-            Debug.Log("Reklam İzleniyor...");
             _chestInteractionService.ForceOpenWithAd(_activeChestData);
-            RefreshUIState();
         }
 
         private void OnOpenChestClicked()
@@ -126,9 +130,19 @@ namespace UI.Chest
 
         private void HideModule()
         {
+            UnsubscribeFromActiveChest();
+
             _activeChestData = null;
             _activeChestStaticData = null;
             _chestActionZone.SetActive(false);
+        }
+
+        private void UnsubscribeFromActiveChest()
+        {
+            if (_activeChestData != null)
+            {
+                _activeChestData.OnStateChanged -= HandleChestStateChanged;
+            }
         }
 
         private void Update()
@@ -144,12 +158,22 @@ namespace UI.Chest
                     TimeSpan ts = TimeSpan.FromTicks(remainingTicks);
                     _unlockingTimerText.text = string.Format("{0:D2}:{1:D2}:{2:D2}", ts.Hours, ts.Minutes, ts.Seconds);
                 }
-                else
-                {
-                    _activeChestData.ForceComplete(); 
-                    RefreshUIState();
-                }
             }
+        }
+
+        private void OnDestroy()
+        {
+            if (_selectionService != null)
+            {
+                _selectionService.OnItemSelected -= OnItemSelected;
+                _selectionService.OnSelectionCleared -= HideModule;
+            }
+            UnsubscribeFromActiveChest();
+            
+            _startUnlockButton.onClick.RemoveAllListeners();
+            _speedUpAdButton.onClick.RemoveAllListeners();
+            _forceOpenGemButton.onClick.RemoveAllListeners();
+            _openChestButton.onClick.RemoveAllListeners();
         }
     }
 }

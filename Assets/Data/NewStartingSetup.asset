@@ -17,17 +17,9 @@ MonoBehaviour:
   <BackpackWidth>k__BackingField: 4
   <BackpackHeight>k__BackingField: 8
   <InitialCells>k__BackingField:
-  - Position: {x: 3, y: 3}
-    ItemDef: {fileID: 11400000, guid: 5a034ebef0e978846bc89a8172ceedb3, type: 2}
-    ItemLevel: 1
-    IsLocked: 0
-  - Position: {x: 3, y: 4}
-    ItemDef: {fileID: 11400000, guid: 2536adb532772d44a927910b8cf1aa62, type: 2}
-    ItemLevel: 1
-    IsLocked: 0
   - Position: {x: 0, y: 1}
-    ItemDef: {fileID: 11400000, guid: 5a034ebef0e978846bc89a8172ceedb3, type: 2}
-    ItemLevel: 3
+    ItemDef: {fileID: 11400000, guid: a026ba51e39f0f141864903e2131bdf5, type: 2}
+    ItemLevel: 2
     IsLocked: 1
   - Position: {x: 0, y: 2}
     ItemDef: {fileID: 11400000, guid: 2536adb532772d44a927910b8cf1aa62, type: 2}
@@ -46,13 +38,25 @@ MonoBehaviour:
     ItemLevel: 0
     IsLocked: 1
   - Position: {x: 2, y: 0}
-    ItemDef: {fileID: 0}
-    ItemLevel: 0
+    ItemDef: {fileID: 11400000, guid: a026ba51e39f0f141864903e2131bdf5, type: 2}
+    ItemLevel: 4
     IsLocked: 1
   - Position: {x: 0, y: 0}
     ItemDef: {fileID: 11400000, guid: 5a034ebef0e978846bc89a8172ceedb3, type: 2}
     ItemLevel: 2
     IsLocked: 1
+  - Position: {x: 3, y: 4}
+    ItemDef: {fileID: 11400000, guid: b33669e209aa48948ae21508cf4d57d8, type: 2}
+    ItemLevel: 1
+    IsLocked: 0
+  - Position: {x: 3, y: 3}
+    ItemDef: {fileID: 11400000, guid: a026ba51e39f0f141864903e2131bdf5, type: 2}
+    ItemLevel: 1
+    IsLocked: 0
+  - Position: {x: 4, y: 3}
+    ItemDef: {fileID: 11400000, guid: a026ba51e39f0f141864903e2131bdf5, type: 2}
+    ItemLevel: 1
+    IsLocked: 0
   <BackpackCells>k__BackingField:
   - Position: {x: 1, y: 6}
     ItemDef: {fileID: 0}

@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b43b932f1faa42c0816684a56d3f7bcb, type: 3}
+  m_Name: BuildingDef_Coffee
+  m_EditorClassIdentifier: 
+  <BuildingId>k__BackingField: building_coffee
+  <BuildingName>k__BackingField: Coffee
+  <Levels>k__BackingField:
+  - LevelSprite: {fileID: 4687309882487268517, guid: d3e2b66b79edc904b80348d917906a7b, type: 3}
+    UpgradeCost: 50
+    LevelRewards:
+    - Category: 5
+      RewardItem: {fileID: 0}
+      Level: 1
+      Amount: 10
+  - LevelSprite: {fileID: 6655872186638320746, guid: d3e2b66b79edc904b80348d917906a7b, type: 3}
+    UpgradeCost: 110
+    LevelRewards:
+    - Category: 5
+      RewardItem: {fileID: 0}
+      Level: 1
+      Amount: 20
+    - Category: 4
+      RewardItem: {fileID: 0}
+      Level: 1
+      Amount: 10
+  - LevelSprite: {fileID: -5084214435005115830, guid: d3e2b66b79edc904b80348d917906a7b, type: 3}
+    UpgradeCost: 240
+    LevelRewards:
+    - Category: 5
+      RewardItem: {fileID: 0}
+      Level: 1
+      Amount: 40
+  - LevelSprite: {fileID: 1838890498225210024, guid: d3e2b66b79edc904b80348d917906a7b, type: 3}
+    UpgradeCost: 530
+    LevelRewards:
+    - Category: 5
+      RewardItem: {fileID: 0}
+      Level: 1
+      Amount: 80
+    - Category: 4
+      RewardItem: {fileID: 0}
+      Level: 1
+      Amount: 10
+  - LevelSprite: {fileID: -5028597511880491726, guid: d3e2b66b79edc904b80348d917906a7b, type: 3}
+    UpgradeCost: 1170
+    LevelRewards:
+    - Category: 5
+      RewardItem: {fileID: 0}
+      Level: 1
+      Amount: 160
+  - LevelSprite: {fileID: 4225551213800497501, guid: d3e2b66b79edc904b80348d917906a7b, type: 3}
+    UpgradeCost: 2580
+    LevelRewards:
+    - Category: 5
+      RewardItem: {fileID: 0}
+      Level: 1
+      Amount: 320
+    - Category: 3
+      RewardItem: {fileID: 0}
+      Level: 1
+      Amount: 5

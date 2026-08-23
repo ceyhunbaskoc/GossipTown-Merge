@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b43b932f1faa42c0816684a56d3f7bcb, type: 3}
+  m_Name: BuildingDef_Bakery
+  m_EditorClassIdentifier: 
+  <BuildingId>k__BackingField: building_bakery
+  <BuildingName>k__BackingField: Bakery
+  <Levels>k__BackingField:
+  - LevelSprite: {fileID: -5359031613335939112, guid: 1331600ebc98ecb4ab4812e87a44ac9e, type: 3}
+    UpgradeCost: 80
+    LevelRewards:
+    - Category: 5
+      RewardItem: {fileID: 0}
+      Level: 1
+      Amount: 20
+  - LevelSprite: {fileID: 5519014445665988251, guid: 1331600ebc98ecb4ab4812e87a44ac9e, type: 3}
+    UpgradeCost: 180
+    LevelRewards:
+    - Category: 5
+      RewardItem: {fileID: 0}
+      Level: 1
+      Amount: 35
+    - Category: 4
+      RewardItem: {fileID: 0}
+      Level: 1
+      Amount: 20
+  - LevelSprite: {fileID: -8476485231599005922, guid: 1331600ebc98ecb4ab4812e87a44ac9e, type: 3}
+    UpgradeCost: 390
+    LevelRewards:
+    - Category: 5
+      RewardItem: {fileID: 0}
+      Level: 1
+      Amount: 70
+  - LevelSprite: {fileID: -3326342669601673362, guid: 1331600ebc98ecb4ab4812e87a44ac9e, type: 3}
+    UpgradeCost: 850
+    LevelRewards:
+    - Category: 5
+      RewardItem: {fileID: 0}
+      Level: 1
+      Amount: 145
+    - Category: 4
+      RewardItem: {fileID: 0}
+      Level: 1
+      Amount: 20
+  - LevelSprite: {fileID: -3750295804794504343, guid: 1331600ebc98ecb4ab4812e87a44ac9e, type: 3}
+    UpgradeCost: 1870
+    LevelRewards:
+    - Category: 5
+      RewardItem: {fileID: 0}
+      Level: 1
+      Amount: 290
+  - LevelSprite: {fileID: -5159179241039441610, guid: 1331600ebc98ecb4ab4812e87a44ac9e, type: 3}
+    UpgradeCost: 4120
+    LevelRewards:
+    - Category: 5
+      RewardItem: {fileID: 0}
+      Level: 1
+      Amount: 575
+    - Category: 3
+      RewardItem: {fileID: 0}
+      Level: 1
+      Amount: 10

@@ -69,7 +69,7 @@ namespace Core.Services
             }
 
             int generatedLevel = GetRandomLevelByWeight(spawnerData);
-            IGridItem newItemData = _dataFactory.CreateItemData(spawnerData.SpawnItemSO.Id, generatedLevel);
+            IGridItem newItemData = _dataFactory.CreateItemData(spawnerDef.SpawnItemSO.Id, generatedLevel);
             
             bool isSpawned = _gridModifier.TrySpawnObject(spawnerPosition, targetEmptyCell.Value, newItemData);
             

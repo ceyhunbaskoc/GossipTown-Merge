@@ -4,6 +4,7 @@ using Core.Backpack;
 using Core.GridSystem;
 using Core.Services;
 using Data;
+using UI.Components;
 using UnityEngine;
 using UnityEngine.UI;
 using Utils;
@@ -23,16 +24,22 @@ namespace UI.Backpack
         private BoardTransferService _transferService;
         private ItemDatabaseSO _itemDatabase;
         private BackpackUnlockerService _backpackUnlockerService;
+        private IWarningMessageService _warningMessageService;
 
         private readonly Dictionary<Vector2Int, BackpackSlotView> _slotRegistry = new Dictionary<Vector2Int, BackpackSlotView>();
         private int _currentUnlockGemCost;
 
-        public void Initialize(GridDataModel backpackModel, BoardTransferService transferService, ItemDatabaseSO itemDatabase, BackpackUnlockerService backpackUnlockerService)
+        public void Initialize(GridDataModel backpackModel, 
+            BoardTransferService transferService, 
+            ItemDatabaseSO itemDatabase, 
+            BackpackUnlockerService backpackUnlockerService,
+            IWarningMessageService warningMessageService)
         {
             _backpackModel = backpackModel;
             _transferService = transferService;
             _itemDatabase = itemDatabase;
             _backpackUnlockerService = backpackUnlockerService;
+            _warningMessageService = warningMessageService;
             
             GenerateGrid();
             RefreshAllSlots();
@@ -156,8 +163,9 @@ namespace UI.Backpack
 
         private void OnSlotClicked(Vector2Int backpackPos)
         {
-            if (_transferService.TryRetrieveFromBackpack(backpackPos))
+            if (!_transferService.TryRetrieveFromBackpack(backpackPos))
             {
+                _warningMessageService.ShowWarning("Grid is full!", Input.mousePosition);
             }
         }
 
@@ -167,6 +175,10 @@ namespace UI.Backpack
             {
                 if (!_slotRegistry.TryGetValue(pos, out BackpackSlotView slotView)) return;
                 slotView.SetEmpty();
+            }
+            else
+            {
+                _warningMessageService.ShowWarning("Not enough gems!", Input.mousePosition);
             }
         }
 

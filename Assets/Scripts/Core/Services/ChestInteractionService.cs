@@ -1,4 +1,5 @@
 ﻿using System;
+using Core.AdService;
 using Core.Controllers;
 using Core.Economy;
 using Core.Factories;
@@ -20,6 +21,7 @@ namespace Core.Services
         private readonly IEconomyModifier _economyModifier;
         private readonly ITimeManager _timeManager;
         private readonly MergeItemFactory _mergeItemFactory;
+        private readonly IAdService _adService;
         
         public ChestInteractionService(
             ILootGenerationService lootService,
@@ -30,7 +32,9 @@ namespace Core.Services
             ChestOpeningOrchestrator chestOpeningOrchestrator,
             IEconomyModifier economyModifier,
             ITimeManager timeManager,
-            MergeItemFactory mergeItemFactory)
+            MergeItemFactory mergeItemFactory,
+            IAdService adService
+            )
         {
             _lootService = lootService;
             _gridModel = gridModel;
@@ -41,6 +45,7 @@ namespace Core.Services
             _economyModifier = economyModifier;
             _timeManager = timeManager;
             _mergeItemFactory = mergeItemFactory;
+            _adService = adService;
         }
 
 
@@ -76,8 +81,15 @@ namespace Core.Services
         {
             if (chestItemData == null || chestItemData.CurrentState != ChestState.Unlocking) return;
             
-            // TODO: Reklam servisine bağlanacak. Reklam başarılıysa:
-            chestItemData.ForceComplete();
+            _adService.ShowRewardedAd(
+                onAdWatched: () =>
+                {
+                    chestItemData.ForceComplete();
+                },
+                onAdFailed: () =>
+                {
+                    //nothing
+                });
         }
 
         public void OpenChest(ChestItemData chestItemData, Vector2Int gridPosition)

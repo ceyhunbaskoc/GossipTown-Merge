@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b43b932f1faa42c0816684a56d3f7bcb, type: 3}
+  m_Name: BuildingDef_BookStore
+  m_EditorClassIdentifier: 
+  <BuildingId>k__BackingField: building_bookstore
+  <BuildingName>k__BackingField: BookStore
+  <Levels>k__BackingField:
+  - LevelSprite: {fileID: 3843231544584785974, guid: 1b5e271c633a29c4b8f3c2d2341b8cee, type: 3}
+    UpgradeCost: 200
+    LevelRewards:
+    - Category: 5
+      RewardItem: {fileID: 0}
+      Level: 1
+      Amount: 60
+  - LevelSprite: {fileID: -6053866238764602296, guid: 1b5e271c633a29c4b8f3c2d2341b8cee, type: 3}
+    UpgradeCost: 450
+    LevelRewards:
+    - Category: 5
+      RewardItem: {fileID: 0}
+      Level: 1
+      Amount: 115
+    - Category: 4
+      RewardItem: {fileID: 0}
+      Level: 1
+      Amount: 40
+  - LevelSprite: {fileID: 7244088574319584740, guid: 1b5e271c633a29c4b8f3c2d2341b8cee, type: 3}
+    UpgradeCost: 990
+    LevelRewards:
+    - Category: 5
+      RewardItem: {fileID: 0}
+      Level: 1
+      Amount: 235
+  - LevelSprite: {fileID: -3860519269612102915, guid: 1b5e271c633a29c4b8f3c2d2341b8cee, type: 3}
+    UpgradeCost: 2180
+    LevelRewards:
+    - Category: 5
+      RewardItem: {fileID: 0}
+      Level: 1
+      Amount: 465
+    - Category: 4
+      RewardItem: {fileID: 0}
+      Level: 1
+      Amount: 40
+  - LevelSprite: {fileID: 5749084434699422419, guid: 1b5e271c633a29c4b8f3c2d2341b8cee, type: 3}
+    UpgradeCost: 4800
+    LevelRewards:
+    - Category: 5
+      RewardItem: {fileID: 0}
+      Level: 1
+      Amount: 935
+  - LevelSprite: {fileID: 4912712256094912398, guid: 1b5e271c633a29c4b8f3c2d2341b8cee, type: 3}
+    UpgradeCost: 10550
+    LevelRewards:
+    - Category: 5
+      RewardItem: {fileID: 0}
+      Level: 1
+      Amount: 1865
+    - Category: 3
+      RewardItem: {fileID: 0}
+      Level: 1
+      Amount: 20

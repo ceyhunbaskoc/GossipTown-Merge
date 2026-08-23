@@ -48,13 +48,18 @@ namespace Core
             _interactRequestReceiver = interactReceiver;
             _mergeValidator = mergeValidator;
             
-            if (Data is SpawnerItemData itemData)
+            bool isSpawner = Data is SpawnerItemData;
+            
+            if (isSpawner)
             {
-                itemData.OnCooldownStateChanged += _handleCooldownState;
-                _handleCooldownState(itemData.IsInCooldown);
+                var spawnerData = (SpawnerItemData)Data;
+                spawnerData.OnCooldownStateChanged += _handleCooldownState;
+                _handleCooldownState(spawnerData.IsInCooldown);
             }
             
             _visualizer.SetVisual(icon);
+            _visualizer.SetBadgeActive(isSpawner); 
+            
             _visualizer.PlaySpawnAnimation();
         }
         
