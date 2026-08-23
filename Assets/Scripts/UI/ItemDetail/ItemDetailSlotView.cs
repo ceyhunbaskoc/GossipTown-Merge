@@ -11,9 +11,11 @@ namespace UI.ItemDetail
         [SerializeField] private Image _iconImage;
         [SerializeField] private TextMeshProUGUI _levelText;
         [SerializeField] private GameObject _lockedOverlay;
+        [SerializeField] private Image _lockedBg;
 
         [Header("Theme Settings")] 
         [SerializeField] private Color _defaultBgColor;
+        [SerializeField] private Color _lockedBgColor;
         [SerializeField] private Color _currentLevelBgColor;
         
         public void Setup(Sprite icon, int level, bool isUnlocked, bool isCurrentLevel)
@@ -21,9 +23,10 @@ namespace UI.ItemDetail
             _iconImage.sprite = icon;
             _levelText.text = level.ToString();
 
-            if (!isUnlocked)
+            _lockedOverlay.SetActive(!isUnlocked);
+            if (!isUnlocked & isCurrentLevel)
             {
-                _lockedOverlay.SetActive(true);
+                _lockedBg.color = _currentLevelBgColor;
             }
             else if (isCurrentLevel)
             {
@@ -32,6 +35,7 @@ namespace UI.ItemDetail
             else
             {
                 _backgroundImage.color = _defaultBgColor;
+                _lockedBg.color = _lockedBgColor;
             }
         }
         

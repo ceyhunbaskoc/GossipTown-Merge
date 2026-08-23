@@ -244,7 +244,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 55.5
+  m_fontSize: 18
   m_fontSizeBase: 53.23
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -504,7 +504,9 @@ MonoBehaviour:
   _iconImage: {fileID: 6324507559739677461}
   _levelText: {fileID: 6693245797718539329}
   _lockedOverlay: {fileID: 5663976582874358801}
+  _lockedBg: {fileID: 3892328375409264012}
   _defaultBgColor: {r: 0.872, g: 0.8035372, b: 0.7062479, a: 1}
+  _lockedBgColor: {r: 0.7372549, g: 0.6784314, b: 0.59607846, a: 1}
   _currentLevelBgColor: {r: 1, g: 0.7458426, b: 0.32549024, a: 1}
 --- !u!114 &1758416075830438641
 MonoBehaviour:

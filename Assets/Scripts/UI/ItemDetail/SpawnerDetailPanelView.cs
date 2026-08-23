@@ -27,6 +27,7 @@ namespace UI.ItemDetail
         public void AddSlotElement(Transform elementTransform)
         {
             elementTransform.SetParent(_spawnerDetailSlotsContainer, false);
+            elementTransform.SetAsLastSibling();
         }
 
         public void Show()

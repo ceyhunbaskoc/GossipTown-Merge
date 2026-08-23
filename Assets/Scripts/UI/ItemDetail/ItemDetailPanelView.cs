@@ -43,6 +43,7 @@ namespace UI.ItemDetail
         public void AddSlotElement(Transform elementTransform)
         {
             elementTransform.SetParent(_itemDetailSlotsContainer, false);
+            elementTransform.SetAsLastSibling();
         }
 
         private void _setupSpawnerSlotElement(Sprite icon)

@@ -20,7 +20,6 @@ namespace Data.Reward
         
         [Header("Special Icons")]
         [field: SerializeField] public Sprite MedalIcon { get; private set; }
-        [field: SerializeField] public Sprite ExperienceIcon { get; private set; }
 
         public Sprite GetIconForCategory(RewardCategory category)
         {

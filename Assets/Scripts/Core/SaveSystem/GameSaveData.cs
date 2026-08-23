@@ -14,6 +14,21 @@ namespace Core.SaveSystem
         public string CustomDataJson;
     }
     
+    public enum TutorialStep
+    {
+        NotStarted = 0,
+        MergeItems = 1,
+        CompleteOrder = 2,
+        ShowCoreLoop = 3,
+        Completed = 4
+    }
+
+    [Serializable]
+    public class TutorialSaveData
+    {
+        public TutorialStep CurrentStep = TutorialStep.NotStarted;
+    }
+    
     [Serializable]
     public class SpawnerSaveState
     {
