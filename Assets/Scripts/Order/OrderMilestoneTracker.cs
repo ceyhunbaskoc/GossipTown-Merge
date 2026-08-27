@@ -34,7 +34,7 @@ namespace Order
 
             if (_completedOrdersInSeries >= _seriesGoal)
             {
-                RewardPayload calculatedReward = _rewardSelectionService.DetermineReward();
+                RewardPayload calculatedReward = _rewardSelectionService.GetNormalItemReward();
                 
                 if (calculatedReward.IsValid) 
                 {

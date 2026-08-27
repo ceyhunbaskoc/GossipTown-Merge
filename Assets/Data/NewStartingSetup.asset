@@ -166,3 +166,5 @@ MonoBehaviour:
     ItemDef: {fileID: 0}
     ItemLevel: 0
     IsLocked: 1
+  TutorialItem1Position: {x: 3, y: 3}
+  TutorialItem2Position: {x: 4, y: 3}

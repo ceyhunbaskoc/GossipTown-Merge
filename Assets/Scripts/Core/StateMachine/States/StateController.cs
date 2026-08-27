@@ -1,6 +1,7 @@
 ﻿using Core.Bootstrap;
 using Core.CameraSystem;
 using Core.Views;
+using UI.Map;
 using UnityEngine;
 
 namespace Core.StateMachine.States
@@ -11,6 +12,7 @@ namespace Core.StateMachine.States
         public GameStateMachine StateMachine => _stateMachine;
         [Header("UI References")]
         [SerializeField] private UIManager _uiManager;
+        [SerializeField] private BuildingUpgradeReadyButtonPresenter _buildingUpgradeReadyButtonPresenter;
         
         [Header("Dependencies")]
         [SerializeField] private GameBootstrapper _gameBootstrapper;
@@ -31,6 +33,7 @@ namespace Core.StateMachine.States
             
             _uiManager.OnPlayRequested += () => _stateMachine.Enter<GameplayState>();
             _uiManager.OnExitToMenuRequested += () => _stateMachine.Enter<MainMenuState>();
+            _buildingUpgradeReadyButtonPresenter.OnBackToMenuRequested += () => _stateMachine.Enter<MainMenuState>();
         }
 
         private void Start()

@@ -5,5 +5,6 @@ namespace Core.Services
     public interface IRewardSelectionService
     {
         RewardPayload DetermineReward();
+        RewardPayload GetNormalItemReward();
     }
 }

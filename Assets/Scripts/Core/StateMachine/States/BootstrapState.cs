@@ -1,4 +1,5 @@
 ﻿using Core.Bootstrap;
+using Core.SaveSystem;
 using UnityEngine;
 
 namespace Core.StateMachine.States
@@ -20,7 +21,19 @@ namespace Core.StateMachine.States
 
             InitializeServices();
             
-            _stateMachine.Enter<MainMenuState>();
+            GameSaveData savedData = SaveManager.LoadGame();
+            bool isTutorialCompleted = savedData != null && 
+                                       savedData.TutorialData != null && 
+                                       savedData.TutorialData.CurrentStep == TutorialStep.Completed;
+
+            if (!isTutorialCompleted)
+            {
+                _stateMachine.Enter<GameplayState>();
+            }
+            else
+            {
+                _stateMachine.Enter<MainMenuState>();
+            }
         }
 
         private void InitializeServices()

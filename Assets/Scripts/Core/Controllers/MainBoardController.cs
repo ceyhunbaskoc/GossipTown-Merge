@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Core.GridSystem;
+using Core.Rules;
 using Core.Services;
 using Data;
 using Data.Quests;
@@ -21,6 +22,7 @@ namespace Core.Controllers
         private CurrencyFlightService _currencyFlightService;
         private ItemDatabaseSO _itemDatabase;
         private MergeVFXOrchestrator _mergeVFXOrchestrator;
+        private IMoveValidator _moveValidator;
         
         
         private Camera _mainCamera; 
@@ -38,6 +40,7 @@ namespace Core.Controllers
             CurrencyFlightService currencyFlightService,
             ItemDatabaseSO itemDatabase,
             MergeVFXOrchestrator mergeVFXOrchestrator,
+            IMoveValidator moveValidator,
             int width, 
             int height, 
             float cellSize)
@@ -50,6 +53,7 @@ namespace Core.Controllers
             _currencyFlightService = currencyFlightService;
             _itemDatabase = itemDatabase;
             _mergeVFXOrchestrator = mergeVFXOrchestrator;
+            _moveValidator = moveValidator;
             
             _mainCamera = Camera.main; 
             
@@ -63,6 +67,12 @@ namespace Core.Controllers
             Vector2Int oldGridPos = viewItem.CurrentGridPosition;
 
             if (newGridPos == oldGridPos) 
+            {
+                viewItem.SnapBackToStart();
+                return;
+            }
+            
+            if (!_moveValidator.CanMoveForTutorial(newGridPos))
             {
                 viewItem.SnapBackToStart();
                 return;

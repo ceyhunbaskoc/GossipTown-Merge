@@ -98,7 +98,7 @@ namespace Core.Services
             return new RewardPayload(randomChestId, randomLevel, 1);
         }
 
-        private RewardPayload GetNormalItemReward()
+        public RewardPayload GetNormalItemReward()
         {
             IReadOnlyList<string> unlockedIds = _itemDiscovery.GetUnlockedItemIds();
             List<string> normalItems = new List<string>();

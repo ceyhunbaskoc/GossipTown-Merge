@@ -5,11 +5,11 @@ using Order;
 
 namespace Data.Tutorial
 {
-    [CreateAssetMenu(fileName = "StartingOrderSetup", menuName = "Data/Starting Order Setup")]
+    [CreateAssetMenu(fileName = "StartingOrderSetup", menuName = "Bootstrap/Starting Order Setup")]
     public class StartingOrderSetupSO : ScriptableObject
     {
         [Header("Tutorial Order Configuration")]
-        public string ItemId;
+        public BaseItemDefinitionSO Item;
         public int ItemLevel;
         public int RequiredCount = 1;
         public int RewardAmount = 10;
@@ -18,7 +18,7 @@ namespace Data.Tutorial
         {
             var items = new Dictionary<ItemIdentifier, int>
             {
-                { new ItemIdentifier(ItemId, ItemLevel), RequiredCount }
+                { new ItemIdentifier(Item.Id, ItemLevel), RequiredCount }
             };
             return new OrderModel(items, RewardAmount);
         }

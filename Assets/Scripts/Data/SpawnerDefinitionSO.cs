@@ -32,6 +32,8 @@ namespace Data
         [field: Header("Global Spawner Rules")]
         [field: SerializeField] public BaseItemDefinitionSO SpawnItemSO { get; private set; } 
         [field: SerializeField] public List<SpawnerData> Spawners { get; private set; }
+        [SerializeField, Min(1)] private int _baseRestingSkipCost = 10;
+        [SerializeField] private AnimationCurve _costMultiplierCurve = AnimationCurve.Linear(1f, 1f, 10f, 5f);
         
         public override int MaxLevel => Spawners != null ? Spawners.Count : 0;
 
@@ -86,5 +88,20 @@ namespace Data
             int maxCapacity = sData.MaxCapacity;
             return new SpawnerItemData(id, level, maxCapacity);
         }
+
+        public int GetRestingSkipCost(int level)
+        {
+            if (level <= 0)
+            {
+                return _baseRestingSkipCost;
+            }
+
+            float multiplier = _costMultiplierCurve.Evaluate(level);
+
+            float rawCost = _baseRestingSkipCost * multiplier;
+
+            return Mathf.CeilToInt(rawCost);
+        }
+        
     }
 }

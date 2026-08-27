@@ -14,6 +14,7 @@ namespace Order
         public event Action<OrderModel> OnOrderUpdated;
         
         public int ActiveOrderCount => _currentOrders.Count;
+        public IReadOnlyList<OrderModel> ActiveOrders => _currentOrders;
         
         public bool TryCreateOrder(OrderModel orderModel)
         {

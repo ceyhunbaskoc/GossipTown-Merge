@@ -1,6 +1,7 @@
 ﻿using Core;
 using Core.Controllers;
 using Core.GridSystem;
+using Core.Rules;
 using Core.Services;
 using DG.Tweening;
 using UI.Components;
@@ -16,14 +17,16 @@ namespace UI.Backpack
         private BoardTransferService _transferService;
         private MainBoardController _mainBoardController;
         private IWarningMessageService _warningService;
+        private IMoveValidator _moveValidator;
 
         private Tween _hoverTween;
 
-        public void Initialize(BoardTransferService transferService, MainBoardController mainBoardController, IWarningMessageService warningService)
+        public void Initialize(BoardTransferService transferService, MainBoardController mainBoardController, IWarningMessageService warningService, IMoveValidator moveValidator)
         {
             _transferService = transferService;
             _mainBoardController = mainBoardController;
             _warningService = warningService;
+            _moveValidator = moveValidator;
         }
 
         public void OnHoverEnter(IViewItem viewItem)
@@ -45,6 +48,11 @@ namespace UI.Backpack
 
         public void OnItemDropRequested(IViewItem viewItem, Vector3 dropWorldPosition)
         {
+            if (!_moveValidator.CanMoveBackpack())
+            {
+                viewItem.SnapBackToStart();
+                return;
+            }
             Vector2Int sourcePos = viewItem.CurrentGridPosition;
 
             if (!_transferService.CanSendToBackpack(sourcePos))

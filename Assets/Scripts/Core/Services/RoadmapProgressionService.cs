@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Core.Services
 {
-    public class RoadmapProgressionService
+    public class RoadmapProgressionService : IDisposable
     {
         public event Action<MapNodeDefinitionSO, BuildingLevelData> OnNodeUpgraded;
         public event Action<MapNodeDefinitionSO> OnNodeUnlocked; 
@@ -29,6 +29,8 @@ namespace Core.Services
             IReadOnlyLevel readOnlyLevel)
         {
             _economyModifier = economyModifier;
+
+            _economyModifier.OnGoldChanged += CheckAnyNodeUpgradeable;
             _readOnlyLevel = readOnlyLevel;
             
             _allNodesMap = new Dictionary<string, MapNodeDefinitionSO>();
@@ -40,6 +42,8 @@ namespace Core.Services
             
             LoadSaveData(null);
         }
+
+        public event Action<bool> OnAnyBuildingUpgradeCheck;
 
         public RoadmapSaveData GetSaveData()
         {
@@ -116,6 +120,36 @@ namespace Core.Services
 
             return true;
         }
+
+        public void CheckAnyNodeUpgradeable(int currentGold = 0)
+        {
+            foreach (var node in _allNodesMap)
+            {
+                MapNodeDefinitionSO nodeDef = node.Value;
+                if (_readOnlyLevel.CurrentLevel < nodeDef.RequiredPlayerLevel)
+                {
+                    continue;
+                }
+                if (nodeDef.RequiredPreviousNode != null)
+                {
+                    int prevNodeLevel = GetNodeCurrentLevel(nodeDef.RequiredPreviousNode.NodeId);
+                    if (prevNodeLevel < nodeDef.RequiredPreviousNodeLevel)
+                    {
+                        continue;
+                    }
+                }
+
+                int currentLevel = GetNodeCurrentLevel(node.Key);
+                if (currentLevel >= nodeDef.Building.MaxLevel) continue; 
+
+                var nextLevelData = nodeDef.Building.GetLevelData(currentLevel + 1);
+                if (nextLevelData == null || _economyModifier.Golds < nextLevelData.UpgradeCost) continue;
+
+                OnAnyBuildingUpgradeCheck?.Invoke(true);
+                return;
+            }
+            OnAnyBuildingUpgradeCheck?.Invoke(false);
+        }
         
         public bool IsNodeUnlocked(string nodeId)
         {
@@ -185,6 +219,12 @@ namespace Core.Services
             {
                 OnNodeUnlocked?.Invoke(nodeDef);
             }
+        }
+
+
+        public void Dispose()
+        {
+            _economyModifier.OnGoldChanged -= CheckAnyNodeUpgradeable;
         }
     }
 }

@@ -27,6 +27,9 @@ namespace Core.SaveSystem
     public class TutorialSaveData
     {
         public TutorialStep CurrentStep = TutorialStep.NotStarted;
+        
+        public bool HasClaimedFreeEnergyRefill;
+        public bool HasClaimedFreeSpawnerRefill;
     }
     
     [Serializable]
@@ -208,11 +211,13 @@ namespace Core.SaveSystem
         public LevelSaveData LevelData = new LevelSaveData();
         public SettingsSaveData SettingsData = new SettingsSaveData();
         public AdShopSaveData AdShopData = new AdShopSaveData();
+        public TutorialSaveData TutorialData = new TutorialSaveData();
         
         public List<ItemDiscoverySaveData> DiscoveredItems = new List<ItemDiscoverySaveData>();
         public List<ClaimedAchievementSaveData> ClaimedAchievements = new List<ClaimedAchievementSaveData>();
         public WeeklyQuestSaveData WeeklyQuests = new WeeklyQuestSaveData();
         
         public long LastSaveTimeTicks; 
+        public long EnergyTargetTimeTicks;
     }
 }

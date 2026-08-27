@@ -74,6 +74,10 @@ namespace Core.GridSystem
             IsInCooldown = true;
         }
 
+        public void ForceComplete()
+        {
+            CooldownEndTimeTicks = 0;
+        }
         public void WakeUp()
         {
             CurrentCapacity = MaxCapacity;

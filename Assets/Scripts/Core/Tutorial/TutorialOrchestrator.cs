@@ -3,6 +3,8 @@ using System.Threading.Tasks;
 using Core.GridSystem;
 using Core.SaveSystem;
 using Order;
+using UI.Orders;
+using UI.Tutorial;
 using UnityEngine;
 
 namespace Core.Tutorial
@@ -13,48 +15,71 @@ namespace Core.Tutorial
         private readonly GridDataModel _gridModel;
         private readonly OrderDataModel _orderDataModel;
         private readonly ITutorialUI _tutorialUI;
+        private readonly OrderUIManager _orderUIManager;
+        private RectTransform _cachedCompleteButtonRect;
+        private float _cellSize;
 
         public bool IsCompleted => _saveData.CurrentStep == TutorialStep.Completed;
+        
+        public TutorialSaveData GetSaveData() => _saveData;
 
         public TutorialOrchestrator(
             TutorialSaveData saveData, 
             GridDataModel gridModel, 
             OrderDataModel orderDataModel,
-            ITutorialUI tutorialUI)
+            ITutorialUI tutorialUI,
+            OrderUIManager orderUIManager,
+            float cellSize)
         {
             _saveData = saveData;
             _gridModel = gridModel;
             _orderDataModel = orderDataModel;
             _tutorialUI = tutorialUI;
+            _orderUIManager = orderUIManager;
+            _cellSize = cellSize;
 
             if (!IsCompleted)
             {
-                _gridModel.OnItemSpawned += HandleItemMerged;
+                _gridModel.OnItemPlaced += HandleItemMerged;
                 _orderDataModel.OnOrderCompleted += HandleOrderCompleted;
+                _orderUIManager.OnOrderUIGenerated += HandleOrderUIGenerated;
             }
         }
-
-        public void StartCurrentStep(Vector3 leftItemPos, Vector3 rightItemPos)
+        
+        private void HandleOrderUIGenerated(OrderModel model, RectTransform buttonRect)
         {
+            _cachedCompleteButtonRect = buttonRect;
+        }
+
+        public async void StartCurrentStep(Vector3 leftItemPos, Vector3 rightItemPos)
+        {
+            await Task.Yield();
+        
             if (_saveData.CurrentStep == TutorialStep.NotStarted)
             {
                 _saveData.CurrentStep = TutorialStep.MergeItems;
             }
-
+        
             ProcessStep(leftItemPos, rightItemPos);
         }
-
-        private void ProcessStep(Vector3 leftItemPos = default, Vector3 rightItemPos = default)
+        
+        private async void ProcessStep(Vector3 leftItemPos = default, Vector3 rightItemPos = default)
         {
             switch (_saveData.CurrentStep)
             {
                 case TutorialStep.MergeItems:
-                    _tutorialUI.HighlightGridCells(leftItemPos, rightItemPos);
+                    _tutorialUI.HighlightGridCells(leftItemPos, rightItemPos, _cellSize);
                     _tutorialUI.PlayHandAnimation(leftItemPos, rightItemPos);
                     break;
                 
                 case TutorialStep.CompleteOrder:
-                    _tutorialUI.HighlightOrderCompleteButton();
+                    while (_cachedCompleteButtonRect == null || !_cachedCompleteButtonRect.gameObject.activeInHierarchy)
+                    {
+                        await Task.Yield();
+                    }
+                    await Task.Delay(150); 
+        
+                    _tutorialUI.HighlightOrderCompleteButton(_cachedCompleteButtonRect);
                     break;
                 
                 case TutorialStep.ShowCoreLoop:
@@ -63,7 +88,7 @@ namespace Core.Tutorial
             }
         }
 
-        private void HandleItemMerged(Vector2Int from, Vector2Int to, ItemData item)
+        private void HandleItemMerged(Vector2Int vector2Int, IGridItem item)
         {
             if (_saveData.CurrentStep == TutorialStep.MergeItems)
             {
@@ -85,7 +110,7 @@ namespace Core.Tutorial
 
         private async void ShowCoreLoopWithDelay()
         {
-            await Task.Delay(2000);
+            await Task.Delay(1000);
             ProcessStep();
         }
 
@@ -93,13 +118,13 @@ namespace Core.Tutorial
         {
             _saveData.CurrentStep = TutorialStep.Completed;
             
-            _gridModel.OnItemSpawned -= HandleItemMerged;
+            _gridModel.OnItemPlaced -= HandleItemMerged;
             _orderDataModel.OnOrderCompleted -= HandleOrderCompleted;
         }
 
         public void Dispose()
         {
-            _gridModel.OnItemSpawned -= HandleItemMerged;
+            _gridModel.OnItemPlaced -= HandleItemMerged;
             _orderDataModel.OnOrderCompleted -= HandleOrderCompleted;
         }
     }

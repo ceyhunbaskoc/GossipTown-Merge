@@ -22,6 +22,7 @@ namespace UI.Orders
         [SerializeField] private Color _defaultBackgroundColor; 
         [SerializeField] private AnimatedLayoutElement _animatedLayoutElement; 
         public AnimatedLayoutElement AnimatedLayoutElement => _animatedLayoutElement;
+        public RectTransform CompleteButtonRect => (RectTransform)_completeButton.transform;
         
         public event Action OnCompleteClicked;
         public event Action<string, int> OnItemDetailRequested;

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Core;
+using UnityEngine;
 using Core.GridSystem;
 using Core.Views;
 
@@ -13,14 +14,16 @@ namespace UI.Hints
         {
             StopHintAnimation();
 
-            if (item1 is MonoBehaviour v1 && v1.TryGetComponent(out _item1Visualizer))
+            if (item1 is MonoBehaviour v1 && v1.TryGetComponent(out DraggableItem drag1))
             {
-                _item1Visualizer.PlayHintPulse();
+                _item1Visualizer = drag1.Visualizer;
+                _item1Visualizer?.PlayHintPulse();
             }
 
-            if (item2 is MonoBehaviour v2 && v2.TryGetComponent(out _item2Visualizer))
+            if (item2 is MonoBehaviour v2 && v2.TryGetComponent(out DraggableItem drag2))
             {
-                _item2Visualizer.PlayHintPulse();
+                _item2Visualizer = drag2.Visualizer;
+                _item2Visualizer?.PlayHintPulse();
             }
         }
 

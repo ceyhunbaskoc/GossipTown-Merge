@@ -14,5 +14,9 @@ namespace Data
         [field: SerializeField, Min(1)] public int BackpackHeight { get; private set; } = 8;
         [field: SerializeField] public List<CellSetupData> InitialCells { get; private set; }
         [field: SerializeField] public List<CellSetupData> BackpackCells { get; private set; }
+        
+        [Header("Tutorial Settings")]
+        public Vector2Int TutorialItem1Position = new Vector2Int(-1, -1);
+        public Vector2Int TutorialItem2Position = new Vector2Int(-1, -1);
     }
 }

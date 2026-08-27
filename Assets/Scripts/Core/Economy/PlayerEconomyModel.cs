@@ -7,6 +7,8 @@ namespace Core.Economy
         int Energy { get; }
         int Gems { get; }
         int Golds { get; }
+        int EnergyRegenerationTrigger { get; }
+        bool CanEnergyRegeneration { get; }
         event Action<int> OnEnergyChanged;
         event Action<int> OnGoldChanged;
         event Action<int> OnGemChanged;
@@ -32,6 +34,9 @@ namespace Core.Economy
         public int Energy { get; private set; }
         public int Golds { get; private set; }
         public int Gems { get; private set; }
+        
+        public int EnergyRegenerationTrigger { get; private set; }
+        public bool CanEnergyRegeneration => Energy < EnergyRegenerationTrigger;
 
         public event Action<int> OnEnergyChanged;
         public event Action<int> OnGoldChanged;
@@ -41,11 +46,12 @@ namespace Core.Economy
         public event Action<int> OnGoldSpend;
         public event Action<int> OnGemSpend;
 
-        public PlayerEconomyModel(int startingEnergy, int startingGem, int startingGold)
+        public PlayerEconomyModel(int startingEnergy, int startingGem, int startingGold, int energyRegenerationTrigger)
         {
             Energy = startingEnergy;
             Gems = startingGem;
             Golds = startingGold;
+            EnergyRegenerationTrigger = energyRegenerationTrigger;
         }
 
         public bool TrySpendEnergy(int amount)

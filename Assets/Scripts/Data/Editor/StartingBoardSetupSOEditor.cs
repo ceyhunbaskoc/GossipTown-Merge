@@ -11,8 +11,10 @@ namespace Data.Editor
         
         private Vector2Int _selectedBoardPos = new Vector2Int(-1, -1);
         private Vector2Int _selectedBackpackPos = new Vector2Int(-1, -1);
+        
         private bool _showBoardEditor = true;
         private bool _showBackpackEditor = true;
+        private bool _showTutorialEditor = true;
 
         private void OnEnable()
         {
@@ -29,6 +31,24 @@ namespace Data.Editor
             EditorGUILayout.PropertyField(serializedObject.FindProperty("<BoardHeight>k__BackingField"), new GUIContent("Board Height"));
             EditorGUILayout.PropertyField(serializedObject.FindProperty("<BackpackWidth>k__BackingField"), new GUIContent("Backpack Width"));
             EditorGUILayout.PropertyField(serializedObject.FindProperty("<BackpackHeight>k__BackingField"), new GUIContent("Backpack Height"));
+            
+            EditorGUILayout.Space(10);
+            DrawSeparator();
+
+            _showTutorialEditor = EditorGUILayout.Foldout(_showTutorialEditor, "Tutorial Setup", true, EditorStyles.foldoutHeader);
+            if (_showTutorialEditor)
+            {
+                EditorGUILayout.BeginVertical(GUI.skin.box);
+                EditorGUILayout.HelpBox("Select the grid coordinates for the two items that will be merged in the tutorial.", MessageType.Info);
+                
+                SerializedProperty tut1Prop = serializedObject.FindProperty("TutorialItem1Position");
+                SerializedProperty tut2Prop = serializedObject.FindProperty("TutorialItem2Position");
+                
+                if(tut1Prop != null) EditorGUILayout.PropertyField(tut1Prop, new GUIContent("First Item Position"));
+                if(tut2Prop != null) EditorGUILayout.PropertyField(tut2Prop, new GUIContent("Second Item Position"));
+                EditorGUILayout.EndVertical();
+            }
+            
             serializedObject.ApplyModifiedProperties();
 
             EditorGUILayout.Space(10);
@@ -37,7 +57,7 @@ namespace Data.Editor
             _showBoardEditor = EditorGUILayout.Foldout(_showBoardEditor, "Main Board Editor", true, EditorStyles.foldoutHeader);
             if (_showBoardEditor)
             {
-                DrawGrid(_targetSO.BoardWidth, _targetSO.BoardHeight, _targetSO.InitialCells, ref _selectedBoardPos);
+                DrawGrid(_targetSO.BoardWidth, _targetSO.BoardHeight, _targetSO.InitialCells, ref _selectedBoardPos, true);
                 DrawCellInspector(_targetSO.InitialCells, _selectedBoardPos, "Main Board Cell");
             }
 
@@ -46,7 +66,7 @@ namespace Data.Editor
             _showBackpackEditor = EditorGUILayout.Foldout(_showBackpackEditor, "Backpack Editor", true, EditorStyles.foldoutHeader);
             if (_showBackpackEditor)
             {
-                DrawGrid(_targetSO.BackpackWidth, _targetSO.BackpackHeight, _targetSO.BackpackCells, ref _selectedBackpackPos);
+                DrawGrid(_targetSO.BackpackWidth, _targetSO.BackpackHeight, _targetSO.BackpackCells, ref _selectedBackpackPos, false);
                 DrawCellInspector(_targetSO.BackpackCells, _selectedBackpackPos, "Backpack Cell");
             }
             
@@ -56,7 +76,7 @@ namespace Data.Editor
             }
         }
 
-        private void DrawGrid(int width, int height, List<CellSetupData> dataList, ref Vector2Int selectedPos)
+        private void DrawGrid(int width, int height, List<CellSetupData> dataList, ref Vector2Int selectedPos, bool isMainBoard)
         {
             EditorGUILayout.BeginVertical(GUI.skin.box);
             
@@ -70,12 +90,17 @@ namespace Data.Editor
                     Vector2Int currentPos = new Vector2Int(x, y);
                     CellSetupData cellData = GetCellData(dataList, currentPos);
                     
+                    bool isTutorialCell = isMainBoard && (currentPos == _targetSO.TutorialItem1Position || currentPos == _targetSO.TutorialItem2Position);
+                    
                     Color originalColor = GUI.backgroundColor;
+                    
                     if (currentPos == selectedPos) GUI.backgroundColor = Color.yellow;
+                    else if (isTutorialCell && cellData.ItemDef != null) GUI.backgroundColor = Color.cyan;
                     else if (cellData.IsLocked) GUI.backgroundColor = new Color(0.8f, 0.3f, 0.3f);
                     else if (cellData.ItemDef != null) GUI.backgroundColor = new Color(0.3f, 0.8f, 0.3f);
                     
-                    string buttonText = cellData.ItemDef != null ? "I" : (cellData.IsLocked ? "L" : ".");
+                    string buttonText = cellData.ItemDef != null ? (isTutorialCell ? "T" : "I") : (cellData.IsLocked ? "L" : ".");
+                    
                     if (GUILayout.Button(buttonText, GUILayout.Width(35), GUILayout.Height(35)))
                     {
                         selectedPos = selectedPos == currentPos ? new Vector2Int(-1, -1) : currentPos;

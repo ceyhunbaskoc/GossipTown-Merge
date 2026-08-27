@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrencyA: 3
   CurrencyB: 1
-  ForwardCostAmount: 10
-  ForwardRewardAmount: 50
-  ReverseCostAmount: 50
-  ReverseRewardAmount: 10
+  ForwardCostAmount: 5
+  ForwardRewardAmount: 25
+  ReverseCostAmount: 25
+  ReverseRewardAmount: 5

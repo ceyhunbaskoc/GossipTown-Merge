@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Core.GridSystem;
 using Core.Reward;
-using Data; // ItemIdentifier için
+using Data;
 using UnityEngine;
 
 namespace Core.Services

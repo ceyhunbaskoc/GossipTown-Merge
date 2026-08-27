@@ -6,6 +6,7 @@ using Core.Controllers;
 using Core.Discovery;
 using Core.Economy;
 using Core.Economy.Exchange;
+using Core.Economy.Offers;
 using Core.Economy.Purchasing;
 using Core.Economy.Shop;
 using Core.Factories;
@@ -26,6 +27,7 @@ using Core.Services;
 using Core.Settings;
 using Core.StateMachine.States;
 using Core.Story;
+using Core.Tutorial;
 using Core.Views;
 using Data;
 using Data.Economy.Shop;
@@ -37,6 +39,7 @@ using Data.Quests;
 using Data.Reward;
 using Data.Roadmap;
 using Data.Story;
+using Data.Tutorial;
 using Data.UI;
 using Order;
 using UI;
@@ -59,6 +62,7 @@ using UI.Rewards;
 using UI.Settings;
 using UI.Spawner;
 using UI.Story;
+using UI.Tutorial;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -92,8 +96,12 @@ namespace Core.Bootstrap
         [SerializeField] private ItemDetailEventChannelSO _itemDetailEventChannel;
         [SerializeField] private ItemDetailEventChannelSO _spawnerDetailEventChannel;
         
-        [Header("Starting Board Data")]
+        [Header("Starting Data")]
         [SerializeField] private StartingBoardSetupSO _currentStartingBoardData;
+        
+        [Header("Tutorial System")]
+        [SerializeField] private StartingOrderSetupSO _startingOrderSetup;
+        [SerializeField] private TutorialUIView _tutorialUIView;
 
         [Header("Controllers")]
         [SerializeField] private MainBoardController _mainBoardController;
@@ -134,6 +142,10 @@ namespace Core.Bootstrap
         [SerializeField] private ShopAdUIPresenter _shopAdUIPresenter;
         [SerializeField] private ItemDetailPanelView _itemDetailPanelView;
         [SerializeField] private SpawnerDetailPanelView _spawnerDetailPanelView;
+        [SerializeField] private BuildingUpgradeReadyButtonPresenter _buildingUpgradeReadyButtonPresenter;
+        [SerializeField] private FreeSpawnerRefillPanelPresenter _freeSpawnerRefillPanelPresenter;
+        [SerializeField] private FreeEnergyRefillPanelPresenter _freeEnergyRefillPanelPresenter;
+        [SerializeField] private EnergyTimerHUDView _energyTimerHUDView;
 
         [SerializeField] private GlobalInputBlockerView _globalInputBlockerView;
         
@@ -188,6 +200,14 @@ namespace Core.Bootstrap
         private AdShopService _adShopService;
         private ItemDetailPanelPresenter _itemDetailPanelPresenter;
         private SpawnerDetailPanelPresenter _spawnerDetailPanelPresenter;
+        private TutorialOrchestrator _tutorialOrchestrator;
+        private FreeEnergyRefillService _freeEnergyRefillService;
+        private EnergyRegenerationService _energyRegenerationService;
+        
+        private OrderWaveController _waveController;
+        private OrderGenerationService _orderGenerator;
+        private RewardDispatcherService _rewardDispatcher;
+        private RewardSelectionService _rewardSelectionService;
 
         private Camera _mainCamera;
 
@@ -222,18 +242,30 @@ namespace Core.Bootstrap
             }
             else
             {
-                startEnergy = 100;
-                startGem = 20;
-                startGold = 10;
+                startEnergy = 15;
+                startGem = 5;
+                startGold = 0;
             }
-            
-            
-            _economyModel = new PlayerEconomyModel(startEnergy, startGem, startGold);
+            _economyModel = new PlayerEconomyModel(startEnergy, startGem, startGold, 100);
+
+            long savedEnergyTicks = savedData != null ? savedData.EnergyTargetTimeTicks : 0;
+            _energyRegenerationService = new EnergyRegenerationService(
+                _economyModel, 
+                _economyModel, 
+                _timeManager, 
+                120,
+                savedEnergyTicks
+            );
+            _energyTimerHUDView.Initialize(_energyRegenerationService, _economyModel);
             
             _gridModel = new GridDataModel(_gridWidth, _gridHeight);
             _backpackGridModel = new GridDataModel(4, 8);
 
-            
+            _orderDataModel = new OrderDataModel();
+            if (savedData != null && savedData.Orders != null && savedData.Orders.Count > 0)
+            {
+                _orderDataModel.LoadSaveData(savedData.Orders);
+            }
 
             SettingsSaveData settingsSaveData = savedData != null ? savedData.SettingsData : null;
             _settingsService = new SettingsService(_audioMixer, settingsSaveData);
@@ -283,12 +315,34 @@ namespace Core.Bootstrap
             _itemInfoPanelController.Initialize(boardSelectionService, _gridModel);
 
             _chestRewardHandler.Initialize(boardSelectionService, chestInteractionService, warningMessageService);
-            _spawnerRestingHandler.Initialize(boardSelectionService);
 
             MergeVFXOrchestrator mergeVFXOrchestrator = new MergeVFXOrchestrator(_objectPoolManager);
-            _mainBoardController.InitializeMainBoard(_gridModel, mergeService, interactionService, boardTransferService, boardSelectionService, warningMessageService, _collectibleCollectOrchestrator, _currencyFlightService ,_itemDatabase, mergeVFXOrchestrator, _gridWidth, _gridHeight, _cellSize);
             
-            _backpackDropZone.Initialize(boardTransferService, _mainBoardController, warningMessageService);
+            TutorialSaveData tutorialSaveData = savedData != null ? savedData.TutorialData : new TutorialSaveData();
+            
+            _tutorialOrchestrator = new TutorialOrchestrator(
+                tutorialSaveData, 
+                _gridModel, 
+                _orderDataModel, 
+                _tutorialUIView,
+                _orderUIManager,
+                _cellSize
+            );
+            
+            SpawnerRestingService spawnerRestingService =
+                new SpawnerRestingService(_itemDatabase, _economyModel, _adService);
+
+            IFirstTimeOfferService firstTimeOfferService =
+                new FirstTimeOfferService(tutorialSaveData, _tutorialOrchestrator, AutoSave);
+            
+            _spawnerRestingHandler.Initialize(boardSelectionService, spawnerRestingService, warningMessageService, firstTimeOfferService, _freeSpawnerRefillPanelPresenter);
+            
+            _freeEnergyRefillService = new FreeEnergyRefillService(_economyModel, _freeEnergyRefillPanelPresenter, firstTimeOfferService, 20);
+
+            IMoveValidator moveValidator= new MoveValidator(_tutorialOrchestrator, _currentStartingBoardData);
+            _mainBoardController.InitializeMainBoard(_gridModel, mergeService, interactionService, boardTransferService, boardSelectionService, warningMessageService, _collectibleCollectOrchestrator, _currencyFlightService ,_itemDatabase, mergeVFXOrchestrator, moveValidator, _gridWidth, _gridHeight, _cellSize);
+            
+            _backpackDropZone.Initialize(boardTransferService, _mainBoardController, warningMessageService, moveValidator);
             
             _boardSelectionVisualizer.Initialize(boardSelectionService, _mainBoardController);
 
@@ -309,7 +363,6 @@ namespace Core.Bootstrap
 
             _hudManager.Initialize(_economyModel);
             
-            _orderDataModel = new OrderDataModel();
             _inventoryTracker = new BoardInventoryTracker(_gridModel, _orderDataModel);
             
             _fulfillmentOrchestrator.Initialize(_mergeItemFactory);
@@ -317,6 +370,7 @@ namespace Core.Bootstrap
             IOrderFulfillmentService fulfillmentService = new OrderFulfillmentController(
                 _mainBoardController, 
                 _fulfillmentOrchestrator, 
+                
                 _orderDataModel, 
                 _economyModel,
                 _objectPoolManager
@@ -329,7 +383,7 @@ namespace Core.Bootstrap
                 new ScarcityWeightedSelectionStrategy();
 
             DampedExponentialPricingStrategy orderPricingStrategy = new DampedExponentialPricingStrategy();
-            OrderGenerationService orderGenerator = new OrderGenerationService(
+            _orderGenerator = new OrderGenerationService(
                 _itemDiscoveryModel,
                 _itemDatabase, 
                 _orderDataModel,
@@ -343,14 +397,14 @@ namespace Core.Bootstrap
             {
                 _pendingRewardModel.LoadSaveData(savedData.PendingRewards); 
             }
-            RewardDispatcherService rewardDispatcher = new RewardDispatcherService(_pendingRewardModel, _economyModel, _levelService);
-            RewardSelectionService rewardSelectionService =
+            _rewardDispatcher = new RewardDispatcherService(_pendingRewardModel, _economyModel, _levelService);
+            _rewardSelectionService =
                 new RewardSelectionService(_gridModel, _rewardSelectionConfig, _itemDiscoveryModel, _itemDatabase);
             
             _milestoneTracker = new OrderMilestoneTracker(
                 _orderDataModel, 
-                rewardDispatcher, 
-                rewardSelectionService,
+                _rewardDispatcher, 
+                _rewardSelectionService,
                 seriesGoal: 5
             );
             
@@ -359,13 +413,13 @@ namespace Core.Bootstrap
                 _milestoneTracker.LoadSaveData(savedData.MilestoneData); 
             }
             
-            _levelRewardService = new LevelRewardService(_levelService, _levelRewardSettings, rewardDispatcher);
+            _levelRewardService = new LevelRewardService(_levelService, _levelRewardSettings, _rewardDispatcher);
 
             DynamicWaveRewardCalculator dynamicWaveRewardCalculator = new DynamicWaveRewardCalculator();
 
-            OrderWaveController waveController = new OrderWaveController(
+            _waveController = new OrderWaveController(
                 _orderDataModel, 
-                orderGenerator, 
+                _orderGenerator, 
                 dynamicWaveRewardCalculator,
                 _levelService,
                 minOrdersPerWave: 1, 
@@ -383,15 +437,27 @@ namespace Core.Bootstrap
             _rewardPresentationManager.Initialize(_pendingRewardModel, _objectPoolManager, _itemDatabase, _stateController.StateMachine);
             _rewardQueueView.Initialize(_pendingRewardModel, _rewardPlacementController, _itemDatabase, warningMessageService);
 
-            if (savedData != null && savedData.Orders != null && savedData.Orders.Count > 0)
+            if (!_tutorialOrchestrator.IsCompleted)
             {
-                _orderDataModel.LoadSaveData(savedData.Orders);
+                if (_orderDataModel.ActiveOrderCount == 0)
+                {
+                    OrderModel tutorialOrder = _startingOrderSetup.CreateTutorialOrder();
+                    _orderDataModel.TryCreateOrder(tutorialOrder);
+                }
+                Vector3 leftItemPos = _mainBoardController.GridToWorldPosition(_currentStartingBoardData.TutorialItem1Position);
+                Vector3 rightItemPos = _mainBoardController.GridToWorldPosition(_currentStartingBoardData.TutorialItem2Position);
+                
+                _tutorialOrchestrator.StartCurrentStep(leftItemPos, rightItemPos);
             }
             else
             {
-                waveController.GenerateNewWave();
+                if (_orderDataModel.ActiveOrderCount == 0)
+                {
+                    _waveController.GenerateNewWave();
+                }
             }
-            _idleMonitorService = new IdleMonitorService(idleThresholdSeconds: 5f);
+            
+            _idleMonitorService = new IdleMonitorService(idleThresholdSeconds: 2.5f);
             MergeHintService hintService = new MergeHintService(_gridModel, _itemDatabase);
 
             _idleHintController = new IdleHintController(
@@ -425,7 +491,7 @@ namespace Core.Bootstrap
                 _roadmapProgressionService.LoadSaveData(savedData.RoadmapData);
             }
 
-            _roadmapRewardIntegrator = new RoadmapRewardIntegrator(_roadmapProgressionService, rewardDispatcher, _economyModel, rewardSelectionService, _roadmapDatabase);
+            _roadmapRewardIntegrator = new RoadmapRewardIntegrator(_roadmapProgressionService, _rewardDispatcher, _economyModel, _rewardSelectionService, _roadmapDatabase);
 
             _buildingUpgradePresenter.Initialize(_roadmapProgressionService, _economyModel, inputLockService, _objectPoolManager, _globalRewardIconDatabase);
             Sprite unBuildSprite = _roadmapDatabase.UnBuildSprite;
@@ -455,16 +521,16 @@ namespace Core.Bootstrap
             _mapCameraController.Initialize(inputLockService);
             
             MilestoneSaveData milestoneLoginSaveData = savedData != null ? savedData.DailyLoginMilestoneData : null;
-            _milestoneServiceLogin = new MilestoneService(_milestoneLoginConfig, rewardDispatcher, milestoneLoginSaveData);
+            _milestoneServiceLogin = new MilestoneService(_milestoneLoginConfig, _rewardDispatcher, milestoneLoginSaveData);
             
             _milestoneLoginProgressBarPresenter.Initialize(_milestoneServiceLogin, _globalRewardIconDatabase);
             
             MilestoneSaveData milestoneQuestSaveData = savedData != null ? savedData.WeeklyQuestMilestoneData : null;
-            _milestoneServiceQuest = new MilestoneService(_milestoneQuestConfig, rewardDispatcher, milestoneQuestSaveData);
+            _milestoneServiceQuest = new MilestoneService(_milestoneQuestConfig, _rewardDispatcher, milestoneQuestSaveData);
             
             _milestoneQuestProgressBarPresenter.Initialize(_milestoneServiceQuest, _globalRewardIconDatabase);
             
-            _weeklyQuestService = new WeeklyQuestService(_weeklyQuestDatabase, rewardDispatcher, rewardSelectionService,_economyModel, _timeManager, _milestoneServiceQuest);
+            _weeklyQuestService = new WeeklyQuestService(_weeklyQuestDatabase, _rewardDispatcher, _rewardSelectionService,_economyModel, _timeManager, _milestoneServiceQuest);
 
             if (savedData != null && savedData.WeeklyQuests != null)
             {
@@ -483,7 +549,7 @@ namespace Core.Bootstrap
             _boardBackdropView.Initialize(boardSelectionService);
             
             DailyLoginSaveData loginSaveData = savedData != null ? savedData.DailyLoginData : null;
-            _dailyLoginService = new DailyLoginService(_dailyLoginConfig, rewardDispatcher, _timeManager, loginSaveData, _milestoneServiceLogin, rewardSelectionService);
+            _dailyLoginService = new DailyLoginService(_dailyLoginConfig, _rewardDispatcher, _timeManager, loginSaveData, _milestoneServiceLogin, _rewardSelectionService);
             
             _dailyLoginPanelPresenter.Initialize(_dailyLoginService, _dailyLoginConfig, inputLockService, _currencyFlightService);
 
@@ -501,6 +567,8 @@ namespace Core.Bootstrap
 
             _itemDetailPanelPresenter = new ItemDetailPanelPresenter(_itemDetailEventChannel, _spawnerDetailEventChannel, _itemDetailPanelView, _itemDatabase, _objectPoolManager, _itemDiscoveryModel);
             _spawnerDetailPanelPresenter = new SpawnerDetailPanelPresenter(_spawnerDetailEventChannel, _spawnerDetailPanelView, _itemDatabase, _objectPoolManager, _itemDiscoveryModel);
+            
+            _buildingUpgradeReadyButtonPresenter.Initialize(_roadmapProgressionService);
 
 
             _roadmapProgressionService.OnRewardSave += AutoSave;
@@ -545,7 +613,9 @@ namespace Core.Bootstrap
                 StoryData = _storyService.GetSaveData(),
                 LevelData = _levelService.GetSaveData(),
                 SettingsData = _settingsService.GetSaveData(),
-                AdShopData = _adShopService.GetSaveData() 
+                AdShopData = _adShopService.GetSaveData() ,
+                TutorialData = _tutorialOrchestrator.GetSaveData(),
+                EnergyTargetTimeTicks = _energyRegenerationService.TargetTimeTicks
             };
 
             SaveManager.SaveGame(currentSave);
@@ -575,6 +645,10 @@ namespace Core.Bootstrap
             _adService.Dispose();
             _itemDetailPanelPresenter.Dispose();
             _spawnerDetailPanelPresenter.Dispose();
+            _tutorialOrchestrator.Dispose();
+            _roadmapProgressionService.Dispose();
+            _freeEnergyRefillService.Dispose();
+            _energyRegenerationService.Dispose();
             _settingsService.OnSettingsChanged -= AutoSave;
             _roadmapProgressionService.OnRewardSave -= AutoSave;
             _roadmapUIController.OnNodeUpgradeVisualCompleted -= _roadmapRewardIntegrator.OnVisualUpgradeCompleted;

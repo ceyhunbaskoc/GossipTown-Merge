@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Core.GridSystem;
 using Core.PoolSystem;
 using Core.Services;
@@ -28,6 +29,8 @@ namespace UI.Orders
         private Dictionary<OrderModel, OrderCardPresenter> _activePresenters = new Dictionary<OrderModel, OrderCardPresenter>();
         
         private Dictionary<OrderModel, Sprite> _activeOrderSprites = new Dictionary<OrderModel, Sprite>();
+        
+        public event Action<OrderModel, RectTransform> OnOrderUIGenerated;
 
         public void Initialize(OrderDataModel orderDataModel, 
             IOrderFulfillmentService fulfillmentService, 
@@ -47,6 +50,11 @@ namespace UI.Orders
 
             _orderDataModel.OnOrderCreated += HandleOrderCreated;
             _orderDataModel.OnOrderCompleted += HandleOrderCompleted;
+            
+            foreach (var existingOrder in _orderDataModel.ActiveOrders)
+            {
+                HandleOrderCreated(existingOrder);
+            }
         }
 
         private void HandleOrderCreated(OrderModel newOrder)
@@ -78,6 +86,8 @@ namespace UI.Orders
 
             OrderCardPresenter presenter = new OrderCardPresenter(newOrder, viewInstance, _orderDataModel, _fulfillmentService, _itemDetailEventChannel);
             _activePresenters.Add(newOrder, presenter);
+            
+            OnOrderUIGenerated?.Invoke(newOrder, viewInstance.CompleteButtonRect);
         }
         
         private void HandleOrderCompleted(OrderModel completedOrder)
