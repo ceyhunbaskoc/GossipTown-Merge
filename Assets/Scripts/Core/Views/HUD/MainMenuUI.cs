@@ -1,5 +1,6 @@
 ﻿using System;
 using Core.Economy;
+using Core.Map;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,7 +12,9 @@ namespace Core.Views
         [SerializeField] 
         private GameObject _mainMenuUI;
         [SerializeField] 
-        private GameObject _mainMenuMap;
+        private ChunkManager _mainMenuChunkManager;
+        [SerializeField] 
+        private GameObject _buildingSlotsContainer;
         [SerializeField]
         private Button _playButton;
         
@@ -31,7 +34,8 @@ namespace Core.Views
         public void Show(bool show)
         {
             _mainMenuUI.SetActive(show);
-            _mainMenuMap.SetActive(show);
+            _mainMenuChunkManager.SetMapActive(show);
+            _buildingSlotsContainer.SetActive(show);
         }
 
         private void OnDestroy()

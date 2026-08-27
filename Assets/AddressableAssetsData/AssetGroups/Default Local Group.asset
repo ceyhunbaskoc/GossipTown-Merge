@@ -1,0 +1,148 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_GUID: a893d43571ae78f43b8e789441443440
+  m_SerializeEntries:
+  - m_GUID: 01bb756d74ade5146ba65c901e1388e2
+    m_Address: MapTile_4_2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 06a5b2c8099a46347bc31873fec9a0c7
+    m_Address: MapTile_0_3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0e45326cd1457474abfa137afec333e8
+    m_Address: MapTile_2_2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 26f45979216d87c4e8a29d9e3ed4846f
+    m_Address: MapTile_4_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 28df3db807beeca46b626b6d30c2be39
+    m_Address: MapTile_2_3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2b099fede2d634f4c803799bc391bb43
+    m_Address: MapTile_1_3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3e54c9af0439a4844a608c8839a447e6
+    m_Address: MapTile_2_4
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3f4009f7fd000a44995ef41c26f38c1f
+    m_Address: MapTile_1_4
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4403952d5279c4d45bb0f52a281175be
+    m_Address: MapTile_3_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 53330cb2867fad64ca96d93ff840ce1a
+    m_Address: MapTile_1_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 544542b499afaad42a65a4a4a4de1d0b
+    m_Address: MapTile_0_4
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5c9a47c70e8b3f0439e4012bcb988f47
+    m_Address: MapTile_4_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5fd536ec32d75084abd2e74faf189016
+    m_Address: MapTile_2_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6809d4fbe8775b94885dfcdaac1f4591
+    m_Address: MapTile_3_3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6ea95ab5496551f4d8b928b9d8ffc88f
+    m_Address: MapTile_0_2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 82d32042fdc4229488697e0d20e3d153
+    m_Address: MapTile_3_2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9eae568c1772f6048bf943a36cd611e6
+    m_Address: MapTile_3_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a49ee42ef6f5ee54da7d9adc0f057262
+    m_Address: MapTile_0_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c00ba4437a8112449b731f8b8b17609b
+    m_Address: MapTile_0_0
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c09d510c6a4b14a4ea22a98793cf993c
+    m_Address: MapTile_2_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d096eb3ab8f39a1448d62a375297b9fe
+    m_Address: MapTile_1_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d42acdd41a6c5af4ea17fe17fb7fe20e
+    m_Address: MapTile_4_4
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d841f4bd2204e974a8f6f0436cf9d016
+    m_Address: MapTile_1_2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ec17d91addc4a174aaa9c2803b54391d
+    m_Address: MapTile_4_3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f6edb31ea8ec43c42879f6ca29dccef3
+    m_Address: MapTile_3_4
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: ac4caa60df99cdc4b9628cf3ae1b64b6, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 9575ce6ea6601f94897a5a3677294442, type: 2}
+    - {fileID: 11400000, guid: c590d1a50da388e4db14e058ad8bf7e7, type: 2}

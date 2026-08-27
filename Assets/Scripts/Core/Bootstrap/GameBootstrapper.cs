@@ -15,6 +15,7 @@ using Core.Interaction;
 using Core.ItemDetail;
 using Core.LevelSystem;
 using Core.Login;
+using Core.Map;
 using Core.Milestones;
 using Core.Orchestration;
 using Core.PoolSystem;
@@ -158,6 +159,9 @@ namespace Core.Bootstrap
 
         [Header("Ad")] 
         [SerializeField] private string _adUnitId;
+
+        [Header("Map")] 
+        [SerializeField] private ChunkManager _chunkManager;
 
         // Core Models & Services
         private PlayerEconomyModel _economyModel;
@@ -520,6 +524,8 @@ namespace Core.Bootstrap
             
             _mapCameraController.Initialize(inputLockService);
             
+            _chunkManager.Initialize(_mapCameraController);
+            
             MilestoneSaveData milestoneLoginSaveData = savedData != null ? savedData.DailyLoginMilestoneData : null;
             _milestoneServiceLogin = new MilestoneService(_milestoneLoginConfig, _rewardDispatcher, milestoneLoginSaveData);
             
@@ -649,6 +655,7 @@ namespace Core.Bootstrap
             _roadmapProgressionService.Dispose();
             _freeEnergyRefillService.Dispose();
             _energyRegenerationService.Dispose();
+            _chunkManager.Dispose();
             _settingsService.OnSettingsChanged -= AutoSave;
             _roadmapProgressionService.OnRewardSave -= AutoSave;
             _roadmapUIController.OnNodeUpgradeVisualCompleted -= _roadmapRewardIntegrator.OnVisualUpgradeCompleted;
