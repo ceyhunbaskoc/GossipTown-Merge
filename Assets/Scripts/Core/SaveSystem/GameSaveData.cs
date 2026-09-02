@@ -19,8 +19,10 @@ namespace Core.SaveSystem
         NotStarted = 0,
         MergeItems = 1,
         CompleteOrder = 2,
-        ShowCoreLoop = 3,
-        Completed = 4
+        Backpack = 3,
+        BackToMainMenu = 4,
+        ShowCoreLoop = 5,
+        Completed = 6
     }
 
     [Serializable]

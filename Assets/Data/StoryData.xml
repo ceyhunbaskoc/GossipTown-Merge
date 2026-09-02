@@ -12,6 +12,8 @@
         <Line speaker="You" isPlayerSide="true" isPausePoint="true">Not for sale. Watch me bring this street back to life.</Line>
 
         <Line speaker="Leo" isPlayerSide="false" isPausePoint="false">Hey! If you're serious about fixing this place, my coffee machine is barely breathing.</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="false">Let me check the pressure valves. It's a simple thermodynamics problem.</Line>
+        <Line speaker="Leo" isPlayerSide="false" isPausePoint="false">Thermodynamics? I just thought it needed a good scrub!</Line>
         <Line speaker="You" isPlayerSide="true" isPausePoint="true">I'm on it. Let's merge some tools and get it running!</Line>
 
         <Line speaker="MayorThomas" isPlayerSide="false" isPausePoint="false">Hold on! You can't just start construction without proper municipal permits!</Line>
@@ -21,13 +23,17 @@
 
         <Line speaker="Max" isPlayerSide="false" isPausePoint="false">Delivery! Wow, the street is already looking a bit cleaner. Need me to run some orders?</Line>
         <Line speaker="You" isPlayerSide="true" isPausePoint="false">Exactly, Max. The more orders we complete, the more capital we generate.</Line>
+        <Line speaker="GrandpaJoe" isPlayerSide="false" isPausePoint="false">Make sure you track those logistics, kid. Efficient routing is key.</Line>
         <Line speaker="Max" isPlayerSide="false" isPausePoint="true">Consider it done! I'm the fastest courier in town.</Line>
 
         <Line speaker="Leo" isPlayerSide="false" isPausePoint="false">People are actually sitting at my tables again. I can't believe this.</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="false">We need to optimize the seating arrangement for maximum throughput.</Line>
+        <Line speaker="Leo" isPlayerSide="false" isPausePoint="false">Haha, just don't turn my cozy cafe into a factory assembly line!</Line>
         <Line speaker="You" isPlayerSide="true" isPausePoint="true">This is just the beginning. Let's upgrade the exterior next.</Line>
 
         <Line speaker="GrandpaJoe" isPlayerSide="false" isPausePoint="false">You did it. The first major milestone. The district is finally breathing again.</Line>
         <Line speaker="Isabella" isPlayerSide="false" isPausePoint="false">Beginner's luck. One decent building doesn't make a profitable district.</Line>
+        <Line speaker="GrandpaJoe" isPlayerSide="false" isPausePoint="false">Luck has nothing to do with solid structural integrity, Isabella.</Line>
         <Line speaker="You" isPlayerSide="true" isPausePoint="true">Then you better sit back and watch, Isabella.</Line>
     </Chapter>
 
@@ -35,25 +41,32 @@
     <Chapter id="ch_02" title="Chapter 2: Cultural Resistance">
         <Line speaker="Mia" isPlayerSide="false" isPausePoint="false">Excuse me? If you're the one fixing things up, my bakery roof is leaking right onto the dough.</Line>
         <Line speaker="You" isPlayerSide="true" isPausePoint="false">A bakery? Fresh bread is exactly what this street needs to attract more foot traffic.</Line>
+        <Line speaker="GrandpaJoe" isPlayerSide="false" isPausePoint="false">Water damage is no joke. Let's patch that up with industrial sealant.</Line>
         <Line speaker="Mia" isPlayerSide="false" isPausePoint="true">I have the recipes, you bring the tools. Let's do this!</Line>
 
         <Line speaker="MayorThomas" isPlayerSide="false" isPausePoint="false">I'm receiving noise complaints regarding your construction activities.</Line>
-        <Line speaker="You" isPlayerSide="true" isPausePoint="false">During legal working hours? That's impossible, Mayor.</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="false">During legal working hours? That's impossible, Mayor. Our decibel levels are compliant.</Line>
+        <Line speaker="GrandpaJoe" isPlayerSide="false" isPausePoint="false">Someone must be filing fake reports to slow us down.</Line>
         <Line speaker="MayorThomas" isPlayerSide="false" isPausePoint="true">Just... keep it down. The city council is watching.</Line>
 
         <Line speaker="Isabella" isPlayerSide="false" isPausePoint="false">I heard you're helping the bakery. I could just open a mega-supermarket across the street and crush her prices.</Line>
         <Line speaker="You" isPlayerSide="true" isPausePoint="false">People prefer quality and community over cheap, mass-produced junk.</Line>
+        <Line speaker="GrandpaJoe" isPlayerSide="false" isPausePoint="false">Corporate bread tastes like cardboard anyway.</Line>
         <Line speaker="Isabella" isPlayerSide="false" isPausePoint="true">We'll see what their wallets prefer.</Line>
 
         <Line speaker="Mia" isPlayerSide="false" isPausePoint="false">The new ovens are incredible! We just sold out of our morning batch.</Line>
         <Line speaker="Max" isPlayerSide="false" isPausePoint="false">And I've been delivering pastries to the uptown offices. Everyone is talking about this place!</Line>
+        <Line speaker="Leo" isPlayerSide="false" isPausePoint="false">My coffee sales have doubled thanks to those croissants, Mia!</Line>
         <Line speaker="You" isPlayerSide="true" isPausePoint="true">Great job, team. Let's keep the momentum going.</Line>
 
         <Line speaker="GrandpaJoe" isPlayerSide="false" isPausePoint="false">The valuation of the neighborhood just spiked. I haven't seen numbers like this since the 90s.</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="false">We are stabilizing the local economy block by block.</Line>
+        <Line speaker="GrandpaJoe" isPlayerSide="false" isPausePoint="false">It's a beautiful algorithm, kid. Hard work equals success.</Line>
         <Line speaker="You" isPlayerSide="true" isPausePoint="true">The higher the value, the harder it is for Isabella to buy us out.</Line>
 
         <Line speaker="Isabella" isPlayerSide="false" isPausePoint="false">I must admit, you are slightly more annoying than I anticipated.</Line>
         <Line speaker="MayorThomas" isPlayerSide="false" isPausePoint="false">Isabella, my investors are getting anxious. You said this would be a quick acquisition!</Line>
+        <Line speaker="Isabella" isPlayerSide="false" isPausePoint="false">Keep your investors in line, Thomas. I will handle these amateurs.</Line>
         <Line speaker="You" isPlayerSide="true" isPausePoint="true">Looks like your little alliance is cracking. Better get used to losing.</Line>
     </Chapter>
 
@@ -61,46 +74,64 @@
     <Chapter id="ch_03" title="Chapter 3: Blossoming Economy">
         <Line speaker="Lily" isPlayerSide="false" isPausePoint="false">Hi there... I was wondering if you could help me too. My flower shop's greenhouse is completely shattered.</Line>
         <Line speaker="You" isPlayerSide="true" isPausePoint="false">A greenhouse requires precise climate control systems. I can engineer that for you.</Line>
+        <Line speaker="GrandpaJoe" isPlayerSide="false" isPausePoint="false">We'll need to calibrate the humidity sensors properly.</Line>
         <Line speaker="Lily" isPlayerSide="false" isPausePoint="true">Oh, thank you! The street needs some color and life.</Line>
 
         <Line speaker="Isabella" isPlayerSide="false" isPausePoint="false">Flowers? Really? You are trying to fight a multi-million dollar corporate takeover with daisies?</Line>
-        <Line speaker="You" isPlayerSide="true" isPausePoint="true">It's about the ecosystem, Isabella. Aesthetics drive customer retention.</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="false">It's about the ecosystem, Isabella. Aesthetics drive customer retention.</Line>
+        <Line speaker="Isabella" isPlayerSide="false" isPausePoint="false">Aesthetics don't pay property taxes. My malls do.</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="true">Watch the foot traffic metrics over the next week. You'll be surprised.</Line>
 
         <Line speaker="Max" isPlayerSide="false" isPausePoint="false">I can barely keep up with the deliveries! Coffee, pastries, and now floral arrangements!</Line>
         <Line speaker="Leo" isPlayerSide="false" isPausePoint="false">We need to upgrade the delivery logistics. The grid is getting busy.</Line>
+        <Line speaker="GrandpaJoe" isPlayerSide="false" isPausePoint="false">A central dispatch hub should solve the routing latency.</Line>
         <Line speaker="You" isPlayerSide="true" isPausePoint="true">I'll handle the resource management. You guys focus on production.</Line>
 
         <Line speaker="MayorThomas" isPlayerSide="false" isPausePoint="false">I am sending a health and safety inspector. Your 'botanical experiment' might be a bio-hazard.</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="false">We use fully organic, closed-loop irrigation. There are no hazards.</Line>
+        <Line speaker="GrandpaJoe" isPlayerSide="false" isPausePoint="false">He's just fishing for an excuse to shut us down.</Line>
         <Line speaker="You" isPlayerSide="true" isPausePoint="true">Send whoever you want. Our systems are flawless.</Line>
 
         <Line speaker="Lily" isPlayerSide="false" isPausePoint="false">The inspector was actually impressed! He even bought a bouquet for his wife!</Line>
         <Line speaker="GrandpaJoe" isPlayerSide="false" isPausePoint="false">Haha! That's how you win them over. By being undeniably good.</Line>
+        <Line speaker="Leo" isPlayerSide="false" isPausePoint="false">And he grabbed a latte on the way out! The synergy is real.</Line>
         <Line speaker="You" isPlayerSide="true" isPausePoint="true">We are becoming a self-sustaining economy. This is perfect.</Line>
 
         <Line speaker="Isabella" isPlayerSide="false" isPausePoint="false">Fine. You've won the lower district. But the real real-estate war is just starting.</Line>
         <Line speaker="You" isPlayerSide="true" isPausePoint="false">We are not backing down. We are expanding.</Line>
-        <Line speaker="Isabella" isPlayerSide="false" isPausePoint="true">Bring it on. Let's see how you handle the heavy industry.</Line>
+        <Line speaker="Isabella" isPlayerSide="false" isPausePoint="false">My zoning lawyers are preparing a massive lawsuit. Be ready.</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="true">Bring it on. Let's see how you handle the heavy industry.</Line>
     </Chapter>
 
     <Chapter id="ch_04" title="Chapter 4: The Knowledge Hub">
         <Line speaker="Arthur" isPlayerSide="false" isPausePoint="false">Welcome. I am Arthur. Sadly, my bookstore is becoming a relic. People just don't value physical archives anymore.</Line>
         <Line speaker="You" isPlayerSide="true" isPausePoint="false">They don't value dust, Arthur. But they do value experience and community. We need to modernize your catalog.</Line>
-        <Line speaker="Arthur" isPlayerSide="false" isPausePoint="true">A digital inventory system paired with classic reading spaces? I like how your mind works.</Line>
+        <Line speaker="Arthur" isPlayerSide="false" isPausePoint="false">Modernize? Are you suggesting we digitize the entire inventory?</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="true">A digital inventory system paired with classic reading spaces. I like how your mind works.</Line>
 
         <Line speaker="Isabella" isPlayerSide="false" isPausePoint="false">A bookstore? How archaic. I was planning to bulldoze this block for a multi-level parking garage.</Line>
-        <Line speaker="You" isPlayerSide="true" isPausePoint="true">Knowledge is a high-yield asset, Isabella. A parking garage is just lazy real estate.</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="false">Knowledge is a high-yield asset, Isabella. A parking garage is just lazy real estate.</Line>
+        <Line speaker="Isabella" isPlayerSide="false" isPausePoint="false">Lazy, perhaps. But highly lucrative on a quarterly basis.</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="true">We measure success in generations, not financial quarters.</Line>
 
         <Line speaker="MayorThomas" isPlayerSide="false" isPausePoint="false">I must warn you, old paper is a severe fire hazard. I might have to revoke your operational license.</Line>
-        <Line speaker="You" isPlayerSide="true" isPausePoint="true">We are installing state-of-the-art thermal suppression systems as we speak, Mayor. Try another excuse.</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="false">We are installing state-of-the-art thermal suppression systems as we speak, Mayor.</Line>
+        <Line speaker="MayorThomas" isPlayerSide="false" isPausePoint="false">I will still require a full structural audit by Friday!</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="true">Try another excuse. The paperwork will be on your desk tomorrow morning.</Line>
 
         <Line speaker="Max" isPlayerSide="false" isPausePoint="false">Heavy delivery coming through! Books are way heavier than pastries, you know.</Line>
-        <Line speaker="You" isPlayerSide="true" isPausePoint="true">We are optimizing the supply chain, Max. Hang in there, the logistics will get smoother.</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="false">We are optimizing the supply chain, Max. I'm building a specialized cargo cart for you.</Line>
+        <Line speaker="Max" isPlayerSide="false" isPausePoint="false">A custom cargo cart? Now that's what I call an upgrade!</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="true">Hang in there, the logistics will get smoother.</Line>
 
         <Line speaker="Arthur" isPlayerSide="false" isPausePoint="false">The integration is flawless! We have students, researchers, and families all sharing this space.</Line>
-        <Line speaker="You" isPlayerSide="true" isPausePoint="true">Cultural valuation is up. We are anchoring the community here.</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="false">Cultural valuation is up. We are anchoring the community here.</Line>
+        <Line speaker="Arthur" isPlayerSide="false" isPausePoint="false">And the digital index makes finding obscure texts instantaneous!</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="true">Efficiency meets tradition. It's the perfect formula.</Line>
 
         <Line speaker="Isabella" isPlayerSide="false" isPausePoint="false">Fine, you saved a library. But sentimentality doesn't generate corporate revenue.</Line>
         <Line speaker="GrandpaJoe" isPlayerSide="false" isPausePoint="false">It generates loyalty, Isabella. Something your shareholders know nothing about.</Line>
+        <Line speaker="Isabella" isPlayerSide="false" isPausePoint="false">Loyalty can be bought, old man. It's just a matter of price.</Line>
         <Line speaker="You" isPlayerSide="true" isPausePoint="true">Let's keep expanding. We are building an unbreakable network.</Line>
     </Chapter>
 
@@ -108,22 +139,32 @@
     <Chapter id="ch_05" title="Chapter 5: Culinary Expansion">
         <Line speaker="Mario" isPlayerSide="false" isPausePoint="false">Mamma mia! My thermal ovens are losing heat efficiency. I cannot bake a proper pizza like this!</Line>
         <Line speaker="You" isPlayerSide="true" isPausePoint="false">Heat dissipation is a classic engineering problem, Mario. Let's rebuild your kitchen with high-grade materials.</Line>
-        <Line speaker="Mario" isPlayerSide="false" isPausePoint="true">If you can fix my kitchen, I will feed this entire street!</Line>
+        <Line speaker="Mario" isPlayerSide="false" isPausePoint="false">High-grade materials? Will it ruin the authentic brick oven flavor?</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="true">Not at all. If you can fix my kitchen, I will feed this entire street!</Line> <!-- Fixed the flow here to make sense for Mario's excitement -->
 
         <Line speaker="Isabella" isPlayerSide="false" isPausePoint="false">A local pizza joint? I can open ten fast-food franchises here by tomorrow and crush his margins.</Line>
-        <Line speaker="You" isPlayerSide="true" isPausePoint="true">Quality always scales better than cheap quantity. Your frozen dough can't compete with authentic craftsmanship.</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="false">Quality always scales better than cheap quantity.</Line>
+        <Line speaker="Isabella" isPlayerSide="false" isPausePoint="false">My supply chain economics suggest otherwise.</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="true">Your frozen dough can't compete with authentic craftsmanship.</Line>
 
         <Line speaker="MayorThomas" isPlayerSide="false" isPausePoint="false">The Board of Health requires strict ventilation standards for commercial kitchens.</Line>
-        <Line speaker="You" isPlayerSide="true" isPausePoint="true">Our new HVAC systems exceed city regulations by forty percent, Mayor. Check the data yourself.</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="false">Our new HVAC systems exceed city regulations by forty percent, Mayor.</Line>
+        <Line speaker="MayorThomas" isPlayerSide="false" isPausePoint="false">I'll have my experts analyze the airflow metrics.</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="true">Check the data yourself. The air is cleaner inside than out.</Line>
 
         <Line speaker="Max" isPlayerSide="false" isPausePoint="false">Hot pizza delivery protocol active! The new insulated thermal bags you designed are amazing!</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="false">They use a vacuum-seal layer to prevent thermal bleed.</Line>
+        <Line speaker="Max" isPlayerSide="false" isPausePoint="false">I don't know what that means, but the cheese stays perfectly melted!</Line>
         <Line speaker="You" isPlayerSide="true" isPausePoint="true">Delivery radius expanded. We are capturing the uptown market now.</Line>
 
         <Line speaker="Mario" isPlayerSide="false" isPausePoint="false">Bellissimo! The lines are out the door! Production efficiency is at maximum capacity!</Line>
-        <Line speaker="You" isPlayerSide="true" isPausePoint="true">Revenue streams are stabilizing. This block is practically self-funding now.</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="false">Revenue streams are stabilizing.</Line>
+        <Line speaker="Mario" isPlayerSide="false" isPausePoint="false">I need to hire more staff just to keep up with the dough prep!</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="true">This block is practically self-funding now.</Line>
 
         <Line speaker="Isabella" isPlayerSide="false" isPausePoint="false">This is a minor statistical anomaly. People will eventually go back to cheap convenience.</Line>
         <Line speaker="GrandpaJoe" isPlayerSide="false" isPausePoint="false">You clearly don't understand the power of a good slice of pizza, Isabella.</Line>
+        <Line speaker="Isabella" isPlayerSide="false" isPausePoint="false">I understand profit margins. And yours are highly volatile.</Line>
         <Line speaker="You" isPlayerSide="true" isPausePoint="true">The economic baseline of the street just shifted. We are winning.</Line>
     </Chapter>
 
@@ -131,44 +172,64 @@
     <Chapter id="ch_06" title="Chapter 6: Bespoke Manufacturing">
         <Line speaker="Sam" isPlayerSide="false" isPausePoint="false">Hey! I have all these designs for mechanical toys, but my old carving tools lack precision.</Line>
         <Line speaker="You" isPlayerSide="true" isPausePoint="false">We need to transition you from manual labor to automated precision. I'll set up some desktop fabrication units.</Line>
-        <Line speaker="Sam" isPlayerSide="false" isPausePoint="true">You mean like 3D printers and CNC machines? You're a genius!</Line>
+        <Line speaker="Sam" isPlayerSide="false" isPausePoint="false">You mean like 3D printers and CNC machines?</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="true">Exactly. You provide the blueprints, we provide the micro-tolerance hardware.</Line>
 
         <Line speaker="Isabella" isPlayerSide="false" isPausePoint="false">Manufacturing toys locally? Have you lost your mind? Mass production in overseas factories is the only profitable way.</Line>
-        <Line speaker="You" isPlayerSide="true" isPausePoint="true">We aren't doing mass production. We are doing bespoke, premium local manufacturing. It's a completely different market tier.</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="false">We aren't doing mass production. We are doing bespoke, premium local manufacturing.</Line>
+        <Line speaker="Isabella" isPlayerSide="false" isPausePoint="false">Premium local? The overhead costs will devour your profits.</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="true">It's a completely different market tier. People pay for precision and art.</Line>
 
         <Line speaker="MayorThomas" isPlayerSide="false" isPausePoint="false">Industrial machinery in a commercial zone? I will have to issue a zoning violation!</Line>
-        <Line speaker="You" isPlayerSide="true" isPausePoint="true">These are low-decibel, eco-friendly micro-fabricators, Mayor. Totally compliant with commercial zoning.</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="false">These are low-decibel, eco-friendly micro-fabricators, Mayor.</Line>
+        <Line speaker="MayorThomas" isPlayerSide="false" isPausePoint="false">They still qualify as manufacturing hardware under sub-section 4B!</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="true">They draw less power than a commercial espresso machine. Totally compliant.</Line>
 
         <Line speaker="Max" isPlayerSide="false" isPausePoint="false">These toys are incredible! I'm delivering them to collectors who are paying premium prices!</Line>
-        <Line speaker="You" isPlayerSide="true" isPausePoint="true">High-margin products. Exactly as calculated. Good job, Max.</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="false">High-margin products. Exactly as calculated.</Line>
+        <Line speaker="Max" isPlayerSide="false" isPausePoint="false">I even got a tip that was higher than the cost of the toy!</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="true">Good job, Max. Keep those supply routes flowing.</Line>
 
         <Line speaker="Sam" isPlayerSide="false" isPausePoint="false">Production output is up 300 percent, and the quality is flawless! The kids love them.</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="false">The automated calibration loop is working perfectly then.</Line>
+        <Line speaker="Sam" isPlayerSide="false" isPausePoint="false">It's beyond perfect. We are creating heirlooms, not just toys.</Line>
         <Line speaker="You" isPlayerSide="true" isPausePoint="true">We've officially proven that local innovation can beat corporate outsourcing.</Line>
 
         <Line speaker="Isabella" isPlayerSide="false" isPausePoint="false">This... this doesn't make financial sense. My algorithms predicted you would go bankrupt by now.</Line>
         <Line speaker="GrandpaJoe" isPlayerSide="false" isPausePoint="false">Algorithms can't predict passion, Isabella. You're losing the neighborhood.</Line>
+        <Line speaker="Isabella" isPlayerSide="false" isPausePoint="false">I need to recalibrate my data models. This defies standard economics.</Line>
         <Line speaker="You" isPlayerSide="true" isPausePoint="true">We are just getting warmed up. The real upgrades are next.</Line>
     </Chapter>
 
     <Chapter id="ch_07" title="Chapter 7: Haute Couture">
         <Line speaker="Chole" isPlayerSide="false" isPausePoint="false">Darling, this street is getting crowded, but my boutique's supply chain is a disaster. I cannot weave fast enough.</Line>
         <Line speaker="You" isPlayerSide="true" isPausePoint="false">Manual weaving is a bottleneck, Chole. We need to integrate automated loom systems and smart inventory tracking.</Line>
-        <Line speaker="Chole" isPlayerSide="false" isPausePoint="true">Automated elegance? If you can maintain the fabric quality, I am completely on board.</Line>
+        <Line speaker="Chole" isPlayerSide="false" isPausePoint="false">Automated elegance? Can machinery truly replicate the human touch?</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="true">With the right algorithm, it can exceed it. If you can maintain the fabric quality, I am completely on board.</Line>
 
         <Line speaker="Isabella" isPlayerSide="false" isPausePoint="false">A high-end boutique in this neighborhood? I was going to replace this block with a fast-fashion outlet.</Line>
-        <Line speaker="You" isPlayerSide="true" isPausePoint="true">Fast fashion is environmentally toxic and economically fragile. We are building a sustainable premium brand.</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="false">Fast fashion is environmentally toxic and economically fragile.</Line>
+        <Line speaker="Isabella" isPlayerSide="false" isPausePoint="false">It has a turnaround time of two weeks. It prints money.</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="true">We are building a sustainable premium brand. Value over volume.</Line>
 
         <Line speaker="MayorThomas" isPlayerSide="false" isPausePoint="false">Textile manufacturing requires severe waste-water permits. I'm afraid I have to halt your operations.</Line>
-        <Line speaker="You" isPlayerSide="true" isPausePoint="true">Our new micro-factories operate on a closed-loop water recycling system, Mayor. Zero emissions. Nice try.</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="false">Our new micro-factories operate on a closed-loop water recycling system, Mayor.</Line>
+        <Line speaker="MayorThomas" isPlayerSide="false" isPausePoint="false">Closed-loop? I'll need environmental analysts to verify that.</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="true">Zero emissions. The data logs are open-source. Nice try.</Line>
 
         <Line speaker="Max" isPlayerSide="false" isPausePoint="false">These packages are so fancy! I feel like a VIP courier delivering these tailored suits across the city.</Line>
-        <Line speaker="You" isPlayerSide="true" isPausePoint="true">Brand presentation is key, Max. The delivery experience is part of the product valuation.</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="false">Brand presentation is key, Max.</Line>
+        <Line speaker="Max" isPlayerSide="false" isPausePoint="false">Even the boxes have a matte finish. Very sleek.</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="true">The delivery experience is part of the product valuation.</Line>
 
         <Line speaker="Chole" isPlayerSide="false" isPausePoint="false">Absolutely stunning! The upper-class clients are flocking here. We are setting the city's trends!</Line>
-        <Line speaker="You" isPlayerSide="true" isPausePoint="true">Our demographic reach has expanded to the elites. The district's net worth is skyrocketing.</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="false">Our demographic reach has expanded to the elites.</Line>
+        <Line speaker="Chole" isPlayerSide="false" isPausePoint="false">They are practically begging for our next seasonal line.</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="true">The district's net worth is skyrocketing.</Line>
 
         <Line speaker="Isabella" isPlayerSide="false" isPausePoint="false">My fast-fashion stock is plummeting. People are actually waiting in line for your boutique.</Line>
         <Line speaker="GrandpaJoe" isPlayerSide="false" isPausePoint="false">Quality craftsmanship outlasts cheap trends, Isabella. Always has, always will.</Line>
+        <Line speaker="Isabella" isPlayerSide="false" isPausePoint="false">This market is irrational. Consumers should follow the price drops.</Line>
         <Line speaker="You" isPlayerSide="true" isPausePoint="true">We control the cultural capital now. The real power plays are next.</Line>
     </Chapter>
 
@@ -176,22 +237,32 @@
     <Chapter id="ch_08" title="Chapter 8: The Silver Screen">
         <Line speaker="Victor" isPlayerSide="false" isPausePoint="false">The art of cinema is dying here. My projectors are ancient, and the acoustics are terrible.</Line>
         <Line speaker="You" isPlayerSide="true" isPausePoint="false">We don't just need new projectors, Victor. We need an acoustic engineering overhaul. Total immersion.</Line>
-        <Line speaker="Victor" isPlayerSide="false" isPausePoint="true">If you can engineer a flawless soundscape, I will bring the greatest independent films to this screen!</Line>
+        <Line speaker="Victor" isPlayerSide="false" isPausePoint="false">Can we achieve Dolby-level standards in a building this old?</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="true">If you can engineer a flawless soundscape, I will bring the greatest independent films to this screen!</Line>
 
         <Line speaker="Isabella" isPlayerSide="false" isPausePoint="false">An indie cinema? I already signed a contract for a corporate multiplex with thirty soulless screens.</Line>
-        <Line speaker="You" isPlayerSide="true" isPausePoint="true">Your multiplex offers noise. We are offering a curated cultural experience. We will siphon your audience.</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="false">Your multiplex offers noise. We are offering a curated cultural experience.</Line>
+        <Line speaker="Isabella" isPlayerSide="false" isPausePoint="false">We have neon lights and a massive arcade. Teenagers love it.</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="true">We will siphon your audience. Just watch.</Line>
 
         <Line speaker="MayorThomas" isPlayerSide="false" isPausePoint="false">Acoustic upgrades? That sounds like a noise pollution violation waiting to happen. I'm sending inspectors.</Line>
-        <Line speaker="You" isPlayerSide="true" isPausePoint="true">The theater is fitted with military-grade soundproofing foam. It's quieter outside than a library, Mayor.</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="false">The theater is fitted with military-grade soundproofing foam.</Line>
+        <Line speaker="MayorThomas" isPlayerSide="false" isPausePoint="false">Military-grade? Where did you even source that?</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="true">It's quieter outside than a library, Mayor. Your inspectors will hear nothing.</Line>
 
         <Line speaker="Max" isPlayerSide="false" isPausePoint="false">Delivering film reels and VIP premier tickets! The whole city wants a seat in Victor's theater.</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="false">The routing for physical ticket deliveries must be precise, Max.</Line>
+        <Line speaker="Max" isPlayerSide="false" isPausePoint="false">Don't worry, my scooter is essentially a rocket now.</Line>
         <Line speaker="You" isPlayerSide="true" isPausePoint="true">We've established a cultural monopoly. The entertainment sector is officially secured.</Line>
 
         <Line speaker="Victor" isPlayerSide="false" isPausePoint="false">Magnificent! The premiere was entirely sold out. The sound system you engineered is breathtaking.</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="false">The bass frequencies resonated exactly as the simulations predicted.</Line>
+        <Line speaker="Victor" isPlayerSide="false" isPausePoint="false">The critics are already calling us the city's new cinematic heart.</Line>
         <Line speaker="You" isPlayerSide="true" isPausePoint="true">We are drawing tourists to the district now. The economic loop is reinforcing itself.</Line>
 
         <Line speaker="Isabella" isPlayerSide="false" isPausePoint="false">This is impossible. My multiplex is empty. People are choosing your single screen over my empire.</Line>
         <Line speaker="GrandpaJoe" isPlayerSide="false" isPausePoint="false">Because this street has a soul, Isabella. And you can't buy that.</Line>
+        <Line speaker="Isabella" isPlayerSide="false" isPausePoint="false">Everything has a price tag. I just need to find yours.</Line>
         <Line speaker="You" isPlayerSide="true" isPausePoint="true">We are unstoppable now. Time to secure our digital infrastructure.</Line>
     </Chapter>
 
@@ -199,43 +270,60 @@
     <Chapter id="ch_09" title="Chapter 9: The Digital Frontier">
         <Line speaker="Zoe" isPlayerSide="false" isPausePoint="false">Hey! All these businesses are great, but the local grid can't handle the data traffic. We need a mesh network.</Line>
         <Line speaker="You" isPlayerSide="true" isPausePoint="false">A localized, decentralized server hub. I can design the hardware architecture if you write the protocols.</Line>
-        <Line speaker="Zoe" isPlayerSide="false" isPausePoint="true">Deal! We are going to turn this street into the smartest block in the city.</Line>
+        <Line speaker="Zoe" isPlayerSide="false" isPausePoint="false">I'll write a custom peer-to-peer encryption layer to keep our data safe.</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="true">Deal! We are going to turn this street into the smartest block in the city.</Line>
 
         <Line speaker="Isabella" isPlayerSide="false" isPausePoint="false">A localized network? No. I control the city's telecom infrastructure. You will route your data through my servers.</Line>
-        <Line speaker="You" isPlayerSide="true" isPausePoint="true">Not a chance. We are building an independent grid. Your data monopoly ends at our district borders.</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="false">Not a chance. We are building an independent grid.</Line>
+        <Line speaker="Isabella" isPlayerSide="false" isPausePoint="false">I can throttle your bandwidth from the mainline. Don't tempt me.</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="true">We use a dedicated fiber-optic backbone. Your data monopoly ends at our district borders.</Line>
 
         <Line speaker="MayorThomas" isPlayerSide="false" isPausePoint="false">Unauthorized data hubs? This is a cyber-security threat! I am ordering a complete shutdown of your network!</Line>
-        <Line speaker="You" isPlayerSide="true" isPausePoint="true">Our encryption protocols exceed federal standards. Unless you want a lawsuit for suppressing free enterprise, back off.</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="false">Our encryption protocols exceed federal standards.</Line>
+        <Line speaker="MayorThomas" isPlayerSide="false" isPausePoint="false">I cannot allow rogue data networks to operate under my jurisdiction!</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="true">Unless you want a lawsuit for suppressing free enterprise, back off.</Line>
 
         <Line speaker="Max" isPlayerSide="false" isPausePoint="false">Zoe updated my delivery app! The smart-routing algorithm just increased my delivery speed by forty percent!</Line>
-        <Line speaker="You" isPlayerSide="true" isPausePoint="true">System-wide efficiency. Every business on the street is now mathematically optimized.</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="false">System-wide efficiency. Every business on the street is now mathematically optimized.</Line>
+        <Line speaker="Max" isPlayerSide="false" isPausePoint="false">I'm taking corners so fast I barely have time to brake!</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="true">Just keep the merchandise intact, Max.</Line>
 
         <Line speaker="Zoe" isPlayerSide="false" isPausePoint="false">The servers are online and stable! The entire district is connected, lightning fast and completely secure.</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="false">Packet loss is at zero percent. The latency is practically non-existent.</Line>
+        <Line speaker="Zoe" isPlayerSide="false" isPausePoint="false">We just created a digital fortress, didn't we?</Line>
         <Line speaker="You" isPlayerSide="true" isPausePoint="true">We have achieved technological independence. The street is officially future-proof.</Line>
 
         <Line speaker="Isabella" isPlayerSide="false" isPausePoint="false">You've locked me out of the local grid. My surveillance and data mining operations here are blind.</Line>
         <Line speaker="GrandpaJoe" isPlayerSide="false" isPausePoint="false">You can't exploit what you can't see, Isabella. Checkmate.</Line>
+        <Line speaker="Isabella" isPlayerSide="false" isPausePoint="false">This is a highly illegal blackout. I'll have the FCC on you.</Line>
         <Line speaker="You" isPlayerSide="true" isPausePoint="true">The foundation is flawless. Now, it's time for the final acquisition.</Line>
     </Chapter>
 
     <Chapter id="ch_10" title="Chapter 10: The Crown Jewel">
         <Line speaker="Edward" isPlayerSide="false" isPausePoint="false">I have watched your progress with great interest. But my jewelry requires microscopic precision and a vault with unbreachable security.</Line>
-        <Line speaker="You" isPlayerSide="true" isPausePoint="false">We will integrate laser-guided engraving modules and a decentralized biometric security grid, Edward. Total perfection.</Line>
-        <Line speaker="Edward" isPlayerSide="false" isPausePoint="true">If you can deliver that level of engineering, my capital will anchor this entire district.</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="false">We will integrate laser-guided engraving modules and a decentralized biometric security grid, Edward.</Line>
+        <Line speaker="Edward" isPlayerSide="false" isPausePoint="false">Biometric security? Are you sure it can withstand a targeted breach?</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="true">Total perfection. If you can deliver that level of engineering, my capital will anchor this entire district.</Line>
 
         <Line speaker="Isabella" isPlayerSide="false" isPausePoint="false">Edward, be reasonable. I am offering you a blank check. Move your business to my new corporate plaza.</Line>
         <Line speaker="Edward" isPlayerSide="false" isPausePoint="false">Your plaza lacks soul, Isabella. This street has an ecosystem of brilliance. My answer is no.</Line>
+        <Line speaker="Isabella" isPlayerSide="false" isPausePoint="false">You are throwing away a guaranteed global distribution network!</Line>
         <Line speaker="You" isPlayerSide="true" isPausePoint="true">The district's integrity is not for sale. We generate our own wealth now.</Line>
 
         <Line speaker="MayorThomas" isPlayerSide="false" isPausePoint="false">A high-security vault in a commercial zone? I am initiating an emergency tax audit on all your businesses!</Line>
-        <Line speaker="You" isPlayerSide="true" isPausePoint="true">Our financial algorithms are transparent and flawless, Mayor. Audit us all you want, you will only find perfection.</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="false">Our financial algorithms are transparent and flawless, Mayor.</Line>
+        <Line speaker="MayorThomas" isPlayerSide="false" isPausePoint="false">We will see what the auditors say when they rip through your ledgers!</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="true">Audit us all you want, you will only find perfection.</Line>
 
         <Line speaker="Max" isPlayerSide="false" isPausePoint="false">Secured armored delivery protocols are active! I've never carried this much value in my life!</Line>
-        <Line speaker="You" isPlayerSide="true" isPausePoint="true">You are the arteries of this economy, Max. The physical assets are finally secured.</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="false">You are the arteries of this economy, Max.</Line>
+        <Line speaker="Max" isPlayerSide="false" isPausePoint="false">I feel like a secret agent. This is awesome!</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="true">The physical assets are finally secured.</Line>
 
         <Line speaker="Isabella" isPlayerSide="false" isPausePoint="false">My board of directors just called. The collective valuation of this street... it has surpassed my company's local assets.</Line>
         <Line speaker="You" isPlayerSide="true" isPausePoint="false">Hostile takeover denied, Isabella. The algorithms predicted you would win, but they couldn't calculate community.</Line>
-        <Line speaker="Isabella" isPlayerSide="false" isPausePoint="true">...You win. I am withdrawing my acquisition bids. This district is yours.</Line>
+        <Line speaker="Isabella" isPlayerSide="false" isPausePoint="false">The mathematics... they just don't add up.</Line>
+        <Line speaker="You" isPlayerSide="true" isPausePoint="true">...You win. I am withdrawing my acquisition bids. This district is yours.</Line>
 
         <Line speaker="MayorThomas" isPlayerSide="false" isPausePoint="false">Well, as the Mayor, I always knew this street had potential! I am officially declaring it a Protected Innovation Hub!</Line>
         <Line speaker="You" isPlayerSide="true" isPausePoint="false">Don't push your luck, Thomas. We built this, not you.</Line>

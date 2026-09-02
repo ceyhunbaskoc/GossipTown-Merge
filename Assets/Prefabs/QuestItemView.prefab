@@ -719,6 +719,7 @@ GameObject:
   - component: {fileID: 1226493380048460015}
   - component: {fileID: 8695397701671584477}
   - component: {fileID: 1068656874031038358}
+  - component: {fileID: -6743326508673715086}
   m_Layer: 5
   m_Name: button_claim_reward
   m_TagString: Untagged
@@ -828,6 +829,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &-6743326508673715086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7312986056976247470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed8817dad81747b0ba37faeedddf4c8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7681615555268009650
 GameObject:
   m_ObjectHideFlags: 0

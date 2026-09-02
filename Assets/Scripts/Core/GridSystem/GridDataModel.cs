@@ -125,19 +125,20 @@ namespace Core.GridSystem
         public bool TryUnlockLockedCells(Vector2Int position)
         {
             _cells[position.x, position.y].SetUnlocked();
+            
             List<Vector2Int> successfullyUnlocked = new List<Vector2Int> {position};
-
+            /*
             foreach (var dir in _directions)
             {
                 Vector2Int neighborPos = position + dir;
-        
+
                 if (IsValidBoundary(neighborPos) && IsCellLocked(neighborPos))
                 {
                     _cells[neighborPos.x, neighborPos.y].SetUnlocked();
                     successfullyUnlocked.Add(neighborPos);
-                }   
+                }
             }
-
+            */
             if (successfullyUnlocked.Count > 0)
             {
                 OnCellsUnlocked?.Invoke(successfullyUnlocked);

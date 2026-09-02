@@ -22,6 +22,10 @@ MonoBehaviour:
       RewardItem: {fileID: 0}
       Level: 1
       Amount: 60
+    - Category: 0
+      RewardItem: {fileID: 11400000, guid: 48c43ca282e4f7547bd0aad8bd94cb0d, type: 2}
+      Level: 1
+      Amount: 1
   - LevelSprite: {fileID: -6053866238764602296, guid: 1b5e271c633a29c4b8f3c2d2341b8cee, type: 3}
     UpgradeCost: 450
     LevelRewards:
@@ -33,6 +37,10 @@ MonoBehaviour:
       RewardItem: {fileID: 0}
       Level: 1
       Amount: 40
+    - Category: 0
+      RewardItem: {fileID: 11400000, guid: 48c43ca282e4f7547bd0aad8bd94cb0d, type: 2}
+      Level: 1
+      Amount: 1
   - LevelSprite: {fileID: 7244088574319584740, guid: 1b5e271c633a29c4b8f3c2d2341b8cee, type: 3}
     UpgradeCost: 990
     LevelRewards:
@@ -40,6 +48,10 @@ MonoBehaviour:
       RewardItem: {fileID: 0}
       Level: 1
       Amount: 235
+    - Category: 0
+      RewardItem: {fileID: 11400000, guid: 48c43ca282e4f7547bd0aad8bd94cb0d, type: 2}
+      Level: 2
+      Amount: 1
   - LevelSprite: {fileID: -3860519269612102915, guid: 1b5e271c633a29c4b8f3c2d2341b8cee, type: 3}
     UpgradeCost: 2180
     LevelRewards:
@@ -51,6 +63,10 @@ MonoBehaviour:
       RewardItem: {fileID: 0}
       Level: 1
       Amount: 40
+    - Category: 0
+      RewardItem: {fileID: 11400000, guid: 48c43ca282e4f7547bd0aad8bd94cb0d, type: 2}
+      Level: 3
+      Amount: 1
   - LevelSprite: {fileID: 5749084434699422419, guid: 1b5e271c633a29c4b8f3c2d2341b8cee, type: 3}
     UpgradeCost: 4800
     LevelRewards:
@@ -58,6 +74,10 @@ MonoBehaviour:
       RewardItem: {fileID: 0}
       Level: 1
       Amount: 935
+    - Category: 0
+      RewardItem: {fileID: 11400000, guid: 48c43ca282e4f7547bd0aad8bd94cb0d, type: 2}
+      Level: 4
+      Amount: 1
   - LevelSprite: {fileID: 4912712256094912398, guid: 1b5e271c633a29c4b8f3c2d2341b8cee, type: 3}
     UpgradeCost: 10550
     LevelRewards:
@@ -69,3 +89,7 @@ MonoBehaviour:
       RewardItem: {fileID: 0}
       Level: 1
       Amount: 20
+    - Category: 0
+      RewardItem: {fileID: 11400000, guid: 48c43ca282e4f7547bd0aad8bd94cb0d, type: 2}
+      Level: 5
+      Amount: 1

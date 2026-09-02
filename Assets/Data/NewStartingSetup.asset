@@ -22,28 +22,28 @@ MonoBehaviour:
     ItemLevel: 2
     IsLocked: 1
   - Position: {x: 0, y: 2}
-    ItemDef: {fileID: 11400000, guid: 2536adb532772d44a927910b8cf1aa62, type: 2}
-    ItemLevel: 1
+    ItemDef: {fileID: 11400000, guid: 7b110605c7d25954d910cb3eb357774d, type: 2}
+    ItemLevel: 2
     IsLocked: 1
   - Position: {x: 2, y: 1}
-    ItemDef: {fileID: 11400000, guid: 5a034ebef0e978846bc89a8172ceedb3, type: 2}
-    ItemLevel: 7
+    ItemDef: {fileID: 11400000, guid: 7b110605c7d25954d910cb3eb357774d, type: 2}
+    ItemLevel: 1
     IsLocked: 1
   - Position: {x: 1, y: 1}
-    ItemDef: {fileID: 11400000, guid: 5a034ebef0e978846bc89a8172ceedb3, type: 2}
-    ItemLevel: 4
+    ItemDef: {fileID: 11400000, guid: ca75fc758d3a7ce43b2f599c5b6d070e, type: 2}
+    ItemLevel: 2
     IsLocked: 1
   - Position: {x: 1, y: 0}
-    ItemDef: {fileID: 0}
-    ItemLevel: 0
+    ItemDef: {fileID: 11400000, guid: ca75fc758d3a7ce43b2f599c5b6d070e, type: 2}
+    ItemLevel: 3
     IsLocked: 1
   - Position: {x: 2, y: 0}
     ItemDef: {fileID: 11400000, guid: a026ba51e39f0f141864903e2131bdf5, type: 2}
     ItemLevel: 4
     IsLocked: 1
   - Position: {x: 0, y: 0}
-    ItemDef: {fileID: 11400000, guid: 5a034ebef0e978846bc89a8172ceedb3, type: 2}
-    ItemLevel: 2
+    ItemDef: {fileID: 11400000, guid: 7b110605c7d25954d910cb3eb357774d, type: 2}
+    ItemLevel: 5
     IsLocked: 1
   - Position: {x: 3, y: 4}
     ItemDef: {fileID: 11400000, guid: b33669e209aa48948ae21508cf4d57d8, type: 2}
@@ -57,6 +57,210 @@ MonoBehaviour:
     ItemDef: {fileID: 11400000, guid: a026ba51e39f0f141864903e2131bdf5, type: 2}
     ItemLevel: 1
     IsLocked: 0
+  - Position: {x: 3, y: 2}
+    ItemDef: {fileID: 11400000, guid: a026ba51e39f0f141864903e2131bdf5, type: 2}
+    ItemLevel: 1
+    IsLocked: 1
+  - Position: {x: 4, y: 2}
+    ItemDef: {fileID: 11400000, guid: a026ba51e39f0f141864903e2131bdf5, type: 2}
+    ItemLevel: 2
+    IsLocked: 1
+  - Position: {x: 1, y: 7}
+    ItemDef: {fileID: 11400000, guid: c08f7f823656a6d4e80e4ea6a57069c2, type: 2}
+    ItemLevel: 4
+    IsLocked: 1
+  - Position: {x: 0, y: 8}
+    ItemDef: {fileID: 11400000, guid: 6a2cb9617fd04ef458fef2440c815028, type: 2}
+    ItemLevel: 5
+    IsLocked: 1
+  - Position: {x: 1, y: 8}
+    ItemDef: {fileID: 11400000, guid: e638d16d9ca50a947a5df552ddb64643, type: 2}
+    ItemLevel: 2
+    IsLocked: 1
+  - Position: {x: 2, y: 8}
+    ItemDef: {fileID: 11400000, guid: 132acf36470ee684591f6854aa80ebe5, type: 2}
+    ItemLevel: 3
+    IsLocked: 1
+  - Position: {x: 3, y: 8}
+    ItemDef: {fileID: 11400000, guid: e638d16d9ca50a947a5df552ddb64643, type: 2}
+    ItemLevel: 3
+    IsLocked: 1
+  - Position: {x: 4, y: 8}
+    ItemDef: {fileID: 11400000, guid: 6a2cb9617fd04ef458fef2440c815028, type: 2}
+    ItemLevel: 1
+    IsLocked: 1
+  - Position: {x: 5, y: 8}
+    ItemDef: {fileID: 11400000, guid: 7095aeb5f698d244e94278c990778b53, type: 2}
+    ItemLevel: 1
+    IsLocked: 1
+  - Position: {x: 6, y: 8}
+    ItemDef: {fileID: 11400000, guid: 6a2cb9617fd04ef458fef2440c815028, type: 2}
+    ItemLevel: 3
+    IsLocked: 1
+  - Position: {x: 0, y: 7}
+    ItemDef: {fileID: 11400000, guid: 7095aeb5f698d244e94278c990778b53, type: 2}
+    ItemLevel: 3
+    IsLocked: 1
+  - Position: {x: 2, y: 7}
+    ItemDef: {fileID: 11400000, guid: c08f7f823656a6d4e80e4ea6a57069c2, type: 2}
+    ItemLevel: 2
+    IsLocked: 1
+  - Position: {x: 3, y: 7}
+    ItemDef: {fileID: 11400000, guid: 7095aeb5f698d244e94278c990778b53, type: 2}
+    ItemLevel: 3
+    IsLocked: 1
+  - Position: {x: 4, y: 7}
+    ItemDef: {fileID: 11400000, guid: 3a8b7e57628b6614c977a4b3cba3c4bd, type: 2}
+    ItemLevel: 2
+    IsLocked: 1
+  - Position: {x: 5, y: 7}
+    ItemDef: {fileID: 11400000, guid: 132acf36470ee684591f6854aa80ebe5, type: 2}
+    ItemLevel: 2
+    IsLocked: 1
+  - Position: {x: 6, y: 7}
+    ItemDef: {fileID: 11400000, guid: a026ba51e39f0f141864903e2131bdf5, type: 2}
+    ItemLevel: 6
+    IsLocked: 1
+  - Position: {x: 0, y: 6}
+    ItemDef: {fileID: 11400000, guid: 7095aeb5f698d244e94278c990778b53, type: 2}
+    ItemLevel: 2
+    IsLocked: 1
+  - Position: {x: 1, y: 6}
+    ItemDef: {fileID: 11400000, guid: 3a8b7e57628b6614c977a4b3cba3c4bd, type: 2}
+    ItemLevel: 3
+    IsLocked: 1
+  - Position: {x: 2, y: 6}
+    ItemDef: {fileID: 11400000, guid: 35159b16e9fbc2b459a77cd556a8c6d0, type: 2}
+    ItemLevel: 2
+    IsLocked: 1
+  - Position: {x: 3, y: 6}
+    ItemDef: {fileID: 11400000, guid: ca75fc758d3a7ce43b2f599c5b6d070e, type: 2}
+    ItemLevel: 2
+    IsLocked: 1
+  - Position: {x: 4, y: 6}
+    ItemDef: {fileID: 11400000, guid: 35159b16e9fbc2b459a77cd556a8c6d0, type: 2}
+    ItemLevel: 2
+    IsLocked: 1
+  - Position: {x: 5, y: 6}
+    ItemDef: {fileID: 11400000, guid: 35159b16e9fbc2b459a77cd556a8c6d0, type: 2}
+    ItemLevel: 1
+    IsLocked: 1
+  - Position: {x: 6, y: 6}
+    ItemDef: {fileID: 11400000, guid: 132acf36470ee684591f6854aa80ebe5, type: 2}
+    ItemLevel: 1
+    IsLocked: 1
+  - Position: {x: 0, y: 5}
+    ItemDef: {fileID: 11400000, guid: 3a8b7e57628b6614c977a4b3cba3c4bd, type: 2}
+    ItemLevel: 1
+    IsLocked: 1
+  - Position: {x: 1, y: 5}
+    ItemDef: {fileID: 11400000, guid: 7b110605c7d25954d910cb3eb357774d, type: 2}
+    ItemLevel: 2
+    IsLocked: 1
+  - Position: {x: 2, y: 5}
+    ItemDef: {fileID: 11400000, guid: a026ba51e39f0f141864903e2131bdf5, type: 2}
+    ItemLevel: 2
+    IsLocked: 1
+  - Position: {x: 3, y: 5}
+    ItemDef: {fileID: 11400000, guid: a026ba51e39f0f141864903e2131bdf5, type: 2}
+    ItemLevel: 4
+    IsLocked: 1
+  - Position: {x: 4, y: 5}
+    ItemDef: {fileID: 11400000, guid: 7b110605c7d25954d910cb3eb357774d, type: 2}
+    ItemLevel: 2
+    IsLocked: 1
+  - Position: {x: 5, y: 5}
+    ItemDef: {fileID: 11400000, guid: 7b110605c7d25954d910cb3eb357774d, type: 2}
+    ItemLevel: 4
+    IsLocked: 1
+  - Position: {x: 6, y: 5}
+    ItemDef: {fileID: 11400000, guid: ca75fc758d3a7ce43b2f599c5b6d070e, type: 2}
+    ItemLevel: 2
+    IsLocked: 1
+  - Position: {x: 6, y: 4}
+    ItemDef: {fileID: 11400000, guid: 7095aeb5f698d244e94278c990778b53, type: 2}
+    ItemLevel: 1
+    IsLocked: 1
+  - Position: {x: 5, y: 4}
+    ItemDef: {fileID: 11400000, guid: a026ba51e39f0f141864903e2131bdf5, type: 2}
+    ItemLevel: 4
+    IsLocked: 1
+  - Position: {x: 4, y: 4}
+    ItemDef: {fileID: 11400000, guid: a026ba51e39f0f141864903e2131bdf5, type: 2}
+    ItemLevel: 2
+    IsLocked: 1
+  - Position: {x: 5, y: 3}
+    ItemDef: {fileID: 11400000, guid: 7b110605c7d25954d910cb3eb357774d, type: 2}
+    ItemLevel: 1
+    IsLocked: 1
+  - Position: {x: 6, y: 3}
+    ItemDef: {fileID: 11400000, guid: 7095aeb5f698d244e94278c990778b53, type: 2}
+    ItemLevel: 2
+    IsLocked: 1
+  - Position: {x: 5, y: 2}
+    ItemDef: {fileID: 11400000, guid: ca75fc758d3a7ce43b2f599c5b6d070e, type: 2}
+    ItemLevel: 1
+    IsLocked: 1
+  - Position: {x: 6, y: 2}
+    ItemDef: {fileID: 11400000, guid: ca75fc758d3a7ce43b2f599c5b6d070e, type: 2}
+    ItemLevel: 2
+    IsLocked: 1
+  - Position: {x: 6, y: 1}
+    ItemDef: {fileID: 11400000, guid: 132acf36470ee684591f6854aa80ebe5, type: 2}
+    ItemLevel: 1
+    IsLocked: 1
+  - Position: {x: 6, y: 0}
+    ItemDef: {fileID: 11400000, guid: 132acf36470ee684591f6854aa80ebe5, type: 2}
+    ItemLevel: 3
+    IsLocked: 1
+  - Position: {x: 5, y: 0}
+    ItemDef: {fileID: 11400000, guid: 3a8b7e57628b6614c977a4b3cba3c4bd, type: 2}
+    ItemLevel: 3
+    IsLocked: 1
+  - Position: {x: 5, y: 1}
+    ItemDef: {fileID: 11400000, guid: c08f7f823656a6d4e80e4ea6a57069c2, type: 2}
+    ItemLevel: 1
+    IsLocked: 1
+  - Position: {x: 4, y: 1}
+    ItemDef: {fileID: 11400000, guid: a026ba51e39f0f141864903e2131bdf5, type: 2}
+    ItemLevel: 3
+    IsLocked: 1
+  - Position: {x: 3, y: 1}
+    ItemDef: {fileID: 11400000, guid: a026ba51e39f0f141864903e2131bdf5, type: 2}
+    ItemLevel: 2
+    IsLocked: 1
+  - Position: {x: 4, y: 0}
+    ItemDef: {fileID: 11400000, guid: 35159b16e9fbc2b459a77cd556a8c6d0, type: 2}
+    ItemLevel: 1
+    IsLocked: 1
+  - Position: {x: 3, y: 0}
+    ItemDef: {fileID: 11400000, guid: 35159b16e9fbc2b459a77cd556a8c6d0, type: 2}
+    ItemLevel: 2
+    IsLocked: 1
+  - Position: {x: 2, y: 2}
+    ItemDef: {fileID: 11400000, guid: a026ba51e39f0f141864903e2131bdf5, type: 2}
+    ItemLevel: 1
+    IsLocked: 1
+  - Position: {x: 1, y: 4}
+    ItemDef: {fileID: 11400000, guid: ca75fc758d3a7ce43b2f599c5b6d070e, type: 2}
+    ItemLevel: 1
+    IsLocked: 1
+  - Position: {x: 1, y: 3}
+    ItemDef: {fileID: 11400000, guid: a026ba51e39f0f141864903e2131bdf5, type: 2}
+    ItemLevel: 3
+    IsLocked: 1
+  - Position: {x: 1, y: 2}
+    ItemDef: {fileID: 11400000, guid: 7b110605c7d25954d910cb3eb357774d, type: 2}
+    ItemLevel: 1
+    IsLocked: 1
+  - Position: {x: 0, y: 4}
+    ItemDef: {fileID: 11400000, guid: a026ba51e39f0f141864903e2131bdf5, type: 2}
+    ItemLevel: 5
+    IsLocked: 1
+  - Position: {x: 0, y: 3}
+    ItemDef: {fileID: 11400000, guid: 7b110605c7d25954d910cb3eb357774d, type: 2}
+    ItemLevel: 4
+    IsLocked: 1
   <BackpackCells>k__BackingField:
   - Position: {x: 1, y: 6}
     ItemDef: {fileID: 0}

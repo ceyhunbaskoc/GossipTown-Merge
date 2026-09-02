@@ -349,6 +349,7 @@ GameObject:
   - component: {fileID: 6657814571542581242}
   - component: {fileID: 5241512639071336780}
   - component: {fileID: 1151448733243626079}
+  - component: {fileID: -8586088953396825410}
   m_Layer: 5
   m_Name: PrivacyPolicy
   m_TagString: Untagged
@@ -428,6 +429,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &-8586088953396825410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3259497251177327240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed8817dad81747b0ba37faeedddf4c8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5066968856388207588
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,6 +452,7 @@ GameObject:
   - component: {fileID: 4393997259119704456}
   - component: {fileID: 4659218705238689512}
   - component: {fileID: 8710201976312970977}
+  - component: {fileID: -5813057740415188466}
   m_Layer: 5
   m_Name: TermsOfService
   m_TagString: Untagged
@@ -518,3 +532,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &-5813057740415188466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5066968856388207588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed8817dad81747b0ba37faeedddf4c8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -33,6 +33,10 @@ MonoBehaviour:
       RewardItem: {fileID: 0}
       Level: 1
       Amount: 10
+    - Category: 0
+      RewardItem: {fileID: 11400000, guid: b33669e209aa48948ae21508cf4d57d8, type: 2}
+      Level: 1
+      Amount: 1
   - LevelSprite: {fileID: -5084214435005115830, guid: d3e2b66b79edc904b80348d917906a7b, type: 3}
     UpgradeCost: 240
     LevelRewards:
@@ -40,6 +44,10 @@ MonoBehaviour:
       RewardItem: {fileID: 0}
       Level: 1
       Amount: 40
+    - Category: 0
+      RewardItem: {fileID: 11400000, guid: b33669e209aa48948ae21508cf4d57d8, type: 2}
+      Level: 2
+      Amount: 1
   - LevelSprite: {fileID: 1838890498225210024, guid: d3e2b66b79edc904b80348d917906a7b, type: 3}
     UpgradeCost: 530
     LevelRewards:
@@ -51,6 +59,10 @@ MonoBehaviour:
       RewardItem: {fileID: 0}
       Level: 1
       Amount: 10
+    - Category: 0
+      RewardItem: {fileID: 11400000, guid: b33669e209aa48948ae21508cf4d57d8, type: 2}
+      Level: 3
+      Amount: 1
   - LevelSprite: {fileID: -5028597511880491726, guid: d3e2b66b79edc904b80348d917906a7b, type: 3}
     UpgradeCost: 1170
     LevelRewards:
@@ -58,6 +70,10 @@ MonoBehaviour:
       RewardItem: {fileID: 0}
       Level: 1
       Amount: 160
+    - Category: 0
+      RewardItem: {fileID: 11400000, guid: b33669e209aa48948ae21508cf4d57d8, type: 2}
+      Level: 4
+      Amount: 1
   - LevelSprite: {fileID: 4225551213800497501, guid: d3e2b66b79edc904b80348d917906a7b, type: 3}
     UpgradeCost: 2580
     LevelRewards:
@@ -69,3 +85,7 @@ MonoBehaviour:
       RewardItem: {fileID: 0}
       Level: 1
       Amount: 5
+    - Category: 0
+      RewardItem: {fileID: 11400000, guid: b33669e209aa48948ae21508cf4d57d8, type: 2}
+      Level: 5
+      Amount: 1

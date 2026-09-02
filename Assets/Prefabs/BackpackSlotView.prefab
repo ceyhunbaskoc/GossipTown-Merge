@@ -277,6 +277,7 @@ GameObject:
   - component: {fileID: 5158987417543771903}
   - component: {fileID: 3659153371223732112}
   - component: {fileID: 2510670243933651987}
+  - component: {fileID: -7042899329658989611}
   m_Layer: 5
   m_Name: BackpackSlotView
   m_TagString: Untagged
@@ -406,6 +407,18 @@ MonoBehaviour:
   _lockedOverlay: {fileID: 204352624026501067}
   _unlockGemCost: {fileID: 2973128638064468687}
   _unlockButton: {fileID: 5205819144939748881}
+--- !u!114 &-7042899329658989611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4390914059354540480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed8817dad81747b0ba37faeedddf4c8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4693592987311128362
 GameObject:
   m_ObjectHideFlags: 0
@@ -555,6 +568,7 @@ GameObject:
   - component: {fileID: 1535352486692892093}
   - component: {fileID: 8232578085850445367}
   - component: {fileID: 5205819144939748881}
+  - component: {fileID: -2074320716449813532}
   m_Layer: 5
   m_Name: button_unlock
   m_TagString: Untagged
@@ -665,6 +679,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &-2074320716449813532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6442234099695644616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed8817dad81747b0ba37faeedddf4c8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7176124996549997028
 GameObject:
   m_ObjectHideFlags: 0

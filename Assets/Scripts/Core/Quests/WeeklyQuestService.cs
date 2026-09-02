@@ -149,21 +149,53 @@ namespace Core.Quests
 
             if (_currentSaveData.LastDayUpdateTimestampTicks == 0)
             {
-                _currentSaveData.LastDayUpdateTimestampTicks = currentNormalizedTime.Ticks;
+                _currentSaveData.LastDayUpdateTimestampTicks = currentNormalizedTime.Date.Ticks;
                 return;
             }
 
             DateTime lastUpdate = new DateTime(_currentSaveData.LastDayUpdateTimestampTicks);
-
             int daysPassed = (currentNormalizedTime.Date - lastUpdate.Date).Days;
 
             if (daysPassed > 0)
             {
                 int targetDayIndex = _currentSaveData.CurrentActiveDayIndex + daysPassed;
-                _currentSaveData.CurrentActiveDayIndex = Mathf.Clamp(targetDayIndex, 1, 7);
+
+                if (targetDayIndex > 7)
+                {
+                    int weeksPassed = targetDayIndex / 7;
+                    int remainingDays = targetDayIndex % 7;
+                    
+                    if (remainingDays == 0) 
+                    {
+                        weeksPassed--;
+                        remainingDays = 7;
+                    }
+
+                    TransitionToNextWeek(weeksPassed);
+                    _currentSaveData.CurrentActiveDayIndex = remainingDays;
+                }
+                else
+                {
+                    _currentSaveData.CurrentActiveDayIndex = targetDayIndex;
+                }
+
                 _currentSaveData.LastDayUpdateTimestampTicks = currentNormalizedTime.Date.Ticks;
                 InitializeUnlockedQuests();
             }
+        }
+        
+        private void TransitionToNextWeek(int weeksToAdvance)
+        {
+            int currentIndex = _questDatabase.AllWeeks.FindIndex(w => w.WeekId == _activeWeekConfig.WeekId);
+            if (currentIndex == -1) currentIndex = 0;
+            int nextIndex = Mathf.Min(currentIndex + weeksToAdvance, _questDatabase.AllWeeks.Count - 1);
+            
+            _activeWeekConfig = _questDatabase.AllWeeks[nextIndex];
+            _currentSaveData.ActiveWeekId = _activeWeekConfig.WeekId;
+
+            _progressMap.Clear();
+            _activeQuestsMap.Clear();
+            _currentSaveData.QuestProgressList.Clear();
         }
         
         public DailyQuestGroup GetDailyQuestGroup(int dayIndex)

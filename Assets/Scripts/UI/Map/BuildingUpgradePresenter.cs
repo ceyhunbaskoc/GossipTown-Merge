@@ -2,8 +2,11 @@
 using Core.Economy;
 using System;
 using System.Collections.Generic;
+using Core.Audio;
+using Core.Haptics;
 using Core.PoolSystem;
 using Core.Services;
+using Data.Audio;
 using Data.Reward;
 using Data.Roadmap;
 using UI.Level;
@@ -22,6 +25,8 @@ namespace UI.Map
         private IInputLockService _inputLockService;
         private IObjectPool _objectPool;
         private GlobalRewardIconDatabaseSO _iconDatabase;
+        private IAudioService _audioService;
+        private IHapticService _hapticService;
         
         private bool _isPanelCurrentlyOpen;
 
@@ -30,13 +35,17 @@ namespace UI.Map
             PlayerEconomyModel economyModifier,
             IInputLockService inputLockService,
             IObjectPool objectPool,
-            GlobalRewardIconDatabaseSO iconDatabase)
+            GlobalRewardIconDatabaseSO iconDatabase,
+            IAudioService audioService,
+            IHapticService hapticService)
         {
             _progressionService = progressionService;
             _economyModifier = economyModifier;
             _inputLockService = inputLockService;
             _objectPool = objectPool;
             _iconDatabase = iconDatabase;
+            _audioService = audioService;
+            _hapticService = hapticService;
 
             _popupView.OnUpgradeClicked += HandleUpgradeRequest;
             _popupView.OnCloseClicked += ClosePopup;
@@ -169,7 +178,8 @@ namespace UI.Map
         {
             if (_currentNodeDef == null) return;
             _progressionService.TryUpgradeNode(_currentNodeDef.NodeId);
-
+            _audioService.PlaySFX(SfxId.Building_Upgraded_Generic);
+            _hapticService.Play(HapticType.HeavyImpact);
             ClosePopup();
         }
 

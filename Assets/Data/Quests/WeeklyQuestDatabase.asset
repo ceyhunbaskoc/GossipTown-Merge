@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: WeeklyQuestDatabase
   m_EditorClassIdentifier: 
   <AllWeeks>k__BackingField:
-  - {fileID: 11400000, guid: 6b66de892352cc24e965534297c8808a, type: 2}
+  - {fileID: 11400000, guid: 9523ce402efe3ad4198b2ce5b7dc3044, type: 2}
+  - {fileID: 11400000, guid: 2ee0e2c9d30905842bc0ade2bc497043, type: 2}
+  - {fileID: 11400000, guid: 0482e828e182e87429350d3b2c50b48d, type: 2}
+  - {fileID: 11400000, guid: 53e37dad39250e84ba33a549300b118b, type: 2}

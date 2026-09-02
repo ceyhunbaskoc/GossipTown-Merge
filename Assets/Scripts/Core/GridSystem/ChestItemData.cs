@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Core.GridSystem
 {
-    public enum ChestState { Locked, Unlocking, ReadyToOpen }
+    public enum ChestState { Locked, Unlocking, ReadyToOpen, Opening }
 
     public class ChestItemData : ItemData, ITimeTrackable, ICustomSaveableItem 
     {
@@ -58,6 +58,11 @@ namespace Core.GridSystem
         public void CompleteUnlocking()
         {
             ChangeState(ChestState.ReadyToOpen);
+        }
+
+        public void StartingOpening()
+        {
+            ChangeState(ChestState.Opening);
         }
 
         public void OnTimeCompleted()

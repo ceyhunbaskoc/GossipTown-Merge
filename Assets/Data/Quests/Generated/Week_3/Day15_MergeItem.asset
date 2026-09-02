@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8db9da221ffd46e1bd7ad46326952353, type: 3}
+  m_Name: Day15_MergeItem
+  m_EditorClassIdentifier: 
+  <QuestId>k__BackingField: Day15_MergeItem
+  <Type>k__BackingField: 0
+  <TargetAmount>k__BackingField: 85
+  <MedalReward>k__BackingField: 13
+  _requiredItemDef: {fileID: 0}
+  <Rewards>k__BackingField:
+  - Category: 4
+    ItemDefinition: {fileID: 0}
+    Level: 1
+    Amount: 20

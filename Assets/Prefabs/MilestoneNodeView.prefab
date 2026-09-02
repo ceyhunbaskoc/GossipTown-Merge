@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5311976817415828797}
   - component: {fileID: 8406888604467604134}
   - component: {fileID: 1235447925093071251}
+  - component: {fileID: 8104552810854608196}
   m_Layer: 5
   m_Name: button_claim
   m_TagString: Untagged
@@ -121,6 +122,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8104552810854608196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1721952501268267813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed8817dad81747b0ba37faeedddf4c8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4002152395541535531
 GameObject:
   m_ObjectHideFlags: 0

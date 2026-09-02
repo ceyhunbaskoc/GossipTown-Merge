@@ -76,6 +76,7 @@ namespace Core.ItemDetail
         public void Dispose()
         {
             _spawnerDetailEventChannel.OnEventRaised -= _handleSpawnerDetailRequested;
+            DespawnAllElements();
         }
     }
 }

@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24daa3c65eb941c3a8c5ff7467ebcbb4, type: 3}
+  m_Name: SFXDatabase
+  m_EditorClassIdentifier: 
+  _sfxList:
+  - <Id>k__BackingField: 1
+    _clip: {fileID: 8300000, guid: 66d0dd09c19bde8408946a37bc99926c, type: 3}
+    _volume: 1
+  - <Id>k__BackingField: 2
+    _clip: {fileID: 8300000, guid: 6deeca3217847b54d83282b073e4e339, type: 3}
+    _volume: 1
+  - <Id>k__BackingField: 3
+    _clip: {fileID: 8300000, guid: 7e7bced1ecfff7d4f95ac2d26a22e8ab, type: 3}
+    _volume: 1
+  - <Id>k__BackingField: 4
+    _clip: {fileID: 8300000, guid: 1d99ccd24b635e64a8e9e3968f2d4168, type: 3}
+    _volume: 1
+  - <Id>k__BackingField: 5
+    _clip: {fileID: 8300000, guid: 3e84ef9a6889baf46823550daa26f778, type: 3}
+    _volume: 1
+  - <Id>k__BackingField: 6
+    _clip: {fileID: 8300000, guid: c28b4dee4aa4fa24a9c7f38e11ca9563, type: 3}
+    _volume: 1
+  - <Id>k__BackingField: 7
+    _clip: {fileID: 8300000, guid: c01b32f10485e264c84201cdba331415, type: 3}
+    _volume: 1
+  - <Id>k__BackingField: 8
+    _clip: {fileID: 8300000, guid: 5a00c661a692faa47bb888a447c5cb4e, type: 3}
+    _volume: 1
+  - <Id>k__BackingField: 9
+    _clip: {fileID: 8300000, guid: edd54457092bab7478e7563255f6f7a1, type: 3}
+    _volume: 1
+  - <Id>k__BackingField: 10
+    _clip: {fileID: 8300000, guid: 1c0652ffb7b7c60448e2d625027d5472, type: 3}
+    _volume: 1
+  - <Id>k__BackingField: 11
+    _clip: {fileID: 8300000, guid: ad78741a64468684694ffe882107fee1, type: 3}
+    _volume: 1

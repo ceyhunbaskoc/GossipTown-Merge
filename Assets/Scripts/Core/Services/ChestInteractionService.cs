@@ -1,10 +1,12 @@
 ﻿using System;
 using Core.AdService;
+using Core.Audio;
 using Core.Controllers;
 using Core.Economy;
 using Core.Factories;
 using Core.GridSystem;
 using Data;
+using Data.Audio;
 using UI.Chest;
 using UnityEngine;
 
@@ -22,6 +24,7 @@ namespace Core.Services
         private readonly ITimeManager _timeManager;
         private readonly MergeItemFactory _mergeItemFactory;
         private readonly IAdService _adService;
+        private readonly IAudioService _audioService;
         
         public ChestInteractionService(
             ILootGenerationService lootService,
@@ -33,7 +36,8 @@ namespace Core.Services
             IEconomyModifier economyModifier,
             ITimeManager timeManager,
             MergeItemFactory mergeItemFactory,
-            IAdService adService
+            IAdService adService,
+            IAudioService audioService
             )
         {
             _lootService = lootService;
@@ -46,6 +50,7 @@ namespace Core.Services
             _timeManager = timeManager;
             _mergeItemFactory = mergeItemFactory;
             _adService = adService;
+            _audioService = audioService;
         }
 
 
@@ -95,18 +100,20 @@ namespace Core.Services
         public void OpenChest(ChestItemData chestItemData, Vector2Int gridPosition)
         {
             if (chestItemData == null || chestItemData.CurrentState != ChestState.ReadyToOpen) return;
-            
+    
             ChestData chestData = GetChestData(chestItemData);
             if (chestData == null) return;
 
             ItemIdentifier chestRewardItem = _lootService.GenerateLootForChest(chestData);
             if (string.IsNullOrEmpty(chestRewardItem.Id))
             {
-                Debug.LogWarning($"[ChestInteraction] Sandık (ID: {chestItemData.Id}) için loot üretilemedi!");
+                Debug.LogWarning($"[ChestInteraction] For (ID: {chestItemData.Id}) loot can't be spawned!");
                 return;
             }
 
+            chestItemData.StartingOpening();
             IViewItem chestVisual = _gridController.ExtractVisualAt(gridPosition);
+    
             _chestOpeningOrchestrator.PlayOpeningSequence(
                 chestView: chestVisual, 
                 onLidOpened: () => 
@@ -114,6 +121,7 @@ namespace Core.Services
                     _gridModel.TryClearCell(gridPosition);
                     IGridItem newLootItem = _gridItemDataFactory.CreateItemData(chestRewardItem.Id, chestRewardItem.Level);
                     _gridModel.TryPlaceObject(gridPosition, newLootItem);
+                    _audioService.PlaySFX(SfxId.ChestOpen);
                 },
                 onSequenceComplete: () => 
                 {

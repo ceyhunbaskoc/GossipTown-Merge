@@ -1,8 +1,11 @@
 ﻿using System;
+using Core.Audio;
 using Core.Controllers;
 using Core.Economy;
+using Core.Haptics;
 using Core.Orchestration;
 using Core.PoolSystem;
+using Data.Audio;
 using Order;
 using UI.Components;
 using UnityEngine;
@@ -17,19 +20,25 @@ namespace Core.Services
         private readonly OrderDataModel _orderData;
         private readonly IEconomyModifier _economyModifier;
         private readonly ObjectPoolManager _poolManager;
+        private readonly IAudioService _audioService;
+        private readonly IHapticService _hapticService;
 
         public OrderFulfillmentController(
             MainBoardController gridController, 
             OrderFulfillmentOrchestrator orchestrator,
             OrderDataModel orderData,
             IEconomyModifier economyModifier,
-            ObjectPoolManager poolManager)
+            ObjectPoolManager poolManager,
+            IAudioService audioService,
+            IHapticService hapticService)
         {
             _gridController = gridController;
             _orchestrator = orchestrator;
             _orderData = orderData;
             _economyModifier = economyModifier;
             _poolManager = poolManager;
+            _audioService = audioService;
+            _hapticService = hapticService;
         }
 
         public event Action OnAnyUserInteraction;
@@ -41,7 +50,11 @@ namespace Core.Services
             _orchestrator.PlayFulfillmentSequence(flyingVisuals, targetCardTransform, () => 
             {
                 _economyModifier.AddGold(order.RewardAmount);
-                _orderData.TryCompleteOrder(order);
+                if (_orderData.TryCompleteOrder(order))
+                {
+                    _audioService.PlaySFX(SfxId.Gameplay_OrderComplete);
+                    _hapticService.Play(HapticType.Success);
+                }
                 OnAnyUserInteraction?.Invoke();
                 orderCardAnimatedLayoutElement.Hide(() => 
                 {

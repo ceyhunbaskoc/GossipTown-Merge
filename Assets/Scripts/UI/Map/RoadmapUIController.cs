@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using Core.Audio;
 using Core.Economy;
 using UnityEngine;
 using Core.Services;
 using Data.Roadmap;
 using Core.PoolSystem;
+using Data.Audio;
 
 namespace UI.Map
 {
@@ -16,6 +18,7 @@ namespace UI.Map
         private RoadmapProgressionService _progressionService;
         private PlayerEconomyModel _economyModel;
         private IInputLockService _inputLockService;
+        private IAudioService _audioService;
         
         public event Action<string> OnNodeClickedRequested;
         public event Action<string> OnNodeUpgradeVisualCompleted; 
@@ -25,11 +28,13 @@ namespace UI.Map
             PlayerEconomyModel economyModel,
             IInputLockService inputLockService,
             IObjectPool objectPool,
-            Sprite unBuildSprite)
+            Sprite unBuildSprite,
+            IAudioService audioService)
         {
             _progressionService = progressionService;
             _economyModel = economyModel;
             _inputLockService = inputLockService;
+            _audioService = audioService;
 
             _progressionService.OnNodeUpgraded += _handleNodeUpgraded;
             _progressionService.OnNodeUnlocked += _handleNodeUnlocked;
@@ -70,7 +75,7 @@ namespace UI.Map
         {
             _inputLockService.RemoveUILock();
             _inputLockService.RemoveLock();
-            
+            _audioService.PlaySFX(SfxId.Building_Upgraded_Confetti);
             OnNodeUpgradeVisualCompleted?.Invoke(nodeId);
         }
 

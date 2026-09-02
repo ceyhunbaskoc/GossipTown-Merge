@@ -16,10 +16,7 @@ namespace UI.ItemDetail
             _iconImage.sprite = icon;
             _levelText.text = level.ToString();
 
-            if (!isUnlocked)
-            {
-                _lockedOverlay.SetActive(true);
-            }
+            _lockedOverlay.SetActive(!isUnlocked);
         }
         
         public void OnSpawned() {}

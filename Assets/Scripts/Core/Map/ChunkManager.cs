@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Core.CameraSystem;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -32,6 +33,10 @@ namespace Core.Map
         private MapCameraController _cameraController;
         private Vector2 _gridWorldOffset;
         
+        private TaskCompletionSource<bool> _initialLoadTcs;
+        private int _pendingChunkLoads = 0;
+        private bool _isInitialLoadDone = false;
+        
 
         public void Initialize(MapCameraController cameraController)
         {
@@ -45,6 +50,14 @@ namespace Core.Map
             {
                 CreateNewContainerForPool();
             }
+        }
+        
+        public Task WaitForInitialLoadAsync()
+        {
+            if (_isInitialLoadDone) return Task.CompletedTask;
+    
+            _initialLoadTcs = new TaskCompletionSource<bool>();
+            return _initialLoadTcs.Task;
         }
         
         private void CalculateGridOffset()
@@ -122,27 +135,35 @@ namespace Core.Map
 
             AsyncOperationHandle<Sprite> handle = Addressables.LoadAssetAsync<Sprite>(address);
             _activeHandles.Add(coord, handle);
+    
+            _pendingChunkLoads++;
 
             handle.Completed += (opHandle) =>
             {
+                _pendingChunkLoads--;
+
                 if (!_activeHandles.ContainsKey(coord))
                 {
                     Addressables.Release(opHandle);
-                    return;
                 }
-
-                if (opHandle.Status == AsyncOperationStatus.Succeeded)
+                else if (opHandle.Status == AsyncOperationStatus.Succeeded)
                 {
                     SpriteRenderer container = GetContainerFromPool();
                     container.sprite = opHandle.Result;
                     container.transform.position = GridCoordToWorldPosition(coord);
                     container.gameObject.name = address;
-                    
+            
                     _activeContainers.Add(coord, container);
                 }
                 else
                 {
                     _activeHandles.Remove(coord);
+                }
+
+                if (!_isInitialLoadDone && _pendingChunkLoads == 0)
+                {
+                    _isInitialLoadDone = true;
+                    _initialLoadTcs?.TrySetResult(true);
                 }
             };
         }

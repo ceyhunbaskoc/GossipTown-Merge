@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1926abd0a3034a4d9734cc290f020da7, type: 3}
+  m_Name: Week_3_Config
+  m_EditorClassIdentifier: 
+  WeekId: Week_3
+  DailyGroups:
+  - DayIndex: 15
+    Quests:
+    - {fileID: 11400000, guid: 9b5e78119cb767a42a9c2cf98de4d5d2, type: 2}
+    - {fileID: 11400000, guid: 797b17b4509e8244b9ab695aa1d5cec4, type: 2}
+    - {fileID: 11400000, guid: 0861c0af6006c5a469790be06fb46512, type: 2}
+    - {fileID: 11400000, guid: 07b228838d29df1469fae323e5b7030e, type: 2}
+    DayCompletionRewards:
+    - Category: 4
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 25
+  - DayIndex: 16
+    Quests:
+    - {fileID: 11400000, guid: 54c760bdbd764864fa72f85a9c419827, type: 2}
+    - {fileID: 11400000, guid: 89f8be3d89ec41041ab63b4f6bc47781, type: 2}
+    - {fileID: 11400000, guid: 805d674020670d64982de67c3e9babcf, type: 2}
+    - {fileID: 11400000, guid: ae1b260007ebae24382a84b2414bd159, type: 2}
+    DayCompletionRewards:
+    - Category: 4
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 25
+  - DayIndex: 17
+    Quests:
+    - {fileID: 11400000, guid: 357dbb0db6a6c7943b1780db432726fa, type: 2}
+    - {fileID: 11400000, guid: 2bddf2bd005cb944a9d9ea872fc20cdc, type: 2}
+    - {fileID: 11400000, guid: 0599378be86bd834ca72a643779cd468, type: 2}
+    - {fileID: 11400000, guid: 89c6de5da191af2408eda1863e732906, type: 2}
+    DayCompletionRewards:
+    - Category: 4
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 25
+  - DayIndex: 18
+    Quests:
+    - {fileID: 11400000, guid: 407bb3d89dc5a8641b9264e765776bb6, type: 2}
+    - {fileID: 11400000, guid: cb92e173b85c40a46af39404be6d282a, type: 2}
+    - {fileID: 11400000, guid: c049d0d78a1dc324794a23f81876856f, type: 2}
+    - {fileID: 11400000, guid: 82606d49bd7647b47b12bbd0fec2e7e5, type: 2}
+    DayCompletionRewards:
+    - Category: 4
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 25
+  - DayIndex: 19
+    Quests:
+    - {fileID: 11400000, guid: 42b7201645fd8e54fba30a08afdf0b80, type: 2}
+    - {fileID: 11400000, guid: 1742ad4b4cee0444687cc5bcf7afb3ab, type: 2}
+    - {fileID: 11400000, guid: f82e124a5a1df3644a77474ee0864575, type: 2}
+    - {fileID: 11400000, guid: 298afa2d1e9de0c4c86af77463064d5f, type: 2}
+    DayCompletionRewards:
+    - Category: 4
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 25
+  - DayIndex: 20
+    Quests:
+    - {fileID: 11400000, guid: 3d9bee6c5341df741bb67892a34168ec, type: 2}
+    - {fileID: 11400000, guid: 59142fe58a40fe646a1dbbbdb0bdf390, type: 2}
+    - {fileID: 11400000, guid: d4fab9c01bd4e2546b4775c6348bdb98, type: 2}
+    - {fileID: 11400000, guid: b45e899725568764cacb356da680b50f, type: 2}
+    DayCompletionRewards:
+    - Category: 4
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 25
+  - DayIndex: 21
+    Quests:
+    - {fileID: 11400000, guid: 0995f4050c298a64ab40a7b04fdcfc5a, type: 2}
+    - {fileID: 11400000, guid: 753c02717867dd849b33890b13963319, type: 2}
+    - {fileID: 11400000, guid: c87fc51d9a4ba5f4daef33034e750626, type: 2}
+    - {fileID: 11400000, guid: 933729c6a323e3a458c93435ebee4f8e, type: 2}
+    DayCompletionRewards:
+    - Category: 3
+      ItemDefinition: {fileID: 0}
+      Level: 1
+      Amount: 14

@@ -1,35 +1,48 @@
 using UnityEngine;
 
 [RequireComponent(typeof(RectTransform))]
-public class SafeAreaFitting : MonoBehaviour
+public class TopSafeAreaShifter : MonoBehaviour
 {
-    private RectTransform rectTransform;
-    private Rect lastSafeArea;
+    private RectTransform _rectTransform;
+    private Canvas _parentCanvas;
+    
+    private Rect _lastSafeArea = Rect.zero;
+    private Vector2 _lastResolution = Vector2.zero;
+    private float _initialAnchoredPositionY;
 
-    void Awake()
+    private void Awake()
     {
-        rectTransform = GetComponent<RectTransform>();
-        ApplySafeArea();
+        _rectTransform = GetComponent<RectTransform>();
+        _parentCanvas = GetComponentInParent<Canvas>();
+        _initialAnchoredPositionY = _rectTransform.anchoredPosition.y;
+        
+        ApplySafeAreaShift();
     }
 
-    void OnEnable()
+    private void Update()
     {
-        ApplySafeArea();
-        Canvas.willRenderCanvases += ApplySafeArea; // her çizimde uygula
+        if (_lastSafeArea == Screen.safeArea && 
+            _lastResolution.x == Screen.width && 
+            _lastResolution.y == Screen.height)
+        {
+            return;
+        }
+
+        ApplySafeAreaShift();
     }
 
-    void OnDisable()
+    private void ApplySafeAreaShift()
     {
-        Canvas.willRenderCanvases -= ApplySafeArea;
-    }
+        if (_parentCanvas == null) return;
 
-    void ApplySafeArea()
-    {
-        Rect safeArea = Screen.safeArea;
+        _lastSafeArea = Screen.safeArea;
+        _lastResolution = new Vector2(Screen.width, Screen.height);
 
-        float topPadding = Screen.height - (safeArea.y + safeArea.height);
-        rectTransform.offsetMax = new Vector2(rectTransform.offsetMax.x, -topPadding);
-
-        lastSafeArea = safeArea;
+        float topPaddingPixels = Screen.height - _lastSafeArea.yMax;
+        float canvasTopPadding = topPaddingPixels / _parentCanvas.scaleFactor;
+        Vector2 newPosition = _rectTransform.anchoredPosition;
+        newPosition.y = _initialAnchoredPositionY - canvasTopPadding;
+        
+        _rectTransform.anchoredPosition = newPosition;
     }
 }

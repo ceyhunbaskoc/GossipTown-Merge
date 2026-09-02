@@ -83,8 +83,7 @@ namespace Core.Settings
         public void ToggleHaptic(bool isOn)
         {
             CurrentData.IsHapticOn = isOn;
-            // Haptic motoruna (Örn: NiceVibrations veya yerleşik API) durumu bildir.
-            // HapticManager.SetEnabled(isOn);
+            Lofelt.NiceVibrations.HapticController.hapticsEnabled = isOn;
         }
 
         public void ApplyAndSaveSettings()

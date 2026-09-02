@@ -1,8 +1,11 @@
 ﻿using System.Collections.Generic;
+using Core.Audio;
 using Core.GridSystem;
+using Core.Haptics;
 using Core.Rules;
 using Core.Services;
 using Data;
+using Data.Audio;
 using Data.Quests;
 using Data.Reward;
 using UI.Collectible;
@@ -23,7 +26,8 @@ namespace Core.Controllers
         private ItemDatabaseSO _itemDatabase;
         private MergeVFXOrchestrator _mergeVFXOrchestrator;
         private IMoveValidator _moveValidator;
-        
+        private IAudioService _audioService;
+        private IHapticService _hapticService;
         
         private Camera _mainCamera; 
         
@@ -41,6 +45,8 @@ namespace Core.Controllers
             ItemDatabaseSO itemDatabase,
             MergeVFXOrchestrator mergeVFXOrchestrator,
             IMoveValidator moveValidator,
+            IAudioService audioService,
+            IHapticService hapticService,
             int width, 
             int height, 
             float cellSize)
@@ -54,6 +60,8 @@ namespace Core.Controllers
             _itemDatabase = itemDatabase;
             _mergeVFXOrchestrator = mergeVFXOrchestrator;
             _moveValidator = moveValidator;
+            _audioService = audioService;
+            _hapticService = hapticService;
             
             _mainCamera = Camera.main; 
             
@@ -85,6 +93,8 @@ namespace Core.Controllers
                     _selectionService.SelectItemAt(newGridPos);
                     Vector3 targetWorldPosition = GridToWorldPosition(newGridPos);
                     _mergeVFXOrchestrator.PlayMergeEffect(targetWorldPosition);
+                    _audioService.PlaySFX(SfxId.Gameplay_ItemMerge);
+                    _hapticService.Play(HapticType.LightImpact);
                 }
                 else
                 {

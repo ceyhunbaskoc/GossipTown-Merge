@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Core.GridSystem;
 using Core.SaveSystem;
+using Data.Tutorial;
 using Order;
 using UI.Orders;
 using UI.Tutorial;
@@ -16,6 +17,7 @@ namespace Core.Tutorial
         private readonly OrderDataModel _orderDataModel;
         private readonly ITutorialUI _tutorialUI;
         private readonly OrderUIManager _orderUIManager;
+        private readonly TutorialHelperTextsSO _tutorialHelperTexts;
         private RectTransform _cachedCompleteButtonRect;
         private float _cellSize;
 
@@ -29,6 +31,7 @@ namespace Core.Tutorial
             OrderDataModel orderDataModel,
             ITutorialUI tutorialUI,
             OrderUIManager orderUIManager,
+            TutorialHelperTextsSO tutorialHelperTexts,
             float cellSize)
         {
             _saveData = saveData;
@@ -36,6 +39,7 @@ namespace Core.Tutorial
             _orderDataModel = orderDataModel;
             _tutorialUI = tutorialUI;
             _orderUIManager = orderUIManager;
+            _tutorialHelperTexts = tutorialHelperTexts;
             _cellSize = cellSize;
 
             if (!IsCompleted)
@@ -43,6 +47,7 @@ namespace Core.Tutorial
                 _gridModel.OnItemPlaced += HandleItemMerged;
                 _orderDataModel.OnOrderCompleted += HandleOrderCompleted;
                 _orderUIManager.OnOrderUIGenerated += HandleOrderUIGenerated;
+                _tutorialUI.OnNextButtonClicked += HandleClickedNextButton;
             }
         }
         
@@ -81,11 +86,21 @@ namespace Core.Tutorial
         
                     _tutorialUI.HighlightOrderCompleteButton(_cachedCompleteButtonRect);
                     break;
+                case TutorialStep.Backpack:
+                    _tutorialUI.HighlightBackpackButton();
+                    break;
+                case TutorialStep.BackToMainMenu:
+                    _tutorialUI.HighlightBackToMenuButton();
+                    break;
                 
                 case TutorialStep.ShowCoreLoop:
                     _tutorialUI.ShowCoreLoopPanel(FinishTutorial);
                     break;
             }
+
+            StepText stepText = _tutorialHelperTexts.GetStepTextByCategory(_saveData.CurrentStep);
+            string text = stepText != null ? stepText.Text : string.Empty;
+            _tutorialUI.SetMentorText(text);
         }
 
         private void HandleItemMerged(Vector2Int vector2Int, IGridItem item)
@@ -101,18 +116,33 @@ namespace Core.Tutorial
         {
             if (_saveData.CurrentStep == TutorialStep.CompleteOrder)
             {
-                _saveData.CurrentStep = TutorialStep.ShowCoreLoop;
-                _tutorialUI.ClearHighlights();
-                
-                ShowCoreLoopWithDelay();
+                _saveData.CurrentStep = TutorialStep.Backpack;
+                ProcessStep();
             }
         }
 
+        private void HandleClickedNextButton()
+        {
+            if (_saveData.CurrentStep == TutorialStep.Backpack)
+            {
+                _saveData.CurrentStep = TutorialStep.BackToMainMenu;
+                ProcessStep();
+            }
+            else if (_saveData.CurrentStep == TutorialStep.BackToMainMenu)
+            {
+                _saveData.CurrentStep = TutorialStep.ShowCoreLoop;
+                _tutorialUI.ClearHighlights();
+                ProcessStep();
+            }
+        }
+
+        /*
         private async void ShowCoreLoopWithDelay()
         {
             await Task.Delay(1000);
             ProcessStep();
         }
+        */
 
         private void FinishTutorial()
         {
@@ -126,6 +156,7 @@ namespace Core.Tutorial
         {
             _gridModel.OnItemPlaced -= HandleItemMerged;
             _orderDataModel.OnOrderCompleted -= HandleOrderCompleted;
+            _tutorialUI.OnNextButtonClicked -= HandleClickedNextButton;
         }
     }
 }

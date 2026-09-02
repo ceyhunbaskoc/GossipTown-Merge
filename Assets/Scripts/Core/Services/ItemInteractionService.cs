@@ -1,8 +1,11 @@
-﻿using UnityEngine;
+﻿using Core.Audio;
+using UnityEngine;
 using Core.GridSystem;
 using Core.Economy;
+using Core.Haptics;
 using Data;
 using Core.Interaction;
+using Data.Audio;
 
 namespace Core.Services
 {
@@ -15,19 +18,25 @@ namespace Core.Services
         private readonly IEconomyModifier _economyModifier;
         private readonly IGeneratorService _generatorService;
         private readonly ChestInteractionService _chestInteractionService;
+        private readonly IAudioService _audioService;
+        private readonly IHapticService _hapticService;
 
         public ItemInteractionService(
             GridDataModel gridModel, 
             ItemDatabaseSO itemDatabase, 
             IEconomyModifier economyModifier,
             IGeneratorService generatorService,
-            ChestInteractionService chestInteractionService)
+            ChestInteractionService chestInteractionService,
+            IAudioService audioService,
+            IHapticService hapticService)
         {
             _gridModel = gridModel;
             _itemDatabase = itemDatabase;
             _economyModifier = economyModifier;
             _generatorService = generatorService;
             _chestInteractionService = chestInteractionService;
+            _audioService = audioService;
+            _hapticService = hapticService;
         }
 
         public InteractionResult ProcessInteraction(Vector2Int gridPosition)
@@ -47,6 +56,11 @@ namespace Core.Services
 
                 case SpawnerItemData spawnerItem:
                     GeneratorResult genResult = _generatorService.TryGenerateItem(gridPosition, spawnerItem);
+                    if (genResult == GeneratorResult.Success || genResult == GeneratorResult.AwesomeSuccess)
+                    {
+                        _audioService.PlaySFX(SfxId.Gameplay_ItemSpawn);
+                        _hapticService.Play(HapticType.Selection);
+                    }
                     return MapGeneratorResult(genResult);
 
                 case CollectibleItemData collectibleItem:

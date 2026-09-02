@@ -54,6 +54,14 @@ MonoBehaviour:
       IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
       IsPlayerSide: 1
+      Text: Let me check the pressure valves. It's a simple thermodynamics problem.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 3c6097a127f17d3458d258f406b59bdd, type: 2}
+      IsPlayerSide: 0
+      Text: Thermodynamics? I just thought it needed a good scrub!
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
       Text: I'm on it. Let's merge some tools and get it running!
       IsPausePoint: 1
     - Speaker: {fileID: 11400000, guid: 0d57fad9c41be454097b69c8b078d26f, type: 2}
@@ -81,6 +89,10 @@ MonoBehaviour:
       IsPlayerSide: 1
       Text: Exactly, Max. The more orders we complete, the more capital we generate.
       IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 4c2cda600e17d3040844d1001b76e26e, type: 2}
+      IsPlayerSide: 0
+      Text: Make sure you track those logistics, kid. Efficient routing is key.
+      IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: a81aeb2f90c933f419f5beb2984e207f, type: 2}
       IsPlayerSide: 0
       Text: Consider it done! I'm the fastest courier in town.
@@ -88,6 +100,14 @@ MonoBehaviour:
     - Speaker: {fileID: 11400000, guid: 3c6097a127f17d3458d258f406b59bdd, type: 2}
       IsPlayerSide: 0
       Text: People are actually sitting at my tables again. I can't believe this.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: We need to optimize the seating arrangement for maximum throughput.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 3c6097a127f17d3458d258f406b59bdd, type: 2}
+      IsPlayerSide: 0
+      Text: Haha, just don't turn my cozy cafe into a factory assembly line!
       IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
       IsPlayerSide: 1
@@ -101,6 +121,10 @@ MonoBehaviour:
     - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
       IsPlayerSide: 0
       Text: Beginner's luck. One decent building doesn't make a profitable district.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 4c2cda600e17d3040844d1001b76e26e, type: 2}
+      IsPlayerSide: 0
+      Text: Luck has nothing to do with solid structural integrity, Isabella.
       IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
       IsPlayerSide: 1
@@ -119,6 +143,10 @@ MonoBehaviour:
       Text: A bakery? Fresh bread is exactly what this street needs to attract more
         foot traffic.
       IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 4c2cda600e17d3040844d1001b76e26e, type: 2}
+      IsPlayerSide: 0
+      Text: Water damage is no joke. Let's patch that up with industrial sealant.
+      IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: 021ea8cb1d1bb964cb0ef1f3352e2b09, type: 2}
       IsPlayerSide: 0
       Text: I have the recipes, you bring the tools. Let's do this!
@@ -129,7 +157,12 @@ MonoBehaviour:
       IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
       IsPlayerSide: 1
-      Text: During legal working hours? That's impossible, Mayor.
+      Text: During legal working hours? That's impossible, Mayor. Our decibel levels
+        are compliant.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 4c2cda600e17d3040844d1001b76e26e, type: 2}
+      IsPlayerSide: 0
+      Text: Someone must be filing fake reports to slow us down.
       IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: 0d57fad9c41be454097b69c8b078d26f, type: 2}
       IsPlayerSide: 0
@@ -144,6 +177,10 @@ MonoBehaviour:
       IsPlayerSide: 1
       Text: People prefer quality and community over cheap, mass-produced junk.
       IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 4c2cda600e17d3040844d1001b76e26e, type: 2}
+      IsPlayerSide: 0
+      Text: Corporate bread tastes like cardboard anyway.
+      IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
       IsPlayerSide: 0
       Text: We'll see what their wallets prefer.
@@ -157,6 +194,10 @@ MonoBehaviour:
       Text: And I've been delivering pastries to the uptown offices. Everyone is
         talking about this place!
       IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 3c6097a127f17d3458d258f406b59bdd, type: 2}
+      IsPlayerSide: 0
+      Text: My coffee sales have doubled thanks to those croissants, Mia!
+      IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
       IsPlayerSide: 1
       Text: Great job, team. Let's keep the momentum going.
@@ -165,6 +206,14 @@ MonoBehaviour:
       IsPlayerSide: 0
       Text: The valuation of the neighborhood just spiked. I haven't seen numbers
         like this since the 90s.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: We are stabilizing the local economy block by block.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 4c2cda600e17d3040844d1001b76e26e, type: 2}
+      IsPlayerSide: 0
+      Text: It's a beautiful algorithm, kid. Hard work equals success.
       IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
       IsPlayerSide: 1
@@ -178,6 +227,10 @@ MonoBehaviour:
       IsPlayerSide: 0
       Text: Isabella, my investors are getting anxious. You said this would be a
         quick acquisition!
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
+      IsPlayerSide: 0
+      Text: Keep your investors in line, Thomas. I will handle these amateurs.
       IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
       IsPlayerSide: 1
@@ -196,6 +249,10 @@ MonoBehaviour:
       Text: A greenhouse requires precise climate control systems. I can engineer
         that for you.
       IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 4c2cda600e17d3040844d1001b76e26e, type: 2}
+      IsPlayerSide: 0
+      Text: We'll need to calibrate the humidity sensors properly.
+      IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: e5b15f1aa1ee81c48934725c96562ec3, type: 2}
       IsPlayerSide: 0
       Text: Oh, thank you! The street needs some color and life.
@@ -208,6 +265,14 @@ MonoBehaviour:
     - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
       IsPlayerSide: 1
       Text: It's about the ecosystem, Isabella. Aesthetics drive customer retention.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
+      IsPlayerSide: 0
+      Text: Aesthetics don't pay property taxes. My malls do.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: Watch the foot traffic metrics over the next week. You'll be surprised.
       IsPausePoint: 1
     - Speaker: {fileID: 11400000, guid: a81aeb2f90c933f419f5beb2984e207f, type: 2}
       IsPlayerSide: 0
@@ -218,6 +283,10 @@ MonoBehaviour:
       IsPlayerSide: 0
       Text: We need to upgrade the delivery logistics. The grid is getting busy.
       IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 4c2cda600e17d3040844d1001b76e26e, type: 2}
+      IsPlayerSide: 0
+      Text: A central dispatch hub should solve the routing latency.
+      IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
       IsPlayerSide: 1
       Text: I'll handle the resource management. You guys focus on production.
@@ -226,6 +295,14 @@ MonoBehaviour:
       IsPlayerSide: 0
       Text: I am sending a health and safety inspector. Your 'botanical experiment'
         might be a bio-hazard.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: We use fully organic, closed-loop irrigation. There are no hazards.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 4c2cda600e17d3040844d1001b76e26e, type: 2}
+      IsPlayerSide: 0
+      Text: He's just fishing for an excuse to shut us down.
       IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
       IsPlayerSide: 1
@@ -239,6 +316,10 @@ MonoBehaviour:
     - Speaker: {fileID: 11400000, guid: 4c2cda600e17d3040844d1001b76e26e, type: 2}
       IsPlayerSide: 0
       Text: Haha! That's how you win them over. By being undeniably good.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 3c6097a127f17d3458d258f406b59bdd, type: 2}
+      IsPlayerSide: 0
+      Text: And he grabbed a latte on the way out! The synergy is real.
       IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
       IsPlayerSide: 1
@@ -255,6 +336,10 @@ MonoBehaviour:
       IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
       IsPlayerSide: 0
+      Text: My zoning lawyers are preparing a massive lawsuit. Be ready.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
       Text: Bring it on. Let's see how you handle the heavy industry.
       IsPausePoint: 1
   - ChapterId: ch_04
@@ -272,7 +357,11 @@ MonoBehaviour:
       IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: 72fc4401eb87d01478e0dcee3b99fc9b, type: 2}
       IsPlayerSide: 0
-      Text: A digital inventory system paired with classic reading spaces? I like
+      Text: Modernize? Are you suggesting we digitize the entire inventory?
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: A digital inventory system paired with classic reading spaces. I like
         how your mind works.
       IsPausePoint: 1
     - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
@@ -284,6 +373,14 @@ MonoBehaviour:
       IsPlayerSide: 1
       Text: Knowledge is a high-yield asset, Isabella. A parking garage is just lazy
         real estate.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
+      IsPlayerSide: 0
+      Text: Lazy, perhaps. But highly lucrative on a quarterly basis.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: We measure success in generations, not financial quarters.
       IsPausePoint: 1
     - Speaker: {fileID: 11400000, guid: 0d57fad9c41be454097b69c8b078d26f, type: 2}
       IsPlayerSide: 0
@@ -293,7 +390,15 @@ MonoBehaviour:
     - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
       IsPlayerSide: 1
       Text: We are installing state-of-the-art thermal suppression systems as we
-        speak, Mayor. Try another excuse.
+        speak, Mayor.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 0d57fad9c41be454097b69c8b078d26f, type: 2}
+      IsPlayerSide: 0
+      Text: I will still require a full structural audit by Friday!
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: Try another excuse. The paperwork will be on your desk tomorrow morning.
       IsPausePoint: 1
     - Speaker: {fileID: 11400000, guid: a81aeb2f90c933f419f5beb2984e207f, type: 2}
       IsPlayerSide: 0
@@ -302,8 +407,16 @@ MonoBehaviour:
       IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
       IsPlayerSide: 1
-      Text: We are optimizing the supply chain, Max. Hang in there, the logistics
-        will get smoother.
+      Text: We are optimizing the supply chain, Max. I'm building a specialized cargo
+        cart for you.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: a81aeb2f90c933f419f5beb2984e207f, type: 2}
+      IsPlayerSide: 0
+      Text: A custom cargo cart? Now that's what I call an upgrade!
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: Hang in there, the logistics will get smoother.
       IsPausePoint: 1
     - Speaker: {fileID: 11400000, guid: 72fc4401eb87d01478e0dcee3b99fc9b, type: 2}
       IsPlayerSide: 0
@@ -313,6 +426,14 @@ MonoBehaviour:
     - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
       IsPlayerSide: 1
       Text: Cultural valuation is up. We are anchoring the community here.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 72fc4401eb87d01478e0dcee3b99fc9b, type: 2}
+      IsPlayerSide: 0
+      Text: And the digital index makes finding obscure texts instantaneous!
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: Efficiency meets tradition. It's the perfect formula.
       IsPausePoint: 1
     - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
       IsPlayerSide: 0
@@ -323,6 +444,10 @@ MonoBehaviour:
       IsPlayerSide: 0
       Text: It generates loyalty, Isabella. Something your shareholders know nothing
         about.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
+      IsPlayerSide: 0
+      Text: Loyalty can be bought, old man. It's just a matter of price.
       IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
       IsPlayerSide: 1
@@ -343,7 +468,11 @@ MonoBehaviour:
       IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: 3ae9e6c8038e4b24d98c8353be283c0c, type: 2}
       IsPlayerSide: 0
-      Text: If you can fix my kitchen, I will feed this entire street!
+      Text: High-grade materials? Will it ruin the authentic brick oven flavor?
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: Not at all. If you can fix my kitchen, I will feed this entire street!
       IsPausePoint: 1
     - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
       IsPlayerSide: 0
@@ -352,8 +481,15 @@ MonoBehaviour:
       IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
       IsPlayerSide: 1
-      Text: Quality always scales better than cheap quantity. Your frozen dough can't
-        compete with authentic craftsmanship.
+      Text: Quality always scales better than cheap quantity.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
+      IsPlayerSide: 0
+      Text: My supply chain economics suggest otherwise.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: Your frozen dough can't compete with authentic craftsmanship.
       IsPausePoint: 1
     - Speaker: {fileID: 11400000, guid: 0d57fad9c41be454097b69c8b078d26f, type: 2}
       IsPlayerSide: 0
@@ -363,12 +499,27 @@ MonoBehaviour:
     - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
       IsPlayerSide: 1
       Text: Our new HVAC systems exceed city regulations by forty percent, Mayor.
-        Check the data yourself.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 0d57fad9c41be454097b69c8b078d26f, type: 2}
+      IsPlayerSide: 0
+      Text: I'll have my experts analyze the airflow metrics.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: Check the data yourself. The air is cleaner inside than out.
       IsPausePoint: 1
     - Speaker: {fileID: 11400000, guid: a81aeb2f90c933f419f5beb2984e207f, type: 2}
       IsPlayerSide: 0
       Text: Hot pizza delivery protocol active! The new insulated thermal bags you
         designed are amazing!
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: They use a vacuum-seal layer to prevent thermal bleed.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: a81aeb2f90c933f419f5beb2984e207f, type: 2}
+      IsPlayerSide: 0
+      Text: I don't know what that means, but the cheese stays perfectly melted!
       IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
       IsPlayerSide: 1
@@ -381,8 +532,15 @@ MonoBehaviour:
       IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
       IsPlayerSide: 1
-      Text: Revenue streams are stabilizing. This block is practically self-funding
-        now.
+      Text: Revenue streams are stabilizing.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 3ae9e6c8038e4b24d98c8353be283c0c, type: 2}
+      IsPlayerSide: 0
+      Text: I need to hire more staff just to keep up with the dough prep!
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: This block is practically self-funding now.
       IsPausePoint: 1
     - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
       IsPlayerSide: 0
@@ -392,6 +550,10 @@ MonoBehaviour:
     - Speaker: {fileID: 11400000, guid: 4c2cda600e17d3040844d1001b76e26e, type: 2}
       IsPlayerSide: 0
       Text: You clearly don't understand the power of a good slice of pizza, Isabella.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
+      IsPlayerSide: 0
+      Text: I understand profit margins. And yours are highly volatile.
       IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
       IsPlayerSide: 1
@@ -412,7 +574,11 @@ MonoBehaviour:
       IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: 4a071e55567759a46a98acfe0dadf45e, type: 2}
       IsPlayerSide: 0
-      Text: You mean like 3D printers and CNC machines? You're a genius!
+      Text: You mean like 3D printers and CNC machines?
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: Exactly. You provide the blueprints, we provide the micro-tolerance hardware.
       IsPausePoint: 1
     - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
       IsPlayerSide: 0
@@ -422,7 +588,16 @@ MonoBehaviour:
     - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
       IsPlayerSide: 1
       Text: We aren't doing mass production. We are doing bespoke, premium local
-        manufacturing. It's a completely different market tier.
+        manufacturing.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
+      IsPlayerSide: 0
+      Text: Premium local? The overhead costs will devour your profits.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: It's a completely different market tier. People pay for precision and
+        art.
       IsPausePoint: 1
     - Speaker: {fileID: 11400000, guid: 0d57fad9c41be454097b69c8b078d26f, type: 2}
       IsPlayerSide: 0
@@ -431,8 +606,15 @@ MonoBehaviour:
       IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
       IsPlayerSide: 1
-      Text: These are low-decibel, eco-friendly micro-fabricators, Mayor. Totally
-        compliant with commercial zoning.
+      Text: These are low-decibel, eco-friendly micro-fabricators, Mayor.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 0d57fad9c41be454097b69c8b078d26f, type: 2}
+      IsPlayerSide: 0
+      Text: They still qualify as manufacturing hardware under sub-section 4B!
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: They draw less power than a commercial espresso machine. Totally compliant.
       IsPausePoint: 1
     - Speaker: {fileID: 11400000, guid: a81aeb2f90c933f419f5beb2984e207f, type: 2}
       IsPlayerSide: 0
@@ -441,12 +623,28 @@ MonoBehaviour:
       IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
       IsPlayerSide: 1
-      Text: High-margin products. Exactly as calculated. Good job, Max.
+      Text: High-margin products. Exactly as calculated.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: a81aeb2f90c933f419f5beb2984e207f, type: 2}
+      IsPlayerSide: 0
+      Text: I even got a tip that was higher than the cost of the toy!
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: Good job, Max. Keep those supply routes flowing.
       IsPausePoint: 1
     - Speaker: {fileID: 11400000, guid: 4a071e55567759a46a98acfe0dadf45e, type: 2}
       IsPlayerSide: 0
       Text: Production output is up 300 percent, and the quality is flawless! The
         kids love them.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: The automated calibration loop is working perfectly then.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 4a071e55567759a46a98acfe0dadf45e, type: 2}
+      IsPlayerSide: 0
+      Text: It's beyond perfect. We are creating heirlooms, not just toys.
       IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
       IsPlayerSide: 1
@@ -460,6 +658,10 @@ MonoBehaviour:
     - Speaker: {fileID: 11400000, guid: 4c2cda600e17d3040844d1001b76e26e, type: 2}
       IsPlayerSide: 0
       Text: Algorithms can't predict passion, Isabella. You're losing the neighborhood.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
+      IsPlayerSide: 0
+      Text: I need to recalibrate my data models. This defies standard economics.
       IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
       IsPlayerSide: 1
@@ -480,8 +682,12 @@ MonoBehaviour:
       IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: e972bc04a23d2cb42bc07a3ecee7841c, type: 2}
       IsPlayerSide: 0
-      Text: Automated elegance? If you can maintain the fabric quality, I am completely
-        on board.
+      Text: Automated elegance? Can machinery truly replicate the human touch?
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: With the right algorithm, it can exceed it. If you can maintain the fabric
+        quality, I am completely on board.
       IsPausePoint: 1
     - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
       IsPlayerSide: 0
@@ -490,8 +696,15 @@ MonoBehaviour:
       IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
       IsPlayerSide: 1
-      Text: Fast fashion is environmentally toxic and economically fragile. We are
-        building a sustainable premium brand.
+      Text: Fast fashion is environmentally toxic and economically fragile.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
+      IsPlayerSide: 0
+      Text: It has a turnaround time of two weeks. It prints money.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: We are building a sustainable premium brand. Value over volume.
       IsPausePoint: 1
     - Speaker: {fileID: 11400000, guid: 0d57fad9c41be454097b69c8b078d26f, type: 2}
       IsPlayerSide: 0
@@ -501,7 +714,15 @@ MonoBehaviour:
     - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
       IsPlayerSide: 1
       Text: Our new micro-factories operate on a closed-loop water recycling system,
-        Mayor. Zero emissions. Nice try.
+        Mayor.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 0d57fad9c41be454097b69c8b078d26f, type: 2}
+      IsPlayerSide: 0
+      Text: Closed-loop? I'll need environmental analysts to verify that.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: Zero emissions. The data logs are open-source. Nice try.
       IsPausePoint: 1
     - Speaker: {fileID: 11400000, guid: a81aeb2f90c933f419f5beb2984e207f, type: 2}
       IsPlayerSide: 0
@@ -510,8 +731,15 @@ MonoBehaviour:
       IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
       IsPlayerSide: 1
-      Text: Brand presentation is key, Max. The delivery experience is part of the
-        product valuation.
+      Text: Brand presentation is key, Max.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: a81aeb2f90c933f419f5beb2984e207f, type: 2}
+      IsPlayerSide: 0
+      Text: Even the boxes have a matte finish. Very sleek.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: The delivery experience is part of the product valuation.
       IsPausePoint: 1
     - Speaker: {fileID: 11400000, guid: e972bc04a23d2cb42bc07a3ecee7841c, type: 2}
       IsPlayerSide: 0
@@ -520,8 +748,15 @@ MonoBehaviour:
       IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
       IsPlayerSide: 1
-      Text: Our demographic reach has expanded to the elites. The district's net
-        worth is skyrocketing.
+      Text: Our demographic reach has expanded to the elites.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: e972bc04a23d2cb42bc07a3ecee7841c, type: 2}
+      IsPlayerSide: 0
+      Text: They are practically begging for our next seasonal line.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: The district's net worth is skyrocketing.
       IsPausePoint: 1
     - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
       IsPlayerSide: 0
@@ -532,6 +767,10 @@ MonoBehaviour:
       IsPlayerSide: 0
       Text: Quality craftsmanship outlasts cheap trends, Isabella. Always has, always
         will.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
+      IsPlayerSide: 0
+      Text: This market is irrational. Consumers should follow the price drops.
       IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
       IsPlayerSide: 1
@@ -552,6 +791,10 @@ MonoBehaviour:
       IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: ef51d743b9fa9714881ce33bae70a8ce, type: 2}
       IsPlayerSide: 0
+      Text: Can we achieve Dolby-level standards in a building this old?
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
       Text: If you can engineer a flawless soundscape, I will bring the greatest
         independent films to this screen!
       IsPausePoint: 1
@@ -563,7 +806,14 @@ MonoBehaviour:
     - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
       IsPlayerSide: 1
       Text: Your multiplex offers noise. We are offering a curated cultural experience.
-        We will siphon your audience.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
+      IsPlayerSide: 0
+      Text: We have neon lights and a massive arcade. Teenagers love it.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: We will siphon your audience. Just watch.
       IsPausePoint: 1
     - Speaker: {fileID: 11400000, guid: 0d57fad9c41be454097b69c8b078d26f, type: 2}
       IsPlayerSide: 0
@@ -572,13 +822,29 @@ MonoBehaviour:
       IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
       IsPlayerSide: 1
-      Text: The theater is fitted with military-grade soundproofing foam. It's quieter
-        outside than a library, Mayor.
+      Text: The theater is fitted with military-grade soundproofing foam.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 0d57fad9c41be454097b69c8b078d26f, type: 2}
+      IsPlayerSide: 0
+      Text: Military-grade? Where did you even source that?
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: It's quieter outside than a library, Mayor. Your inspectors will hear
+        nothing.
       IsPausePoint: 1
     - Speaker: {fileID: 11400000, guid: a81aeb2f90c933f419f5beb2984e207f, type: 2}
       IsPlayerSide: 0
       Text: Delivering film reels and VIP premier tickets! The whole city wants a
         seat in Victor's theater.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: The routing for physical ticket deliveries must be precise, Max.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: a81aeb2f90c933f419f5beb2984e207f, type: 2}
+      IsPlayerSide: 0
+      Text: Don't worry, my scooter is essentially a rocket now.
       IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
       IsPlayerSide: 1
@@ -589,6 +855,14 @@ MonoBehaviour:
       IsPlayerSide: 0
       Text: Magnificent! The premiere was entirely sold out. The sound system you
         engineered is breathtaking.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: The bass frequencies resonated exactly as the simulations predicted.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: ef51d743b9fa9714881ce33bae70a8ce, type: 2}
+      IsPlayerSide: 0
+      Text: The critics are already calling us the city's new cinematic heart.
       IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
       IsPlayerSide: 1
@@ -603,6 +877,10 @@ MonoBehaviour:
     - Speaker: {fileID: 11400000, guid: 4c2cda600e17d3040844d1001b76e26e, type: 2}
       IsPlayerSide: 0
       Text: Because this street has a soul, Isabella. And you can't buy that.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
+      IsPlayerSide: 0
+      Text: Everything has a price tag. I just need to find yours.
       IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
       IsPlayerSide: 1
@@ -623,6 +901,10 @@ MonoBehaviour:
       IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: f0df9c76a75af9b4ca4ab723203cc247, type: 2}
       IsPlayerSide: 0
+      Text: I'll write a custom peer-to-peer encryption layer to keep our data safe.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
       Text: Deal! We are going to turn this street into the smartest block in the
         city.
       IsPausePoint: 1
@@ -633,8 +915,16 @@ MonoBehaviour:
       IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
       IsPlayerSide: 1
-      Text: Not a chance. We are building an independent grid. Your data monopoly
-        ends at our district borders.
+      Text: Not a chance. We are building an independent grid.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
+      IsPlayerSide: 0
+      Text: I can throttle your bandwidth from the mainline. Don't tempt me.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: We use a dedicated fiber-optic backbone. Your data monopoly ends at our
+        district borders.
       IsPausePoint: 1
     - Speaker: {fileID: 11400000, guid: 0d57fad9c41be454097b69c8b078d26f, type: 2}
       IsPlayerSide: 0
@@ -643,8 +933,15 @@ MonoBehaviour:
       IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
       IsPlayerSide: 1
-      Text: Our encryption protocols exceed federal standards. Unless you want a
-        lawsuit for suppressing free enterprise, back off.
+      Text: Our encryption protocols exceed federal standards.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 0d57fad9c41be454097b69c8b078d26f, type: 2}
+      IsPlayerSide: 0
+      Text: I cannot allow rogue data networks to operate under my jurisdiction!
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: Unless you want a lawsuit for suppressing free enterprise, back off.
       IsPausePoint: 1
     - Speaker: {fileID: 11400000, guid: a81aeb2f90c933f419f5beb2984e207f, type: 2}
       IsPlayerSide: 0
@@ -655,11 +952,27 @@ MonoBehaviour:
       IsPlayerSide: 1
       Text: System-wide efficiency. Every business on the street is now mathematically
         optimized.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: a81aeb2f90c933f419f5beb2984e207f, type: 2}
+      IsPlayerSide: 0
+      Text: I'm taking corners so fast I barely have time to brake!
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: Just keep the merchandise intact, Max.
       IsPausePoint: 1
     - Speaker: {fileID: 11400000, guid: f0df9c76a75af9b4ca4ab723203cc247, type: 2}
       IsPlayerSide: 0
       Text: The servers are online and stable! The entire district is connected,
         lightning fast and completely secure.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: Packet loss is at zero percent. The latency is practically non-existent.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: f0df9c76a75af9b4ca4ab723203cc247, type: 2}
+      IsPlayerSide: 0
+      Text: We just created a digital fortress, didn't we?
       IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
       IsPlayerSide: 1
@@ -674,6 +987,10 @@ MonoBehaviour:
     - Speaker: {fileID: 11400000, guid: 4c2cda600e17d3040844d1001b76e26e, type: 2}
       IsPlayerSide: 0
       Text: You can't exploit what you can't see, Isabella. Checkmate.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
+      IsPlayerSide: 0
+      Text: This is a highly illegal blackout. I'll have the FCC on you.
       IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
       IsPlayerSide: 1
@@ -690,12 +1007,16 @@ MonoBehaviour:
     - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
       IsPlayerSide: 1
       Text: We will integrate laser-guided engraving modules and a decentralized
-        biometric security grid, Edward. Total perfection.
+        biometric security grid, Edward.
       IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: daaf67181a4cc9249a7e946315bacbfd, type: 2}
       IsPlayerSide: 0
-      Text: If you can deliver that level of engineering, my capital will anchor
-        this entire district.
+      Text: Biometric security? Are you sure it can withstand a targeted breach?
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: Total perfection. If you can deliver that level of engineering, my capital
+        will anchor this entire district.
       IsPausePoint: 1
     - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
       IsPlayerSide: 0
@@ -706,6 +1027,10 @@ MonoBehaviour:
       IsPlayerSide: 0
       Text: Your plaza lacks soul, Isabella. This street has an ecosystem of brilliance.
         My answer is no.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
+      IsPlayerSide: 0
+      Text: You are throwing away a guaranteed global distribution network!
       IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
       IsPlayerSide: 1
@@ -719,8 +1044,15 @@ MonoBehaviour:
       IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
       IsPlayerSide: 1
-      Text: Our financial algorithms are transparent and flawless, Mayor. Audit us
-        all you want, you will only find perfection.
+      Text: Our financial algorithms are transparent and flawless, Mayor.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 0d57fad9c41be454097b69c8b078d26f, type: 2}
+      IsPlayerSide: 0
+      Text: We will see what the auditors say when they rip through your ledgers!
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: Audit us all you want, you will only find perfection.
       IsPausePoint: 1
     - Speaker: {fileID: 11400000, guid: a81aeb2f90c933f419f5beb2984e207f, type: 2}
       IsPlayerSide: 0
@@ -729,8 +1061,15 @@ MonoBehaviour:
       IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
       IsPlayerSide: 1
-      Text: You are the arteries of this economy, Max. The physical assets are finally
-        secured.
+      Text: You are the arteries of this economy, Max.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: a81aeb2f90c933f419f5beb2984e207f, type: 2}
+      IsPlayerSide: 0
+      Text: I feel like a secret agent. This is awesome!
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
+      Text: The physical assets are finally secured.
       IsPausePoint: 1
     - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
       IsPlayerSide: 0
@@ -744,6 +1083,10 @@ MonoBehaviour:
       IsPausePoint: 0
     - Speaker: {fileID: 11400000, guid: d55d93a88519c914fade87a57e6d4167, type: 2}
       IsPlayerSide: 0
+      Text: The mathematics... they just don't add up.
+      IsPausePoint: 0
+    - Speaker: {fileID: 11400000, guid: 56a9d02871d780c47976b8def7cf7bb7, type: 2}
+      IsPlayerSide: 1
       Text: ...You win. I am withdrawing my acquisition bids. This district is yours.
       IsPausePoint: 1
     - Speaker: {fileID: 11400000, guid: 0d57fad9c41be454097b69c8b078d26f, type: 2}

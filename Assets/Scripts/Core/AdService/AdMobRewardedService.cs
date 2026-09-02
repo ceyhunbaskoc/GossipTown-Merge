@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using GoogleMobileAds.Api;
+using Core.Architecture;
 
 namespace Core.AdService
 {
@@ -21,7 +22,7 @@ namespace Core.AdService
 
         private void InitializeSdk()
         {
-            MobileAds.Initialize(initStatus => LoadAd());
+            MobileAds.Initialize(initStatus => MainThreadDispatcher.Enqueue(LoadAd));
         }
 
         private void LoadAd()
@@ -36,21 +37,23 @@ namespace Core.AdService
             
             RewardedAd.Load(_adUnitId, adRequest, (RewardedAd ad, LoadAdError error) =>
             {
-                if (error != null || ad == null)
+                MainThreadDispatcher.Enqueue(() =>
                 {
-                    Debug.LogError($"[AdMobRewardedService] Ad can't be loaded. Errror: {error}");
-                    return;
-                }
+                    if (error != null || ad == null)
+                    {
+                        Debug.LogError($"[AdMobRewardedService] Ad can't be loaded. Error: {error}");
+                        return;
+                    }
 
-                _rewardedAd = ad;
-                RegisterEventHandlers(_rewardedAd);
+                    _rewardedAd = ad;
+                    RegisterEventHandlers(_rewardedAd);
+                });
             });
         }
 
         private void RegisterEventHandlers(RewardedAd ad)
         {
             ad.OnAdFullScreenContentClosed += HandleAdClosed;
-            
             ad.OnAdFullScreenContentFailed += HandleAdFailed;
         }
 
@@ -64,8 +67,11 @@ namespace Core.AdService
 
                 _rewardedAd.Show((GoogleMobileAds.Api.Reward reward) =>
                 {
-                    _isRewardEarned = true;
-                    _onAdWatched?.Invoke();
+                    MainThreadDispatcher.Enqueue(() =>
+                    {
+                        _isRewardEarned = true;
+                        _onAdWatched?.Invoke();
+                    });
                 });
             }
             else
@@ -79,23 +85,28 @@ namespace Core.AdService
 
         private void HandleAdClosed()
         {
-            if (!_isRewardEarned)
+            MainThreadDispatcher.Enqueue(() =>
             {
-                _onAdFailed?.Invoke();
-            }
+                if (!_isRewardEarned)
+                {
+                    _onAdFailed?.Invoke();
+                }
 
-            ClearCallbacks();
-            
-            LoadAd(); 
+                ClearCallbacks();
+                LoadAd(); 
+            });
         }
 
         private void HandleAdFailed(AdError error)
         {
-            Debug.LogError($"[AdMobRewardedService] Ad display failed: {error.GetMessage()}");
-            _onAdFailed?.Invoke();
-            
-            ClearCallbacks();
-            LoadAd();
+            MainThreadDispatcher.Enqueue(() =>
+            {
+                Debug.LogError($"[AdMobRewardedService] Ad display failed: {error.GetMessage()}");
+                _onAdFailed?.Invoke();
+                
+                ClearCallbacks();
+                LoadAd();
+            });
         }
 
         private void ClearCallbacks()

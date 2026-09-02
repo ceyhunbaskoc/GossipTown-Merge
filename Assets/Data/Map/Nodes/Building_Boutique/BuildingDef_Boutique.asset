@@ -22,6 +22,10 @@ MonoBehaviour:
       RewardItem: {fileID: 0}
       Level: 1
       Amount: 340
+    - Category: 0
+      RewardItem: {fileID: 11400000, guid: 34bc04e9b05197d42834ef3e847910e4, type: 2}
+      Level: 1
+      Amount: 1
   - LevelSprite: {fileID: 6237070540196265568, guid: 11aa23c36fa59c045986e5baa6368a07, type: 3}
     UpgradeCost: 1850
     LevelRewards:
@@ -33,6 +37,10 @@ MonoBehaviour:
       RewardItem: {fileID: 0}
       Level: 1
       Amount: 70
+    - Category: 0
+      RewardItem: {fileID: 11400000, guid: 34bc04e9b05197d42834ef3e847910e4, type: 2}
+      Level: 1
+      Amount: 1
   - LevelSprite: {fileID: 3852799338055319414, guid: 11aa23c36fa59c045986e5baa6368a07, type: 3}
     UpgradeCost: 4060
     LevelRewards:
@@ -40,6 +48,10 @@ MonoBehaviour:
       RewardItem: {fileID: 0}
       Level: 1
       Amount: 1360
+    - Category: 0
+      RewardItem: {fileID: 11400000, guid: 34bc04e9b05197d42834ef3e847910e4, type: 2}
+      Level: 2
+      Amount: 1
   - LevelSprite: {fileID: -6769114225347239959, guid: 11aa23c36fa59c045986e5baa6368a07, type: 3}
     UpgradeCost: 8930
     LevelRewards:
@@ -51,6 +63,10 @@ MonoBehaviour:
       RewardItem: {fileID: 0}
       Level: 1
       Amount: 70
+    - Category: 0
+      RewardItem: {fileID: 11400000, guid: 34bc04e9b05197d42834ef3e847910e4, type: 2}
+      Level: 3
+      Amount: 1
   - LevelSprite: {fileID: 6824955594689082465, guid: 11aa23c36fa59c045986e5baa6368a07, type: 3}
     UpgradeCost: 19650
     LevelRewards:
@@ -58,6 +74,10 @@ MonoBehaviour:
       RewardItem: {fileID: 0}
       Level: 1
       Amount: 5440
+    - Category: 0
+      RewardItem: {fileID: 11400000, guid: 34bc04e9b05197d42834ef3e847910e4, type: 2}
+      Level: 4
+      Amount: 1
   - LevelSprite: {fileID: 6426633240935878965, guid: 11aa23c36fa59c045986e5baa6368a07, type: 3}
     UpgradeCost: 43230
     LevelRewards:
@@ -69,3 +89,7 @@ MonoBehaviour:
       RewardItem: {fileID: 0}
       Level: 1
       Amount: 35
+    - Category: 0
+      RewardItem: {fileID: 11400000, guid: 34bc04e9b05197d42834ef3e847910e4, type: 2}
+      Level: 5
+      Amount: 1

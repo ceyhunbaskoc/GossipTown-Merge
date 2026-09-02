@@ -1,5 +1,8 @@
-﻿using Core.Achievements;
+﻿using System.Threading.Tasks;
+using Core.Achievements;
 using Core.AdService;
+using Core.Architecture;
+using Core.Audio;
 using Core.Backpack;
 using Core.CameraSystem;
 using Core.Controllers;
@@ -11,6 +14,7 @@ using Core.Economy.Purchasing;
 using Core.Economy.Shop;
 using Core.Factories;
 using Core.GridSystem;
+using Core.Haptics;
 using Core.Interaction;
 using Core.ItemDetail;
 using Core.LevelSystem;
@@ -31,6 +35,7 @@ using Core.Story;
 using Core.Tutorial;
 using Core.Views;
 using Data;
+using Data.Audio;
 using Data.Economy.Shop;
 using Data.EventChannels;
 using Data.Level;
@@ -45,6 +50,7 @@ using Data.UI;
 using Order;
 using UI;
 using UI.Backpack;
+using UI.Boot;
 using UI.Chest;
 using UI.Collectible;
 using UI.Components;
@@ -92,6 +98,8 @@ namespace Core.Bootstrap
         [SerializeField] private FloatingTextConfigSO _floatingTextConfig;
         [SerializeField] private ExchangePairSO _exchangePair;
         [SerializeField] private AdShopPackagesDatabaseSO _adShopPackagesDatabase;
+        [SerializeField] private TutorialHelperTextsSO _tutorialHelperTexts;
+        [SerializeField] private SfxDatabaseSO _sfxDatabase;
         
         [Header("Event Channels")]
         [SerializeField] private ItemDetailEventChannelSO _itemDetailEventChannel;
@@ -147,6 +155,7 @@ namespace Core.Bootstrap
         [SerializeField] private FreeSpawnerRefillPanelPresenter _freeSpawnerRefillPanelPresenter;
         [SerializeField] private FreeEnergyRefillPanelPresenter _freeEnergyRefillPanelPresenter;
         [SerializeField] private EnergyTimerHUDView _energyTimerHUDView;
+        [SerializeField] private SplashPanelView _splashPanelView;
 
         [SerializeField] private GlobalInputBlockerView _globalInputBlockerView;
         
@@ -187,6 +196,11 @@ namespace Core.Bootstrap
         
         [Header("Audio")]
         [SerializeField] private AudioMixer _audioMixer;
+        [SerializeField] private AudioClip _backgroundMusic;
+        [SerializeField] private AudioSource _audioMusicSource;
+        [SerializeField] private AudioSource _audioSFXSource;
+        
+        [SerializeField] private int _minimumSplashTimeMs = 1500;
         private IdleMonitorService _idleMonitorService;
         private IdleHintController _idleHintController;
 
@@ -212,14 +226,37 @@ namespace Core.Bootstrap
         private OrderGenerationService _orderGenerator;
         private RewardDispatcherService _rewardDispatcher;
         private RewardSelectionService _rewardSelectionService;
+        private AudioService _audioService;
+        private EconomyAudioController _economyAudioController;
+        private IHapticService _hapticService;
 
         private Camera _mainCamera;
+        
+        private async Task InitializeGameAsync()
+        {
+            _splashPanelView.Show();
+            Task mapLoadTask = _chunkManager.WaitForInitialLoadAsync();
+            Task minimumDelayTask = Task.Delay(_minimumSplashTimeMs);
 
-        public void InitializeGame()
+            if(_tutorialOrchestrator.IsCompleted)
+                await Task.WhenAll(mapLoadTask, minimumDelayTask);
+            else
+                await Task.WhenAll(minimumDelayTask);
+            
+            _splashPanelView.FadeOutAndHide(() => 
+            {
+                Debug.Log("[Bootstrapper] Map loaded and splash closed.");
+            });
+        }
+
+        public async void InitializeGame()
         {
             _mainCamera = Camera.main;
             _objectPoolManager.InitializePools();
             _gridVisualizer.Initialize(_objectPoolManager);
+
+            _audioService = new AudioService(_sfxDatabase, _audioMusicSource, _audioSFXSource, _backgroundMusic);
+            ServiceLocator.Register<IAudioService>(_audioService);
             
             IMergeValidator mergeValidator = new StandardMergeValidator(_itemDatabase);
             _mergeItemFactory.Initialize(_objectPoolManager, mergeValidator);
@@ -229,7 +266,6 @@ namespace Core.Bootstrap
             _timeManager = new TimeManager();
             IInputLockService inputLockService = new InputLockService();
             _globalInputBlockerView.Initialize(inputLockService);
-            IWarningMessageService warningMessageService = new WarningMessageService(_singleWarningTextView, _floatingTextConfig);
             
             GridItemDataFactory gridItemDataFactory = new GridItemDataFactory(_itemDatabase);
             
@@ -246,11 +282,12 @@ namespace Core.Bootstrap
             }
             else
             {
-                startEnergy = 15;
+                startEnergy = 35;
                 startGem = 5;
                 startGold = 0;
             }
             _economyModel = new PlayerEconomyModel(startEnergy, startGem, startGold, 100);
+            _economyAudioController = new EconomyAudioController(_economyModel, _audioService);
 
             long savedEnergyTicks = savedData != null ? savedData.EnergyTargetTimeTicks : 0;
             _energyRegenerationService = new EnergyRegenerationService(
@@ -274,6 +311,10 @@ namespace Core.Bootstrap
             SettingsSaveData settingsSaveData = savedData != null ? savedData.SettingsData : null;
             _settingsService = new SettingsService(_audioMixer, settingsSaveData);
             
+            _hapticService = new NiceVibrationsWrapperService(_settingsService);
+            
+            IWarningMessageService warningMessageService = new WarningMessageService(_singleWarningTextView, _floatingTextConfig, _hapticService);
+            
             _settingsUIPresenter.Initialize(_settingsService);
             
             _currencyFlightService.Initialize(_hudManager, _objectPoolManager, _globalRewardIconDatabase);
@@ -282,6 +323,7 @@ namespace Core.Bootstrap
             _exchangeItemUIPresenter.Initialize(_exchangePair, currencyExchangeService, _currencyFlightService, warningMessageService);
 
             _adService = new AdMobRewardedService(_adUnitId);
+            MainThreadDispatcher.Initialize();
             IPurchaseStrategy purchaseStrategy = new RewardedAdPurchaseStrategy(_adService);
             _adShopService = new AdShopService(purchaseStrategy, _economyModel);
             if (savedData != null && savedData.AdShopData != null)
@@ -308,9 +350,15 @@ namespace Core.Bootstrap
             ILootGenerationService lootGenerationService = new LootGenerationService();
 
             ChestInteractionService chestInteractionService = new ChestInteractionService(lootGenerationService, _gridModel, _itemDatabase, gridItemDataFactory, _mainBoardController,
-                _chestOpeningOrchestrator, _economyModel, _timeManager, _mergeItemFactory, _adService);
+                _chestOpeningOrchestrator, _economyModel, _timeManager, _mergeItemFactory, _adService, _audioService);
             
-            ItemInteractionService interactionService = new ItemInteractionService(_gridModel, _itemDatabase, _economyModel, generatorService, chestInteractionService);
+            ItemInteractionService interactionService = new ItemInteractionService(_gridModel, 
+                _itemDatabase, 
+                _economyModel,
+                generatorService, 
+                chestInteractionService, 
+                _audioService,
+                _hapticService);
 
             BoardTransferService boardTransferService = new BoardTransferService(_gridModel, _backpackGridModel);
 
@@ -330,6 +378,7 @@ namespace Core.Bootstrap
                 _orderDataModel, 
                 _tutorialUIView,
                 _orderUIManager,
+                _tutorialHelperTexts,
                 _cellSize
             );
             
@@ -344,9 +393,9 @@ namespace Core.Bootstrap
             _freeEnergyRefillService = new FreeEnergyRefillService(_economyModel, _freeEnergyRefillPanelPresenter, firstTimeOfferService, 20);
 
             IMoveValidator moveValidator= new MoveValidator(_tutorialOrchestrator, _currentStartingBoardData);
-            _mainBoardController.InitializeMainBoard(_gridModel, mergeService, interactionService, boardTransferService, boardSelectionService, warningMessageService, _collectibleCollectOrchestrator, _currencyFlightService ,_itemDatabase, mergeVFXOrchestrator, moveValidator, _gridWidth, _gridHeight, _cellSize);
+            _mainBoardController.InitializeMainBoard(_gridModel, mergeService, interactionService, boardTransferService, boardSelectionService, warningMessageService, _collectibleCollectOrchestrator, _currencyFlightService ,_itemDatabase, mergeVFXOrchestrator, moveValidator, _audioService, _hapticService,  _gridWidth, _gridHeight, _cellSize);
             
-            _backpackDropZone.Initialize(boardTransferService, _mainBoardController, warningMessageService, moveValidator);
+            _backpackDropZone.Initialize(boardTransferService, _mainBoardController, warningMessageService, moveValidator,_audioService,_hapticService);
             
             _boardSelectionVisualizer.Initialize(boardSelectionService, _mainBoardController);
 
@@ -374,10 +423,11 @@ namespace Core.Bootstrap
             IOrderFulfillmentService fulfillmentService = new OrderFulfillmentController(
                 _mainBoardController, 
                 _fulfillmentOrchestrator, 
-                
                 _orderDataModel, 
                 _economyModel,
-                _objectPoolManager
+                _objectPoolManager,
+                _audioService,
+                _hapticService
             );
             IOrderCharacterSelector characterSelector = new OrderRandomCharacterSelector(_characterSpriteDatabase);
             
@@ -497,9 +547,9 @@ namespace Core.Bootstrap
 
             _roadmapRewardIntegrator = new RoadmapRewardIntegrator(_roadmapProgressionService, _rewardDispatcher, _economyModel, _rewardSelectionService, _roadmapDatabase);
 
-            _buildingUpgradePresenter.Initialize(_roadmapProgressionService, _economyModel, inputLockService, _objectPoolManager, _globalRewardIconDatabase);
+            _buildingUpgradePresenter.Initialize(_roadmapProgressionService, _economyModel, inputLockService, _objectPoolManager, _globalRewardIconDatabase,_audioService, _hapticService);
             Sprite unBuildSprite = _roadmapDatabase.UnBuildSprite;
-            _roadmapUIController.Initialize(_roadmapProgressionService, _economyModel, inputLockService, _objectPoolManager, unBuildSprite);
+            _roadmapUIController.Initialize(_roadmapProgressionService, _economyModel, inputLockService, _objectPoolManager, unBuildSprite,_audioService);
             
             _roadmapUIController.OnNodeUpgradeVisualCompleted += _roadmapRewardIntegrator.OnVisualUpgradeCompleted;
             
@@ -525,6 +575,7 @@ namespace Core.Bootstrap
             _mapCameraController.Initialize(inputLockService);
             
             _chunkManager.Initialize(_mapCameraController);
+            await InitializeGameAsync();
             
             MilestoneSaveData milestoneLoginSaveData = savedData != null ? savedData.DailyLoginMilestoneData : null;
             _milestoneServiceLogin = new MilestoneService(_milestoneLoginConfig, _rewardDispatcher, milestoneLoginSaveData);
@@ -656,6 +707,7 @@ namespace Core.Bootstrap
             _freeEnergyRefillService.Dispose();
             _energyRegenerationService.Dispose();
             _chunkManager.Dispose();
+            _economyAudioController.Dispose();
             _settingsService.OnSettingsChanged -= AutoSave;
             _roadmapProgressionService.OnRewardSave -= AutoSave;
             _roadmapUIController.OnNodeUpgradeVisualCompleted -= _roadmapRewardIntegrator.OnVisualUpgradeCompleted;

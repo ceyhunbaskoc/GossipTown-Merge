@@ -1,8 +1,11 @@
 ﻿using Core;
+using Core.Audio;
 using Core.Controllers;
 using Core.GridSystem;
+using Core.Haptics;
 using Core.Rules;
 using Core.Services;
+using Data.Audio;
 using DG.Tweening;
 using UI.Components;
 using UnityEngine;
@@ -18,15 +21,22 @@ namespace UI.Backpack
         private MainBoardController _mainBoardController;
         private IWarningMessageService _warningService;
         private IMoveValidator _moveValidator;
+        private IAudioService _audioService;
+        private IHapticService _hapticService;
 
         private Tween _hoverTween;
 
-        public void Initialize(BoardTransferService transferService, MainBoardController mainBoardController, IWarningMessageService warningService, IMoveValidator moveValidator)
+        public void Initialize(BoardTransferService transferService, MainBoardController mainBoardController, IWarningMessageService warningService, 
+            IMoveValidator moveValidator,
+            IAudioService audioService,
+            IHapticService hapticService)
         {
             _transferService = transferService;
             _mainBoardController = mainBoardController;
             _warningService = warningService;
             _moveValidator = moveValidator;
+            _audioService = audioService;
+            _hapticService = hapticService;
         }
 
         public void OnHoverEnter(IViewItem viewItem)
@@ -67,6 +77,8 @@ namespace UI.Backpack
 
             if (_transferService.TrySendToBackpack(sourcePos))
             {
+                _audioService.PlaySFX(SfxId.Backpack_Drop);
+                _hapticService.Play(HapticType.SoftImpact);
                 if (flyingVisual is DraggableItem draggableItem)
                 {
                     draggableItem.transform.SetParent(null);

@@ -26,6 +26,7 @@ namespace UI.Chest
         {
             if (chestView == null || !(chestView is Component chestComponent))
             {
+                Debug.LogError("[ChestOpeningOrchestrator] PlayOpeningSequence called but View is null! Fallback triggered.");
                 onLidOpened?.Invoke();
                 onSequenceComplete?.Invoke();
                 return;
