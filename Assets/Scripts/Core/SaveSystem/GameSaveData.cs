@@ -197,6 +197,7 @@ namespace Core.SaveSystem
     [Serializable]
     public class GameSaveData
     {
+        public int SaveVersion;
         public int Energy;
         public int Gem;
         public int Gold;

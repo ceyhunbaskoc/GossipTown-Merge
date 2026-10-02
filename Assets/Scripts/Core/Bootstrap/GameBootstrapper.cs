@@ -231,7 +231,10 @@ namespace Core.Bootstrap
         private IHapticService _hapticService;
 
         private Camera _mainCamera;
-        
+
+        private bool _isInitialized;
+        private bool _isSaveDirty;
+
         private async Task InitializeGameAsync()
         {
             _splashPanelView.Show();
@@ -644,11 +647,25 @@ namespace Core.Bootstrap
             _weeklyQuestService.OnQuestProgressChanged += (questDef, current, target) => AutoSave();
             _weeklyQuestService.OnQuestCompleted += (questDef) => AutoSave();
             _weeklyQuestService.OnQuestRewardClaimed += (questDef) => AutoSave();
+
+            _isInitialized = true;
         }
-        
+
         private void AutoSave()
         {
-            if (_gridModel == null || _economyModel == null) return;
+            _isSaveDirty = true;
+        }
+
+        private void LateUpdate()
+        {
+            if (_isSaveDirty) SaveNow();
+        }
+
+        private void SaveNow()
+        {
+            if (!_isInitialized) return;
+
+            _isSaveDirty = false;
 
             GameSaveData currentSave = new GameSaveData
             {
@@ -680,12 +697,12 @@ namespace Core.Bootstrap
         
         private void OnApplicationPause(bool pauseStatus)
         {
-            if (pauseStatus) AutoSave();
+            if (pauseStatus) SaveNow();
         }
-        
+
         private void OnApplicationQuit()
         {
-            AutoSave();
+            SaveNow();
         }
 
         private void OnDestroy()

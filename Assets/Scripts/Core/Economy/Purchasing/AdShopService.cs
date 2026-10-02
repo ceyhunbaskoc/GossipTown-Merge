@@ -118,6 +118,7 @@ namespace Core.Economy.Shop
         private void GrantReward(CurrencyType currency, int amount)
         {
             if (currency == CurrencyType.Gold) _economyModel.AddGold(amount);
+            else if (currency == CurrencyType.Gem) _economyModel.AddGem(amount);
             else if (currency == CurrencyType.Energy) _economyModel.AddEnergy(amount);
         }
     }

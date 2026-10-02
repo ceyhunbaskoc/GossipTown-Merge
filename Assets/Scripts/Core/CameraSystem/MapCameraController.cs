@@ -50,6 +50,8 @@ namespace Core.CameraSystem
             _targetZoom = _mainCamera.orthographicSize;
             _lastReportedZoom = _targetZoom;
             _lastReportedPosition = _targetPosition;
+
+            ForceReportPosition();
         }
 
         private void LateUpdate()
@@ -127,7 +129,6 @@ namespace Core.CameraSystem
                 _lastPointerPosition = Input.mousePosition;
             }
         }
-        /*
         public void ForceReportPosition()
         {
             if (_mainCamera == null) return;
@@ -137,7 +138,6 @@ namespace Core.CameraSystem
             
             OnCameraMoved?.Invoke(transform.position, _mainCamera.orthographicSize, _mainCamera.aspect);
         }
-*/
         private void ApplyTransformations()
         {
             _targetPosition = ClampPosition(_targetPosition, _targetZoom);
@@ -220,12 +220,17 @@ namespace Core.CameraSystem
         {
             if (_mainCamera == null) _mainCamera = GetComponent<Camera>();
 
-            _targetPosition = newPos;
-            _targetZoom = newZoom;
-            transform.position = newPos;
-            _mainCamera.orthographicSize = newZoom;
-            
-            ReportPositionIfChanged();
+            float absoluteMaxZoom = CalculateAbsoluteMaxZoom();
+            float clampedMaxZoom = Mathf.Min(_maxZoom, absoluteMaxZoom);
+            float safeMinZoom = Mathf.Min(_minZoom, clampedMaxZoom);
+    
+            _targetZoom = Mathf.Clamp(newZoom, safeMinZoom, clampedMaxZoom);
+            _targetPosition = ClampPosition(newPos, _targetZoom);
+
+            transform.position = _targetPosition;
+            _mainCamera.orthographicSize = _targetZoom;
+    
+            ForceReportPosition();
         }
         
 #if UNITY_EDITOR
