@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Id>k__BackingField: item_coffee
   <ItemName>k__BackingField: Coffee
+  <IsSellable>k__BackingField: 1
+  <BaseSellPrice>k__BackingField: 2
   _description: 
   <Items>k__BackingField:
   - <Level>k__BackingField: 1

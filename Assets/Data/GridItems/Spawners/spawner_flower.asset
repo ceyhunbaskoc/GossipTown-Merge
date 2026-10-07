@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Id>k__BackingField: spawner_flower
   <ItemName>k__BackingField: Flower Spawner
+  <IsSellable>k__BackingField: 0
+  <BaseSellPrice>k__BackingField: 3
   _description: 
   <SpawnItemSO>k__BackingField: {fileID: 11400000, guid: ca75fc758d3a7ce43b2f599c5b6d070e, type: 2}
   <Spawners>k__BackingField:
@@ -91,3 +93,28 @@ MonoBehaviour:
       Weight: 1
     <MaxCapacity>k__BackingField: 150
     <CooldownSeconds>k__BackingField: 28800
+  _baseRestingSkipCost: 10
+  _costMultiplierCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0.44444445
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 10
+      value: 5
+      inSlope: 0.44444445
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

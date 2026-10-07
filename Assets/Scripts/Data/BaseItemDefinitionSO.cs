@@ -1,4 +1,5 @@
-﻿using Core.GridSystem;
+﻿using System;
+using Core.GridSystem;
 using UnityEngine;
 
 namespace Data
@@ -7,6 +8,8 @@ namespace Data
     {
         [field: SerializeField] public string Id { get; protected set; }
         [field: SerializeField] public string ItemName { get; protected set; }
+        [field: SerializeField] public bool IsSellable { get; protected set; } = true;
+        [field: SerializeField] public int BaseSellPrice { get; protected set; } = 3;
         public abstract int MaxLevel { get; }
         
         [Header("UI Info")]
@@ -22,9 +25,14 @@ namespace Data
         {
             if (string.IsNullOrWhiteSpace(_description))
             {
-                return "Bu eşyayı geliştirmek için aynısından bir tane daha bularak birleştirin.";
+                return "To upgrade this item, find another one just like it and merge them.";
             }
             return _description;
+        }
+        
+        public virtual int GetSellPrice(int level)
+        {
+            return Mathf.FloorToInt(BaseSellPrice * (level*0.75f));
         }
     }
 }

@@ -367,7 +367,7 @@ namespace Core.Bootstrap
 
             BoardSelectionService boardSelectionService = new BoardSelectionService(_gridModel, _itemDatabase);
             
-            _itemInfoPanelController.Initialize(boardSelectionService, _gridModel);
+            _itemInfoPanelController.Initialize(boardSelectionService, _gridModel, _economyModel, _currencyFlightService, _mainBoardController);
 
             _chestRewardHandler.Initialize(boardSelectionService, chestInteractionService, warningMessageService);
 

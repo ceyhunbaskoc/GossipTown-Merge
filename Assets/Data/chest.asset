@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Id>k__BackingField: chest
   <ItemName>k__BackingField: Chest
-  _description: 
+  <IsSellable>k__BackingField: 1
+  <BaseSellPrice>k__BackingField: 8
+  _description: Either open this chest or combine it with an identical one to upgrade
+    it
   <Chests>k__BackingField:
   - Level: 1
     ItemIcon: {fileID: 21300000, guid: 36f1266355be96443b410a4634d0b91b, type: 3}
